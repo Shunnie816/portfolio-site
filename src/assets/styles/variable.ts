@@ -32,16 +32,19 @@ export const variables = css`
     //layout
     --header-hight: 56px;
 
-    //text color
-    --text-default: rgba(0, 0, 0, 0.87);
-
     //color
     --color-dark-navy: #201e43;
     --color-navy: #134b70;
     --color-light-navy: #508c9b;
     --color-gray: #eeeeee;
+    --color-light-blue: #eef7ff;
+
+    //text color
+    --text-default: rgba(0, 0, 0, 0.87);
+    --text-normal: var(--color-gray);
+    --text-dark: var(--color-dark-navy);
 
     //background-color
-    --bg-color-light-blue: #eef7ff;
+    --bg-color-default: var(--color-dark-navy);
   }
 `;
