@@ -7,19 +7,19 @@ import { Icon } from "@/components/parts/Icon";
 import { SkillLevel } from "../presentations/SkillLevel";
 
 const avatarWrapper = css`
+  align-items: center;
+  background-color: var(--bg-color-dark);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   gap: var(--spacing-2);
   height: 100vh;
-  background-color: var(--bg-color-dark);
+  justify-content: center;
 `;
 
 const commonWrapperStyle = css`
-  padding: var(--spacing-14) var(--spacing-4) 0;
   display: flex;
   flex-direction: column;
+  padding: var(--spacing-14) var(--spacing-4) 0;
 `;
 
 const introWrapper = css`

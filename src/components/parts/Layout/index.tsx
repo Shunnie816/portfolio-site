@@ -11,8 +11,9 @@ type Props = {
 };
 
 const globalStyles = css`
-  ${globalStyle} //以前のglobal.scss
-  ${variables} //scssカスタムプロパティ
+  ${globalStyle} /* 以前のglobal.scss */
+
+  ${variables} /* scssカスタムプロパティ */
 `;
 
 export const Layout = ({ children }: Props) => {

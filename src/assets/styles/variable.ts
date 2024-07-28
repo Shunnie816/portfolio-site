@@ -2,10 +2,10 @@ import { css } from "@emotion/react";
 
 export const variables = css`
   :root {
-    //breakpoint
+    /* breakpoint */
     --breakpoint: 768px;
 
-    //font-size
+    /* font-size */
     --fontSizeXXS: 10px;
     --fontSizeXS: 12px;
     --fontSizeS: 14px;
@@ -14,7 +14,7 @@ export const variables = css`
     --fontSizeXL: 20px;
     --fontSizeXXL: 24px;
 
-    //spacing
+    /* spacing */
     --spacing-1: 4px;
     --spacing-2: 8px;
     --spacing-3: 12px;
@@ -29,23 +29,23 @@ export const variables = css`
     --spacing-18: 72px;
     --spacing-24: 96px;
 
-    //layout
+    /* layout */
     --header-hight: 56px;
 
-    //color
+    /* color */
     --color-dark-navy: #201e43;
     --color-navy: #134b70;
     --color-light-navy: #508c9b;
-    --color-gray: #eeeeee;
+    --color-gray: #eee;
     --color-light-blue: #cde8e5;
     --color-white: #fff;
 
-    //text color
+    /* text color */
     --text-default: var(--color-dark-navy);
-    --text-normal: rgba(0, 0, 0, 0.87);
+    --text-normal: rgb(0 0 0 / 87%);
     --text-dark: var(--color-color-gray);
 
-    //background-color
+    /* background-color */
     --bg-color-default: var(--color-gray);
     --bg-color-dark: var(--color-dark-navy);
     --bg-color-light: var(--color-white);
