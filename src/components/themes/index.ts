@@ -28,7 +28,8 @@ export const defaultTheme = createTheme({
       secondary: COLOR_PALETTE.darkNavy,
     },
     background: {
-      default: COLOR_PALETTE.lightBlue,
+      default: COLOR_PALETTE.darkNavy,
+      paper: COLOR_PALETTE.gray,
     },
   },
   typography: {

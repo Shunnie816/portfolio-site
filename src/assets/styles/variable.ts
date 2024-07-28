@@ -37,14 +37,17 @@ export const variables = css`
     --color-navy: #134b70;
     --color-light-navy: #508c9b;
     --color-gray: #eeeeee;
-    --color-light-blue: #eef7ff;
+    --color-light-blue: #cde8e5;
+    --color-white: #fff;
 
     //text color
-    --text-default: rgba(0, 0, 0, 0.87);
-    --text-normal: var(--color-gray);
-    --text-dark: var(--color-dark-navy);
+    --text-default: var(--color-dark-navy);
+    --text-normal: rgba(0, 0, 0, 0.87);
+    --text-dark: var(--color-color-gray);
 
     //background-color
-    --bg-color-default: var(--color-dark-navy);
+    --bg-color-default: var(--color-gray);
+    --bg-color-dark: var(--color-dark-navy);
+    --bg-color-light: var(--color-white);
   }
 `;
