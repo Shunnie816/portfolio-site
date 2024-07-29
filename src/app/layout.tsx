@@ -1,7 +1,6 @@
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import { Layout } from "@/components/parts/Layout";
 import type { Metadata } from "next";
-import "../assets/styles/reset.scss";
-import "../assets/styles/global.scss";
 
 export const metadata: Metadata = {
   title: "Shun's Portfolio",
@@ -17,7 +16,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Layout>{children}</Layout>
+        <AppRouterCacheProvider>
+          <Layout>{children}</Layout>
+        </AppRouterCacheProvider>
       </body>
     </html>
   );

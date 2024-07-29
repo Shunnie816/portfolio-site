@@ -6,13 +6,17 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:style": "stylelint '**/*.{css,scss,ts,tsx,js,jsx}'",
+    "lint:style:fix": "stylelint '**/*.{css,scss,ts,tsx,js,jsx}' --fix"
   },
   "dependencies": {
+    "@emotion/cache": "^11.13.0",
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
     "@mui/icons-material": "^5.16.4",
     "@mui/material": "^5.16.4",
+    "@mui/material-nextjs": "^5.16.4",
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18",
@@ -27,7 +31,11 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "postcss": "^8",
+    "postcss-styled-syntax": "^0.6.4",
     "prettier": "^3.3.3",
+    "stylelint": "^16.7.0",
+    "stylelint-config-standard": "^36.0.1",
+    "stylelint-order": "^6.0.4",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }
