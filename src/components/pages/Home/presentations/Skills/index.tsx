@@ -10,7 +10,7 @@ const skillWrapper = css`
 `;
 
 const cardsWrapper = css`
-  margin: var(--spacing-4) 0 var(--spacing-9);
+  padding: var(--spacing-4) 0 var(--spacing-9);
   display: flex;
   flex-direction: column;
   gap: var(--spacing-3);
