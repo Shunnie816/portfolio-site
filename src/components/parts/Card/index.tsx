@@ -14,6 +14,12 @@ type Props = {
   avatarName: string;
 };
 
+const cardHeaderSx = {
+  backgroundColor: "secondary.light",
+  color: "primary.dark",
+  maxHeight: "48px",
+};
+
 export const Card = ({ title, children, avatarName }: Props) => {
   return (
     <MUICard>
@@ -27,11 +33,7 @@ export const Card = ({ title, children, avatarName }: Props) => {
             alt={avatarName}
           />
         }
-        sx={{
-          backgroundColor: "secondary.light",
-          color: "primary.dark",
-          height: "48px",
-        }}
+        sx={cardHeaderSx}
         titleTypographyProps={{ variant: "h6" }}
       />
       <Divider sx={{ borderColor: "primary.main" }} />
