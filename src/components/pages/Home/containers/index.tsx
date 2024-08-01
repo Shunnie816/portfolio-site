@@ -5,6 +5,8 @@ import { Avatar, IconButton, Typography } from "@mui/material";
 import React from "react";
 import { Icon } from "@/components/parts/Icon";
 import { SkillLevel } from "../presentations/SkillLevel";
+import { Skills } from "../presentations/Skills";
+import { commonWrapperStyle } from "./commonStyle";
 
 const avatarWrapper = css`
   align-items: center;
@@ -14,12 +16,6 @@ const avatarWrapper = css`
   gap: var(--spacing-2);
   height: 100vh;
   justify-content: center;
-`;
-
-const commonWrapperStyle = css`
-  display: flex;
-  flex-direction: column;
-  padding: var(--spacing-14) var(--spacing-4) 0;
 `;
 
 const introWrapper = css`
@@ -37,10 +33,6 @@ const iconsWrapper = css`
   margin-top: var(--spacing-4);
 `;
 
-const skillWrapper = css`
-  ${commonWrapperStyle}
-`;
-
 const experienceWrapper = css`
   ${commonWrapperStyle}
   background-color: var(--bg-color-light);
@@ -55,7 +47,6 @@ const AvatarWrapper = emotionStyled.section`${avatarWrapper}`;
 const IntroWrapper = emotionStyled.section`${introWrapper}`;
 const IntroDescription = emotionStyled.div`${introDescription}`;
 const IconsWrapper = emotionStyled.div`${iconsWrapper}`;
-const SkillWrapper = emotionStyled.section`${skillWrapper}`;
 const ExperienceWrapper = emotionStyled.section`${experienceWrapper}`;
 const EducationWrapper = emotionStyled.section`${educationWrapper}`;
 
@@ -98,11 +89,7 @@ export const Home = () => {
         </IconsWrapper>
         <SkillLevel />
       </IntroWrapper>
-      <SkillWrapper>
-        <Typography variant="h3" textAlign="center">
-          Skills
-        </Typography>
-      </SkillWrapper>
+      <Skills />
       <ExperienceWrapper>
         <Typography variant="h3" textAlign="center">
           Experiences

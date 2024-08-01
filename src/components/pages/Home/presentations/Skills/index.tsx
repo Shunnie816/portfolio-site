@@ -29,10 +29,22 @@ export const Skills = () => {
         <Card title="TypeScript" avatarName="ts.png">
           Experienced most of the developments with this.
         </Card>
-        <Card title="TypeScript" avatarName="ts.png">
+        <Card title="Next.js" avatarName="nextjs.png">
           Experienced most of the developments with this.
         </Card>
-        <Card title="TypeScript" avatarName="ts.png">
+        <Card title="React" avatarName="react.png">
+          Experienced most of the developments with this.
+        </Card>
+        <Card title="Storybook" avatarName="storybook.png">
+          Experienced most of the developments with this.
+        </Card>
+        <Card title="Docker" avatarName="docker.png">
+          Experienced most of the developments with this.
+        </Card>
+        <Card title="Firebase" avatarName="firebase.png">
+          Experienced most of the developments with this.
+        </Card>
+        <Card title="Java" avatarName="java.png">
           Experienced most of the developments with this.
         </Card>
       </CardsWrapper>

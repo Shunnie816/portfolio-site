@@ -6,6 +6,7 @@ const COLOR_PALETTE = {
   navy: "#134b70",
   lightNavy: "#508c9b",
   gray: "#eeeeee",
+  lightGray: "#fafafa",
   lightBlue: "#eef7ff",
 };
 
@@ -22,6 +23,7 @@ export const defaultTheme = createTheme({
     },
     secondary: {
       main: COLOR_PALETTE.gray,
+      light: COLOR_PALETTE.lightGray,
     },
     text: {
       primary: COLOR_PALETTE.gray,
