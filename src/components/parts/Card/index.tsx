@@ -3,13 +3,14 @@ import {
   CardContent,
   CardHeader,
   Divider,
+  Typography,
 } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 
 type Props = {
   title: string;
-  children: React.ReactNode;
+  children: string;
   avatarName: string;
 };
 
@@ -35,7 +36,7 @@ export const Card = ({ title, children, avatarName }: Props) => {
       />
       <Divider sx={{ borderColor: "primary.main" }} />
       <CardContent sx={{ backgroundColor: "common.white" }}>
-        {children}
+        <Typography sx={{ color: "primary.dark" }}>{children}</Typography>
       </CardContent>
     </MUICard>
   );
