@@ -4,6 +4,7 @@ import emotionStyled from "@emotion/styled";
 import { Avatar, IconButton, Typography } from "@mui/material";
 import React from "react";
 import { Icon } from "@/components/parts/Icon";
+import { Experiences } from "../presentations/Experiences";
 import { SkillLevel } from "../presentations/SkillLevel";
 import { Skills } from "../presentations/Skills";
 import { commonWrapperStyle } from "./commonStyle";
@@ -33,11 +34,6 @@ const iconsWrapper = css`
   margin-top: var(--spacing-4);
 `;
 
-const experienceWrapper = css`
-  ${commonWrapperStyle}
-  background-color: var(--bg-color-light);
-`;
-
 const educationWrapper = css`
   ${commonWrapperStyle}
 `;
@@ -47,7 +43,6 @@ const AvatarWrapper = emotionStyled.section`${avatarWrapper}`;
 const IntroWrapper = emotionStyled.section`${introWrapper}`;
 const IntroDescription = emotionStyled.div`${introDescription}`;
 const IconsWrapper = emotionStyled.div`${iconsWrapper}`;
-const ExperienceWrapper = emotionStyled.section`${experienceWrapper}`;
 const EducationWrapper = emotionStyled.section`${educationWrapper}`;
 
 export const Home = () => {
@@ -90,11 +85,7 @@ export const Home = () => {
         <SkillLevel />
       </IntroWrapper>
       <Skills />
-      <ExperienceWrapper>
-        <Typography variant="h3" textAlign="center">
-          Experiences
-        </Typography>
-      </ExperienceWrapper>
+      <Experiences />
       <EducationWrapper>
         <Typography variant="h3" textAlign="center">
           Education
