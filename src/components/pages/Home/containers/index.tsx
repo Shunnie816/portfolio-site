@@ -34,16 +34,16 @@ const iconsWrapper = css`
   margin-top: var(--spacing-4);
 `;
 
-const educationWrapper = css`
-  ${commonWrapperStyle}
-`;
+// const learningWrapper = css`
+//   ${commonWrapperStyle}
+// `;
 
 /** emotion styled components */
 const AvatarWrapper = emotionStyled.section`${avatarWrapper}`;
 const IntroWrapper = emotionStyled.section`${introWrapper}`;
 const IntroDescription = emotionStyled.div`${introDescription}`;
 const IconsWrapper = emotionStyled.div`${iconsWrapper}`;
-const EducationWrapper = emotionStyled.section`${educationWrapper}`;
+// const LearningWrapper = emotionStyled.section`${learningWrapper}`;
 
 export const Home = () => {
   return (
@@ -86,11 +86,14 @@ export const Home = () => {
       </IntroWrapper>
       <Skills />
       <Experiences />
-      <EducationWrapper>
+
+      {/* 
+      TODO: 追加予定
+      <LearningWrapper>
         <Typography variant="h3" textAlign="center">
           Education
         </Typography>
-      </EducationWrapper>
+      </LearningWrapper> */}
     </>
   );
 };
