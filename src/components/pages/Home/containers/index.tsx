@@ -3,6 +3,7 @@ import { css } from "@emotion/react";
 import emotionStyled from "@emotion/styled";
 import { Avatar, IconButton, Typography } from "@mui/material";
 import React from "react";
+import { Header } from "@/components/parts/Header";
 import { Icon } from "@/components/parts/Icon";
 import { Experiences } from "../presentations/Experiences";
 import { SkillLevel } from "../presentations/SkillLevel";
@@ -48,6 +49,7 @@ const IconsWrapper = emotionStyled.div`${iconsWrapper}`;
 export const Home = () => {
   return (
     <>
+      <Header />
       <AvatarWrapper>
         <Avatar
           alt="ねこのこ"
