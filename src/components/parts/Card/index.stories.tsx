@@ -1,5 +1,4 @@
-import { ThemeProvider } from "@mui/material";
-import { defaultTheme } from "@/components/themes";
+import { Layout } from "../Layout";
 import { Card } from ".";
 import type { Meta, StoryObj } from "@storybook/react";
 
@@ -12,9 +11,9 @@ type Story = StoryObj<typeof Card>;
 
 const Component: Story["render"] = (args) => {
   return (
-    <ThemeProvider theme={defaultTheme}>
+    <Layout>
       <Card {...args} />
-    </ThemeProvider>
+    </Layout>
   );
 };
 
