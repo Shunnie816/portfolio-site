@@ -7,11 +7,13 @@ import {
   Typography,
 } from "@mui/material";
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, { useState } from "react";
+import { DrawerNav } from "../DrawerNav";
 import { Icon } from "../Icon";
 
 export const Header = () => {
   const router = useRouter();
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <AppBar color="transparent" sx={{ boxShadow: "none" }}>
@@ -39,9 +41,15 @@ export const Header = () => {
           edge="start"
           color="secondary"
           aria-label="menu"
+          onClick={() => setIsOpen(true)}
         >
           <Icon icon="menu" />
         </IconButton>
+        <DrawerNav
+          isOpen={isOpen}
+          onClose={() => setIsOpen(false)}
+          onOpen={() => setIsOpen(true)}
+        />
       </Toolbar>
     </AppBar>
   );
