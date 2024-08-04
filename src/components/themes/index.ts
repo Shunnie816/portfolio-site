@@ -8,6 +8,7 @@ const COLOR_PALETTE = {
   gray: "#eeeeee",
   lightGray: "#fafafa",
   lightBlue: "#eef7ff",
+  fog: "#64748b",
 };
 
 /**
@@ -28,6 +29,7 @@ export const defaultTheme = createTheme({
     text: {
       primary: COLOR_PALETTE.gray,
       secondary: COLOR_PALETTE.darkNavy,
+      disabled: COLOR_PALETTE.fog,
     },
     background: {
       default: COLOR_PALETTE.darkNavy,

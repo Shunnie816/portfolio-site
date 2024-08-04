@@ -1,10 +1,11 @@
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import MenuIcon from "@mui/icons-material/Menu";
 import XIcon from "@mui/icons-material/X";
 import { SvgIconProps } from "@mui/material/SvgIcon";
 import React from "react";
 
-export type IconType = "gitHub" | "linkedIn" | "x";
+export type IconType = "gitHub" | "linkedIn" | "x" | "menu";
 
 type BaseProps = {
   icon: IconType;
@@ -15,6 +16,7 @@ const iconMap = {
   gitHub: GitHubIcon,
   linkedIn: LinkedInIcon,
   x: XIcon,
+  menu: MenuIcon,
 };
 
 export const Icon = ({ icon, ...rest }: Props) => {
