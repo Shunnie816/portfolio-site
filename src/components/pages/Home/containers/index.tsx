@@ -3,6 +3,7 @@ import { css } from "@emotion/react";
 import emotionStyled from "@emotion/styled";
 import { Avatar, IconButton, Typography } from "@mui/material";
 import React from "react";
+import { Footer } from "@/components/parts/Footer";
 import { Header } from "@/components/parts/Header";
 import { Icon } from "@/components/parts/Icon";
 import { Experiences } from "../presentations/Experiences";
@@ -96,6 +97,7 @@ export const Home = () => {
           Education
         </Typography>
       </LearningWrapper> */}
+      <Footer />
     </>
   );
 };
