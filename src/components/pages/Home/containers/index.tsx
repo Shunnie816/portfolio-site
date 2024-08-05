@@ -3,7 +3,6 @@ import { css } from "@emotion/react";
 import emotionStyled from "@emotion/styled";
 import { Avatar, IconButton, Typography } from "@mui/material";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import React from "react";
 import { Footer } from "@/components/parts/Footer";
 import { Header } from "@/components/parts/Header";
@@ -51,8 +50,6 @@ const IconsWrapper = emotionStyled.div`${iconsWrapper}`;
 // const LearningWrapper = emotionStyled.section`${learningWrapper}`;
 
 export const Home = () => {
-  const router = useRouter();
-
   return (
     <>
       <Header />
