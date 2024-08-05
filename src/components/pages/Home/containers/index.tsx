@@ -2,6 +2,8 @@
 import { css } from "@emotion/react";
 import emotionStyled from "@emotion/styled";
 import { Avatar, IconButton, Typography } from "@mui/material";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { Footer } from "@/components/parts/Footer";
 import { Header } from "@/components/parts/Header";
@@ -10,6 +12,7 @@ import { Experiences } from "../presentations/Experiences";
 import { SkillLevel } from "../presentations/SkillLevel";
 import { Skills } from "../presentations/Skills";
 import { commonWrapperStyle } from "./commonStyle";
+import { GITHUB, LINKEDIN, X } from "./constants";
 
 const avatarWrapper = css`
   align-items: center;
@@ -48,6 +51,8 @@ const IconsWrapper = emotionStyled.div`${iconsWrapper}`;
 // const LearningWrapper = emotionStyled.section`${learningWrapper}`;
 
 export const Home = () => {
+  const router = useRouter();
+
   return (
     <>
       <Header />
@@ -68,21 +73,34 @@ export const Home = () => {
             Frontend Developer
           </Typography>
           <Typography>
-            I am a passionate software engineer with x years of working
-            experience. I built OSS tools for Kubernetes using GO. My tools help
-            people to deploy their workloads in Kubernetes. Sometimes, I work on
-            some fun projects such as writing a theme, etc.
+            I am a dedicated software engineer with 2 years of professional
+            experience, and a total of 4 years including personal projects.
+          </Typography>
+          <Typography>
+            Currently, I specialize in frontend development, focusing on
+            technologies such as TypeScript, React, and Next.js. My goal is to
+            eventually take on roles as a Tech Lead or Full-Stack Engineer.
+          </Typography>
+          <Typography>
+            I am actively expanding my skill set to include Docker, Firebase,
+            and Python.
           </Typography>
         </IntroDescription>
         <IconsWrapper>
           <IconButton>
-            <Icon icon="gitHub" color="primary" />
+            <Link href={GITHUB} target="_blank" rel="noreferrer noopener">
+              <Icon icon="gitHub" color="primary" />
+            </Link>
           </IconButton>
           <IconButton>
-            <Icon icon="linkedIn" color="primary" />
+            <Link href={LINKEDIN} target="_blank" rel="noreferrer noopener">
+              <Icon icon="linkedIn" color="primary" />
+            </Link>
           </IconButton>
           <IconButton>
-            <Icon icon="x" color="primary" />
+            <Link href={X} target="_blank" rel="noreferrer noopener">
+              <Icon icon="x" color="primary" />
+            </Link>
           </IconButton>
         </IconsWrapper>
         <SkillLevel />
