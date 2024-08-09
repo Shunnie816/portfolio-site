@@ -11,7 +11,7 @@ import { Experiences } from "../presentations/Experiences";
 import { SkillLevel } from "../presentations/SkillLevel";
 import { Skills } from "../presentations/Skills";
 import { commonWrapperStyle } from "./commonStyle";
-import { GITHUB, LINKEDIN, X } from "./constants";
+import { URL } from "./constants";
 
 const avatarWrapper = css`
   align-items: center;
@@ -85,17 +85,17 @@ export const Home = () => {
         </IntroDescription>
         <IconsWrapper>
           <IconButton>
-            <Link href={GITHUB} target="_blank" rel="noreferrer noopener">
+            <Link href={URL.GITHUB} target="_blank" rel="noreferrer noopener">
               <Icon icon="gitHub" color="primary" />
             </Link>
           </IconButton>
           <IconButton>
-            <Link href={LINKEDIN} target="_blank" rel="noreferrer noopener">
+            <Link href={URL.LINKEDIN} target="_blank" rel="noreferrer noopener">
               <Icon icon="linkedIn" color="primary" />
             </Link>
           </IconButton>
           <IconButton>
-            <Link href={X} target="_blank" rel="noreferrer noopener">
+            <Link href={URL.X} target="_blank" rel="noreferrer noopener">
               <Icon icon="x" color="primary" />
             </Link>
           </IconButton>
