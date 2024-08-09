@@ -61,7 +61,7 @@ export const SkillLevel = () => {
         <CircularProgress
           size={150}
           variant="determinate"
-          value={65}
+          value={70}
           sx={{ color: "secondary.dark" }}
         />
         <Box sx={circleBoxSx}>
@@ -72,7 +72,7 @@ export const SkillLevel = () => {
         <CircularProgress
           size={150}
           variant="determinate"
-          value={40}
+          value={35}
           sx={{ color: "info.light" }}
         />
         <Box sx={circleBoxSx}>
