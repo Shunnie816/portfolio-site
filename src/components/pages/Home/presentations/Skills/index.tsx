@@ -27,25 +27,50 @@ export const Skills = () => {
       </Typography>
       <CardsWrapper>
         <Card title="TypeScript" avatarName="ts.png">
-          Experienced most of the developments with this.
-        </Card>
-        <Card title="Next.js" avatarName="nextjs.png">
-          Experienced most of the developments with this.
+          Type-safe coding for scalable and maintainable applications using
+          TypeScript.
         </Card>
         <Card title="React" avatarName="react.png">
-          Experienced most of the developments with this.
+          Skilled in integrating React with modern tools and libraries for
+          efficient development.
+        </Card>
+        <Card title="Next.js" avatarName="nextjs.png">
+          Building high-performance web applications with Next.js, focusing on
+          server-side rendering and static generation.
         </Card>
         <Card title="Storybook" avatarName="storybook.png">
-          Experienced most of the developments with this.
+          Utilizing Storybook for isolated UI development, ensuring component
+          reusability and visual consistency across projects.
+        </Card>
+        <Card title="MUI" avatarName="mui.png">
+          Enhancing frontend development with MUI’s extensive UI components and
+          customizable themes for a cohesive user experience.
+        </Card>
+        <Card title="Sass" avatarName="sass.png">
+          Optimizing CSS with Sass to create maintainable, scalable, and modular
+          stylesheets for efficient frontend development.
         </Card>
         <Card title="Docker" avatarName="docker.png">
-          Experienced most of the developments with this.
+          Getting started with Docker to build and manage basic containers,
+          enhancing development efficiency and consistency.
         </Card>
         <Card title="Firebase" avatarName="firebase.png">
-          Experienced most of the developments with this.
+          Implementing Firebase Hosting and Storage to streamline deployment
+          processes and manage static assets with ease.
+        </Card>
+        <Card title="Git" avatarName="git.png">
+          Utilizing GitHub and GitLab for effective source code management and
+          team collaboration, ensuring smooth development processes and version
+          control.
         </Card>
         <Card title="Java" avatarName="java.png">
-          Experienced most of the developments with this.
+          Holding Java Silver certification, with a strong grasp of Java
+          fundamentals and a readiness to build upon this knowledge with
+          practical experience.
+        </Card>
+        <Card title="Python" avatarName="python.png">
+          Beginning my journey with Python, eager to apply and expand my skills
+          in personal development projects and explore its full potential.
         </Card>
       </CardsWrapper>
     </SkillWrapper>

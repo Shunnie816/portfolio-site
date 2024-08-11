@@ -38,8 +38,8 @@ export const Experiences = () => {
           July 2023 - Present
         </Typography>
         <Typography variant="body2">
-          Developing a my page for outsourcing staffs. Join as a frontend
-          developer in a scrum team.
+          Developing a SPA for outsourcing staffs. Join as a frontend developer
+          in a scrum team.
         </Typography>
         <div className="details">
           <div>
@@ -56,8 +56,9 @@ export const Experiences = () => {
             <Typography sx={{ fontWeight: "bold", color: "primary.main" }}>
               Responsibilities:
             </Typography>
-            <Typography>・Implement and test xyz feature</Typography>
-            <Typography>・Frontend system desgin for xyz feature</Typography>
+            <Typography>・Implement and test UI parts and pages</Typography>
+            <Typography>・Frontend system desgin</Typography>
+            <Typography>・a part of scrum master</Typography>
           </div>
         </div>
       </ProjectWrapper>
