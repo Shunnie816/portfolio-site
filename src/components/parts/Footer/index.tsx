@@ -1,6 +1,7 @@
 import { css } from "@emotion/react";
 import emotionStyled from "@emotion/styled";
 import { Divider, List, ListItemText, Typography } from "@mui/material";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { Icon } from "../Icon";
 
@@ -37,7 +38,13 @@ export const Footer = () => {
   /** コピーライト用 */
   const currentYear = new Date().getFullYear();
 
-  const firstListItems = ["About", "Skills", "Experiences"];
+  const router = useRouter();
+
+  const firstListItems = [
+    { text: "About", anchor: "about" },
+    { text: "Skills", anchor: "skills" },
+    { text: "Experiences", anchor: "experiences" },
+  ];
   const secondListItems = [
     {
       component: (
@@ -72,15 +79,20 @@ export const Footer = () => {
     <Wrapper>
       <Typography sx={{ color: "secondary.main" }}>Navigation</Typography>
       <List>
-        {firstListItems.map((text) => {
+        {firstListItems.map((item) => {
           return (
-            <React.Fragment key={text}>
+            <div
+              key={item.text}
+              onClick={() => {
+                router.push(`#${item.anchor}`);
+              }}
+            >
               <ListItemText
-                primary={text}
+                primary={item.text}
                 sx={{ color: "text.disabled" }}
                 primaryTypographyProps={{ variant: "body2" }}
               />
-            </React.Fragment>
+            </div>
           );
         })}
       </List>

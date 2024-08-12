@@ -21,7 +21,7 @@ const CardsWrapper = emotionStyled.div`${cardsWrapper}`;
 
 export const Skills = () => {
   return (
-    <SkillWrapper>
+    <SkillWrapper id="skills">
       <Typography variant="h3" textAlign="center">
         Skills
       </Typography>

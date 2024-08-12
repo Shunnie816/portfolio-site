@@ -53,7 +53,7 @@ export const Home = () => {
   return (
     <>
       <Header />
-      <AvatarWrapper>
+      <AvatarWrapper id="home">
         <Avatar
           alt="ねこのこ"
           src="/assets/img/ねこのこ.jpg"
@@ -63,7 +63,7 @@ export const Home = () => {
           Hi, I am Shun
         </Typography>
       </AvatarWrapper>
-      <IntroWrapper>
+      <IntroWrapper id="about">
         <IntroDescription>
           <Typography variant="h4">Shun Yoshiya</Typography>
           <Typography variant="h6" sx={{ color: "primary.light" }}>
