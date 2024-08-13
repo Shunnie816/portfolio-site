@@ -1,4 +1,3 @@
-import { url } from "inspector";
 import { css } from "@emotion/react";
 import emotionStyled from "@emotion/styled";
 import { Divider, List, ListItemText, Typography } from "@mui/material";
