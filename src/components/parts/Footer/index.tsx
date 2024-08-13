@@ -1,7 +1,11 @@
+import { url } from "inspector";
 import { css } from "@emotion/react";
 import emotionStyled from "@emotion/styled";
 import { Divider, List, ListItemText, Typography } from "@mui/material";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
+import { URL } from "@/components/pages/Home/containers/constants";
 import { Icon } from "../Icon";
 
 const wrapper = css`
@@ -11,8 +15,9 @@ const wrapper = css`
 
 const itemWrapper = css`
   display: flex;
-  align-items: center;
-  gap: var(--spacing-1);
+  align-items: flex-end;
+  gap: var(--spacing-2);
+  color: var();
 `;
 
 const copyRight = css`
@@ -37,7 +42,13 @@ export const Footer = () => {
   /** コピーライト用 */
   const currentYear = new Date().getFullYear();
 
-  const firstListItems = ["About", "Skills", "Experiences"];
+  const router = useRouter();
+
+  const firstListItems = [
+    { text: "About", anchor: "about" },
+    { text: "Skills", anchor: "skills" },
+    { text: "Experiences", anchor: "experiences" },
+  ];
   const secondListItems = [
     {
       component: (
@@ -47,6 +58,7 @@ export const Footer = () => {
         </ItemWrapper>
       ),
       id: "gitHub",
+      url: URL.GITHUB,
     },
     {
       component: (
@@ -56,6 +68,7 @@ export const Footer = () => {
         </ItemWrapper>
       ),
       id: "LinkedIn",
+      url: URL.LINKEDIN,
     },
     {
       component: (
@@ -65,6 +78,7 @@ export const Footer = () => {
         </ItemWrapper>
       ),
       id: "x",
+      url: URL.X,
     },
   ];
 
@@ -72,15 +86,20 @@ export const Footer = () => {
     <Wrapper>
       <Typography sx={{ color: "secondary.main" }}>Navigation</Typography>
       <List>
-        {firstListItems.map((text) => {
+        {firstListItems.map((item) => {
           return (
-            <React.Fragment key={text}>
+            <div
+              key={item.text}
+              onClick={() => {
+                router.push(`#${item.anchor}`);
+              }}
+            >
               <ListItemText
-                primary={text}
+                primary={item.text}
                 sx={{ color: "text.disabled" }}
                 primaryTypographyProps={{ variant: "body2" }}
               />
-            </React.Fragment>
+            </div>
           );
         })}
       </List>
@@ -88,13 +107,18 @@ export const Footer = () => {
       <List>
         {secondListItems.map((item) => {
           return (
-            <React.Fragment key={item.id}>
+            <Link
+              key={item.id}
+              href={item.url}
+              target="_blank"
+              rel="noreferrer noopener"
+            >
               <ListItemText
                 primary={item.component}
                 sx={{ color: "text.disabled" }}
                 primaryTypographyProps={{ variant: "caption" }}
               />
-            </React.Fragment>
+            </Link>
           );
         })}
       </List>

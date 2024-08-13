@@ -26,7 +26,7 @@ const ProjectWrapper = emotionStyled.div`${projectWrapper}`;
 
 export const Experiences = () => {
   return (
-    <ExperienceWrapper>
+    <ExperienceWrapper id="experiences">
       <Typography variant="h3" textAlign="center">
         Experiences
       </Typography>
@@ -58,7 +58,7 @@ export const Experiences = () => {
             </Typography>
             <Typography>・Implement and test UI parts and pages</Typography>
             <Typography>・Frontend system desgin</Typography>
-            <Typography>・a part of scrum master</Typography>
+            <Typography>・A part of scrum master</Typography>
           </div>
         </div>
       </ProjectWrapper>
