@@ -1,10 +1,10 @@
 import { css } from "@emotion/react";
 
+/* breakpoint */
+export const breakpoint = "768px";
+
 export const variables = css`
   :root {
-    /* breakpoint */
-    --breakpoint: 768px;
-
     /* font-size */
     --fontSizeXXS: 10px;
     --fontSizeXS: 12px;
