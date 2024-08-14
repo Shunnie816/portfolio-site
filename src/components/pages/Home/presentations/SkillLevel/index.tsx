@@ -161,18 +161,18 @@ const SkillLevelPc = () => {
   return (
     <PcLayout>
       <Grid container spacing={2} paddingBottom={4} paddingLeft={2}>
-        <Grid item xs={5} sx={{ position: "relative" }}>
+        <Grid item xs={4} sx={{ position: "relative" }}>
           <CircularProgress
             size={130}
             variant="determinate"
             value={75}
-            sx={{ color: "info.main" }}
+            sx={{ color: "info.dark" }}
           />
           <Box sx={pcCircleBoxSx}>
             <CustomTypography>TypeScript</CustomTypography>
           </Box>
         </Grid>
-        <Grid item xs={5} sx={{ position: "relative" }}>
+        <Grid item xs={4} sx={{ position: "relative" }}>
           <CircularProgress
             size={130}
             variant="determinate"
@@ -183,7 +183,7 @@ const SkillLevelPc = () => {
             <CustomTypography>React</CustomTypography>
           </Box>
         </Grid>
-        <Grid item xs={5} sx={{ position: "relative" }}>
+        <Grid item xs={4} sx={{ position: "relative" }}>
           <CircularProgress
             size={130}
             variant="determinate"
@@ -194,7 +194,7 @@ const SkillLevelPc = () => {
             <CustomTypography>Next.js</CustomTypography>
           </Box>
         </Grid>
-        <Grid item xs={5} sx={{ position: "relative" }}>
+        <Grid item xs={4} sx={{ position: "relative" }}>
           <CircularProgress
             size={130}
             variant="determinate"
@@ -205,7 +205,7 @@ const SkillLevelPc = () => {
             <CustomTypography>Docker</CustomTypography>
           </Box>
         </Grid>
-        <Grid item xs={5} sx={{ position: "relative" }}>
+        <Grid item xs={4} sx={{ position: "relative" }}>
           <CircularProgress
             size={130}
             variant="determinate"
@@ -216,7 +216,7 @@ const SkillLevelPc = () => {
             <CustomTypography>Firebase</CustomTypography>
           </Box>
         </Grid>
-        <Grid item xs={5} sx={{ position: "relative" }}>
+        <Grid item xs={4} sx={{ position: "relative" }}>
           <CircularProgress
             size={130}
             variant="determinate"
