@@ -1,16 +1,26 @@
-import { url } from "inspector";
 import { css } from "@emotion/react";
 import emotionStyled from "@emotion/styled";
 import { Divider, List, ListItemText, Typography } from "@mui/material";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
+import { breakpoint } from "@/assets/styles/variable";
 import { URL } from "@/components/pages/Home/containers/constants";
 import { Icon } from "../Icon";
 
 const wrapper = css`
   padding: var(--spacing-12) var(--spacing-4) var(--spacing-10);
   background-color: var(--bg-color-dark);
+`;
+
+const pcWrapper = css`
+  @media (min-width: ${breakpoint}) {
+    padding: 0 var(--spacing-24) var(--spacing-2);
+
+    .item:hover {
+      cursor: pointer;
+    }
+  }
 `;
 
 const itemWrapper = css`
@@ -28,6 +38,10 @@ const copyRight = css`
 
 const Wrapper = emotionStyled.footer`
   ${wrapper}
+`;
+
+const PcWrapper = emotionStyled.div`
+  ${pcWrapper}
 `;
 
 const ItemWrapper = emotionStyled.div`
@@ -84,45 +98,49 @@ export const Footer = () => {
 
   return (
     <Wrapper>
-      <Typography sx={{ color: "secondary.main" }}>Navigation</Typography>
-      <List>
-        {firstListItems.map((item) => {
-          return (
-            <div
-              key={item.text}
-              onClick={() => {
-                router.push(`#${item.anchor}`);
-              }}
-            >
-              <ListItemText
-                primary={item.text}
-                sx={{ color: "text.disabled" }}
-                primaryTypographyProps={{ variant: "body2" }}
-              />
-            </div>
-          );
-        })}
-      </List>
-      <Typography sx={{ color: "secondary.main" }}>Contact Me</Typography>
-      <List>
-        {secondListItems.map((item) => {
-          return (
-            <Link
-              key={item.id}
-              href={item.url}
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              <ListItemText
-                primary={item.component}
-                sx={{ color: "text.disabled" }}
-                primaryTypographyProps={{ variant: "caption" }}
-              />
-            </Link>
-          );
-        })}
-      </List>
+      <PcWrapper>
+        <Typography sx={{ color: "secondary.main" }}>Navigation</Typography>
+        <List>
+          {firstListItems.map((item) => {
+            return (
+              <div
+                className="item"
+                key={item.text}
+                onClick={() => {
+                  router.push(`#${item.anchor}`);
+                }}
+              >
+                <ListItemText
+                  primary={item.text}
+                  sx={{ color: "text.disabled" }}
+                  primaryTypographyProps={{ variant: "body2" }}
+                />
+              </div>
+            );
+          })}
+        </List>
+        <Typography sx={{ color: "secondary.main" }}>Contact Me</Typography>
+        <List>
+          {secondListItems.map((item) => {
+            return (
+              <Link
+                key={item.id}
+                href={item.url}
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <ListItemText
+                  primary={item.component}
+                  sx={{ color: "text.disabled" }}
+                  primaryTypographyProps={{ variant: "caption" }}
+                />
+              </Link>
+            );
+          })}
+        </List>
+      </PcWrapper>
       <Divider sx={{ borderColor: "text.disabled" }} />
+
       <CopyRight>
         <Typography variant="caption" sx={{ color: "text.disabled" }}>
           © {currentYear} Shun Yoshiya. All rights are reserved.
