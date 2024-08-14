@@ -12,6 +12,7 @@ type Props = {
   title: string;
   children: string;
   avatarName: string;
+  className?: string;
 };
 
 const cardHeaderSx = {
@@ -20,9 +21,9 @@ const cardHeaderSx = {
   maxHeight: "48px",
 };
 
-export const Card = ({ title, children, avatarName }: Props) => {
+export const Card = ({ title, children, avatarName, className }: Props) => {
   return (
-    <MUICard>
+    <MUICard className={className} sx={{ backgroundColor: "common.white" }}>
       <CardHeader
         title={title}
         avatar={
@@ -37,7 +38,7 @@ export const Card = ({ title, children, avatarName }: Props) => {
         titleTypographyProps={{ variant: "h6" }}
       />
       <Divider sx={{ borderColor: "primary.main" }} />
-      <CardContent sx={{ backgroundColor: "common.white" }}>
+      <CardContent>
         <Typography sx={{ color: "primary.dark" }}>{children}</Typography>
       </CardContent>
     </MUICard>

@@ -1,52 +1,235 @@
-import { Box, CircularProgress, Grid, Typography } from "@mui/material";
+import { css } from "@emotion/react";
+import emotionStyled from "@emotion/styled";
+import {
+  Box,
+  CircularProgress,
+  Grid,
+  Typography,
+  TypographyProps,
+} from "@mui/material";
 import React from "react";
+import { breakpoint } from "@/assets/styles/variable";
 
-const circleBoxSx = {
-  top: 25,
-  left: 25,
+const pcLayout = css`
+  display: none;
+  @media (min-width: ${breakpoint}) {
+    display: block;
+  }
+`;
+
+const spLayout = css`
+  @media (min-width: ${breakpoint}) {
+    display: none;
+  }
+`;
+
+const PcLayout = emotionStyled.section`
+  ${pcLayout}
+`;
+
+const SpLayout = emotionStyled.section`
+  ${spLayout}
+`;
+
+export const SkillLevel = () => {
+  return (
+    <>
+      <SkillLevelSp />
+      <SkillLevelPc />
+    </>
+  );
+};
+
+type CustomProps = Omit<TypographyProps, "variant" | "component" | "color">;
+
+const CustomTypography = ({ children, ...rest }: CustomProps) => {
+  return (
+    <Typography variant="h6" component="span" color="secondary.main" {...rest}>
+      {children}
+    </Typography>
+  );
+};
+
+const spCircleBoxSx = {
+  top: 44,
+  left: 44,
   bottom: 0,
   right: 0,
   position: "absolute",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
+  width: "126px",
+  height: "126px",
+  borderRadius: 99,
+  backgroundColor: "background.default",
 };
 
-export const SkillLevel = () => {
+const pcCircleBoxSx = {
+  top: 26,
+  left: 26,
+  bottom: 0,
+  right: 0,
+  position: "absolute",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  width: "110px",
+  height: "110px",
+  borderRadius: 99,
+  backgroundColor: "background.default",
+};
+
+const SkillLevelSp = () => {
   return (
-    <Grid container spacing={4} marginTop={2} paddingBottom={4}>
-      <Grid item xs={6} sx={{ position: "relative" }}>
-        <CircularProgress size={150} variant="determinate" value={75} />
-        <Box sx={circleBoxSx}>
-          <Typography variant="h3" component="span" color="primary.main">
-            75%
-          </Typography>
-        </Box>
+    <SpLayout>
+      <Grid container spacing={4} marginTop={2} paddingBottom={4}>
+        <Grid item xs={6} sx={{ position: "relative" }}>
+          <CircularProgress
+            size={150}
+            variant="determinate"
+            value={75}
+            sx={{ color: "info.main" }}
+          />
+          <Box sx={spCircleBoxSx}>
+            <CustomTypography>TypeScript</CustomTypography>
+          </Box>
+        </Grid>
+        <Grid item xs={6} sx={{ position: "relative" }}>
+          <CircularProgress
+            size={150}
+            variant="determinate"
+            value={70}
+            sx={{ color: "success.light" }}
+          />
+          <Box sx={spCircleBoxSx}>
+            <CustomTypography>React</CustomTypography>
+          </Box>
+        </Grid>
+        <Grid item xs={6} sx={{ position: "relative" }}>
+          <CircularProgress
+            size={150}
+            variant="determinate"
+            value={70}
+            sx={{ color: "secondary.dark" }}
+          />
+          <Box sx={spCircleBoxSx}>
+            <CustomTypography>Next.js</CustomTypography>
+          </Box>
+        </Grid>
+        <Grid item xs={6} sx={{ position: "relative" }}>
+          <CircularProgress
+            size={150}
+            variant="determinate"
+            value={35}
+            sx={{ color: "info.light" }}
+          />
+          <Box sx={spCircleBoxSx}>
+            <CustomTypography>Docker</CustomTypography>
+          </Box>
+        </Grid>
+        <Grid item xs={6} sx={{ position: "relative" }}>
+          <CircularProgress
+            size={150}
+            variant="determinate"
+            value={30}
+            sx={{ color: "warning.light" }}
+          />
+          <Box sx={spCircleBoxSx}>
+            <CustomTypography>Firebase</CustomTypography>
+          </Box>
+        </Grid>
+        <Grid item xs={6} sx={{ position: "relative" }}>
+          <CircularProgress
+            size={150}
+            variant="determinate"
+            value={85}
+            sx={{ color: "error.light" }}
+          />
+          <Box sx={spCircleBoxSx}>
+            <CustomTypography textAlign="center">
+              English <br /> Proficiency
+            </CustomTypography>
+          </Box>
+        </Grid>
       </Grid>
-      <Grid item xs={6} sx={{ position: "relative" }}>
-        <CircularProgress size={150} variant="determinate" value={75} />
-        <Box sx={circleBoxSx}>
-          <Typography variant="h3" component="span" color="primary.main">
-            75%
-          </Typography>
-        </Box>
+    </SpLayout>
+  );
+};
+
+const SkillLevelPc = () => {
+  return (
+    <PcLayout>
+      <Grid container spacing={2} paddingBottom={4} paddingLeft={2}>
+        <Grid item xs={4} sx={{ position: "relative" }}>
+          <CircularProgress
+            size={130}
+            variant="determinate"
+            value={75}
+            sx={{ color: "info.dark" }}
+          />
+          <Box sx={pcCircleBoxSx}>
+            <CustomTypography>TypeScript</CustomTypography>
+          </Box>
+        </Grid>
+        <Grid item xs={4} sx={{ position: "relative" }}>
+          <CircularProgress
+            size={130}
+            variant="determinate"
+            value={70}
+            sx={{ color: "success.light" }}
+          />
+          <Box sx={pcCircleBoxSx}>
+            <CustomTypography>React</CustomTypography>
+          </Box>
+        </Grid>
+        <Grid item xs={4} sx={{ position: "relative" }}>
+          <CircularProgress
+            size={130}
+            variant="determinate"
+            value={70}
+            sx={{ color: "secondary.dark" }}
+          />
+          <Box sx={pcCircleBoxSx}>
+            <CustomTypography>Next.js</CustomTypography>
+          </Box>
+        </Grid>
+        <Grid item xs={4} sx={{ position: "relative" }}>
+          <CircularProgress
+            size={130}
+            variant="determinate"
+            value={35}
+            sx={{ color: "info.light" }}
+          />
+          <Box sx={pcCircleBoxSx}>
+            <CustomTypography>Docker</CustomTypography>
+          </Box>
+        </Grid>
+        <Grid item xs={4} sx={{ position: "relative" }}>
+          <CircularProgress
+            size={130}
+            variant="determinate"
+            value={30}
+            sx={{ color: "warning.light" }}
+          />
+          <Box sx={pcCircleBoxSx}>
+            <CustomTypography>Firebase</CustomTypography>
+          </Box>
+        </Grid>
+        <Grid item xs={4} sx={{ position: "relative" }}>
+          <CircularProgress
+            size={130}
+            variant="determinate"
+            value={85}
+            sx={{ color: "error.light" }}
+          />
+          <Box sx={pcCircleBoxSx}>
+            <CustomTypography textAlign="center">
+              English <br /> Proficiency
+            </CustomTypography>
+          </Box>
+        </Grid>
       </Grid>
-      <Grid item xs={6} sx={{ position: "relative" }}>
-        <CircularProgress size={150} variant="determinate" value={75} />
-        <Box sx={circleBoxSx}>
-          <Typography variant="h3" component="span" color="primary.main">
-            75%
-          </Typography>
-        </Box>
-      </Grid>
-      <Grid item xs={6} sx={{ position: "relative" }}>
-        <CircularProgress size={150} variant="determinate" value={75} />
-        <Box sx={circleBoxSx}>
-          <Typography variant="h3" component="span" color="primary.main">
-            75%
-          </Typography>
-        </Box>
-      </Grid>
-    </Grid>
+    </PcLayout>
   );
 };
