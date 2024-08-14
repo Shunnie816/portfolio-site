@@ -3,6 +3,9 @@ import { css } from "@emotion/react";
 /* breakpoint */
 export const breakpoint = "768px";
 
+/* layout */
+export const headerHeight = "56px";
+
 export const variables = css`
   :root {
     /* font-size */
@@ -29,9 +32,6 @@ export const variables = css`
     --spacing-16: 64px;
     --spacing-18: 72px;
     --spacing-24: 96px;
-
-    /* layout */
-    --header-hight: 56px;
 
     /* color */
     --color-dark-navy: #201e43;

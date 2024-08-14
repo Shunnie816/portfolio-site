@@ -13,7 +13,7 @@ import {
 } from "@mui/material";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
-import { breakpoint } from "@/assets/styles/variable";
+import { breakpoint, headerHeight } from "@/assets/styles/variable";
 import { DrawerNav } from "../DrawerNav";
 import { Icon } from "../Icon";
 
@@ -26,8 +26,8 @@ const menuButton = css`
 const pcHeadermenu = css`
   display: none;
   @media (min-width: ${breakpoint}) {
-    display: block;
     display: flex;
+    margin: 0;
   }
 `;
 
@@ -38,6 +38,22 @@ const MenuButton = emotionStyled.div`
 const PcHeaderMenu = emotionStyled.ul`
   ${pcHeadermenu}
 `;
+
+const appBarSx = {
+  boxShadow: "none",
+  backgroundColor: "background.default",
+  opacity: "0.8",
+  maxHeight: headerHeight,
+  justifyContent: "center",
+};
+
+const toolbarSx = {
+  display: "flex",
+  justifyContent: "space-between",
+  "@media (min-width: 768px)": {
+    padding: "0 72px",
+  },
+};
 
 export const Header = () => {
   const router = useRouter();
@@ -51,17 +67,8 @@ export const Header = () => {
   ];
 
   return (
-    <AppBar
-      sx={{
-        boxShadow: "none",
-        backgroundColor: "background.default",
-        opacity: "0.8",
-      }}
-    >
-      <Toolbar
-        disableGutters
-        sx={{ display: "flex", justifyContent: "space-between" }}
-      >
+    <AppBar sx={appBarSx}>
+      <Toolbar disableGutters sx={toolbarSx}>
         <Box display="flex" alignItems="center">
           <IconButton onClick={() => router.push("/")}>
             <Avatar
