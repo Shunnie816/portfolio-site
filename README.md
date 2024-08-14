@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Portfolio Website
 
-## Getting Started
+Welcome to my portfolio website! This site showcases my skills, projects, and experience as a frontend developer.
 
-First, run the development server:
+## Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+This portfolio site is designed to highlight my work and expertise in frontend development. It features:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Professional Experience: Details of my work history and roles in various projects.
+- Skills: An overview of my technical skills, including frontend technologies, tools, and frameworks.
+- Projects: A collection of personal and professional projects that demonstrate my abilities and interests.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Technology Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+The site is built using the following technologies:
 
-## Learn More
+- TypeScript: For type safety and improved developer experience.
+- React: To build reusable UI components and manage state.
+- Next.js: For server-side rendering, static site generation, and optimized performance.
+- MUI: For a modern and consistent UI design system.
+- Sass: For advanced styling capabilities and maintainable CSS.
+- Storybook: For developing and testing UI components in isolation.
+- Firebase: For hosting the site.
 
-To learn more about Next.js, take a look at the following resources:
+## Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The site is deployed on Firebase Hosting. The deployment is automatically triggered on code merges to the main branch.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Future Improvements
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Implement additional features such as animations and theme switching.
+- Enhance design elements and add more interactive components.
