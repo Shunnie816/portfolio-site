@@ -88,7 +88,7 @@ export const Footer = () => {
       component: (
         <ItemWrapper>
           <Icon icon="x" />
-          Shun Yoshiya
+          @nekonoko2323
         </ItemWrapper>
       ),
       id: "x",
