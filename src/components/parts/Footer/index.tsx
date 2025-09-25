@@ -97,7 +97,7 @@ export const Footer = () => {
 
       <CopyRight>
         <Typography variant="caption" sx={{ color: "text.disabled" }}>
-          © {currentYear} Shun Yoshiya. All rights are reserved.
+          © {currentYear} Nekonoko. All rights are reserved.
         </Typography>
       </CopyRight>
     </Wrapper>

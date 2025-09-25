@@ -27,13 +27,13 @@ export const Home = () => {
           sx={{ width: "140px", height: "140px" }}
         />
         <Typography variant="h3" component="p" sx={{ color: "text.primary" }}>
-          Hi, I am Shun
+          Hi, I am Nekonoko
         </Typography>
       </AvatarWrapper>
       <IntroWrapper id="about">
         <div>
           <IntroDescription>
-            <Typography variant="h4">Shun Yoshiya</Typography>
+            <Typography variant="h4">Nekonoko</Typography>
             <Typography variant="h6" sx={{ color: "primary.light" }}>
               Frontend Developer
             </Typography>

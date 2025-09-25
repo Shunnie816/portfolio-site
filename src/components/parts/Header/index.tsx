@@ -42,7 +42,7 @@ export const Header = () => {
             component="a"
             href="/"
             sx={{ color: "secondary.main" }}
-          >{`Shun's Portfolio`}</Typography>
+          >{`Nekonoko's Portfolio`}</Typography>
         </Box>
         <PcHeaderMenu>
           {listItems.map((item) => (
