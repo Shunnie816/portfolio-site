@@ -1,56 +1,10 @@
-import { css } from "@emotion/react";
-import emotionStyled from "@emotion/styled";
 import { Divider, List, ListItemText, Typography } from "@mui/material";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
-import { breakpoint } from "@/assets/styles/variable";
 import { URL } from "@/components/pages/Home/containers/constants";
 import { Icon } from "../Icon";
-
-const wrapper = css`
-  padding: var(--spacing-12) var(--spacing-4) var(--spacing-10);
-  background-color: var(--bg-color-dark);
-`;
-
-const pcWrapper = css`
-  @media (min-width: ${breakpoint}) {
-    padding: 0 var(--spacing-24) var(--spacing-2);
-
-    .item:hover {
-      cursor: pointer;
-    }
-  }
-`;
-
-const itemWrapper = css`
-  display: flex;
-  align-items: flex-end;
-  gap: var(--spacing-2);
-  color: var();
-`;
-
-const copyRight = css`
-  display: flex;
-  justify-content: center;
-  margin-top: var(--spacing-3);
-`;
-
-const Wrapper = emotionStyled.footer`
-  ${wrapper}
-`;
-
-const PcWrapper = emotionStyled.div`
-  ${pcWrapper}
-`;
-
-const ItemWrapper = emotionStyled.div`
-  ${itemWrapper}
-`;
-
-const CopyRight = emotionStyled.div`
-  ${copyRight}
-`;
+import { Wrapper, PcWrapper, ItemWrapper, CopyRight } from "./styles";
 
 export const Footer = () => {
   /** コピーライト用 */

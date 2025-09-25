@@ -1,58 +1,20 @@
 "use client";
-import { css } from "@emotion/react";
-import emotionStyled from "@emotion/styled";
 import { Avatar, IconButton, Typography } from "@mui/material";
 import Link from "next/link";
 import React from "react";
-import { breakpoint } from "@/assets/styles/variable";
 import { Footer } from "@/components/parts/Footer";
 import { Header } from "@/components/parts/Header";
 import { Icon } from "@/components/parts/Icon";
 import { Experiences } from "../presentations/Experiences";
 import { SkillLevel } from "../presentations/SkillLevel";
 import { Skills } from "../presentations/Skills";
-import { commonWrapperStyle } from "./commonStyle";
 import { URL } from "./constants";
-
-const avatarWrapper = css`
-  align-items: center;
-  background-color: var(--bg-color-dark);
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-2);
-  height: 100vh;
-  justify-content: center;
-`;
-
-const introWrapper = css`
-  ${commonWrapperStyle}
-  background-color: var(--bg-color-light);
-
-  @media (min-width: ${breakpoint}) {
-    flex-direction: row;
-  }
-`;
-
-const introDescription = css`
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-2);
-`;
-
-const iconsWrapper = css`
-  margin-top: var(--spacing-4);
-`;
-
-// const learningWrapper = css`
-//   ${commonWrapperStyle}
-// `;
-
-/** emotion styled components */
-const AvatarWrapper = emotionStyled.section`${avatarWrapper}`;
-const IntroWrapper = emotionStyled.section`${introWrapper}`;
-const IntroDescription = emotionStyled.div`${introDescription}`;
-const IconsWrapper = emotionStyled.div`${iconsWrapper}`;
-// const LearningWrapper = emotionStyled.section`${learningWrapper}`;
+import {
+  AvatarWrapper,
+  IntroWrapper,
+  IntroDescription,
+  IconsWrapper,
+} from "./styles";
 
 export const Home = () => {
   return (

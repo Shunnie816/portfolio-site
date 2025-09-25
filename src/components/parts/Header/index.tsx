@@ -1,5 +1,3 @@
-import { css } from "@emotion/react";
-import emotionStyled from "@emotion/styled";
 import {
   AppBar,
   Avatar,
@@ -13,47 +11,9 @@ import {
 } from "@mui/material";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
-import { breakpoint, headerHeight } from "@/assets/styles/variable";
 import { DrawerNav } from "../DrawerNav";
 import { Icon } from "../Icon";
-
-const menuButton = css`
-  @media (min-width: ${breakpoint}) {
-    display: none;
-  }
-`;
-
-const pcHeadermenu = css`
-  display: none;
-  @media (min-width: ${breakpoint}) {
-    display: flex;
-    margin: 0;
-  }
-`;
-
-const MenuButton = emotionStyled.div`
-  ${menuButton}
-`;
-
-const PcHeaderMenu = emotionStyled.ul`
-  ${pcHeadermenu}
-`;
-
-const appBarSx = {
-  boxShadow: "none",
-  backgroundColor: "background.default",
-  opacity: "0.8",
-  maxHeight: headerHeight,
-  justifyContent: "center",
-};
-
-const toolbarSx = {
-  display: "flex",
-  justifyContent: "space-between",
-  "@media (min-width: 768px)": {
-    padding: "0 72px",
-  },
-};
+import { MenuButton, PcHeaderMenu, appBarSx, toolbarSx } from "./styles";
 
 export const Header = () => {
   const router = useRouter();

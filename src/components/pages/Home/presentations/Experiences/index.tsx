@@ -1,5 +1,3 @@
-import { css } from "@emotion/react";
-import emotionStyled from "@emotion/styled";
 import {
   Step,
   StepContent,
@@ -8,45 +6,7 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
-import { breakpoint } from "@/assets/styles/variable";
-import { commonWrapperStyle } from "../../containers/commonStyle";
-
-const experienceWrapper = css`
-  ${commonWrapperStyle}
-  background-color: var(--bg-color-light);
-  padding-bottom: var(--spacing-9);
-
-  @media (min-width: ${breakpoint}) {
-    padding-bottom: var(--spacing-9);
-  }
-`;
-
-const projectWrapper = css`
-  margin-top: var(--spacing-3);
-  margin-left: var(--spacing-4);
-
-  .details {
-    margin-top: var(--spacing-2);
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-2);
-  }
-
-  @media (min-width: ${breakpoint}) {
-    margin-left: var(--spacing-18);
-  }
-`;
-
-const titleWrapper = css`
-  margin-left: var(--spacing-4);
-  @media (min-width: ${breakpoint}) {
-    margin-left: var(--spacing-18);
-  }
-`;
-
-const ExperienceWrapper = emotionStyled.section`${experienceWrapper}`;
-const ProjectWrapper = emotionStyled.div`${projectWrapper}`;
-const TitleWrapper = emotionStyled.div`${titleWrapper}`;
+import { ExperienceWrapper, ProjectWrapper, TitleWrapper } from "./styles";
 
 export const Experiences = () => {
   return (

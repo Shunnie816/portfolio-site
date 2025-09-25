@@ -1,34 +1,7 @@
-import { css } from "@emotion/react";
-import emotionStyled from "@emotion/styled";
 import { Typography } from "@mui/material";
 import React from "react";
-import { breakpoint } from "@/assets/styles/variable";
 import { Card } from "@/components/parts/Card";
-import { commonWrapperStyle } from "../../containers/commonStyle";
-
-const skillWrapper = css`
-  ${commonWrapperStyle}
-`;
-
-const cardsWrapper = css`
-  padding: var(--spacing-4) 0 var(--spacing-9);
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-3);
-
-  @media (min-width: ${breakpoint}) {
-    flex-flow: row wrap;
-    justify-content: flex-start;
-
-    .child {
-      width: 31%;
-      margin: 0 var(--spacing-1);
-    }
-  }
-`;
-
-const SkillWrapper = emotionStyled.section`${skillWrapper}`;
-const CardsWrapper = emotionStyled.div`${cardsWrapper}`;
+import { SkillWrapper, CardsWrapper } from "./styles";
 
 export const Skills = () => {
   return (

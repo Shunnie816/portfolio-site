@@ -1,5 +1,3 @@
-import { css } from "@emotion/react";
-import emotionStyled from "@emotion/styled";
 import {
   Box,
   CircularProgress,
@@ -8,28 +6,7 @@ import {
   TypographyProps,
 } from "@mui/material";
 import React from "react";
-import { breakpoint } from "@/assets/styles/variable";
-
-const pcLayout = css`
-  display: none;
-  @media (min-width: ${breakpoint}) {
-    display: block;
-  }
-`;
-
-const spLayout = css`
-  @media (min-width: ${breakpoint}) {
-    display: none;
-  }
-`;
-
-const PcLayout = emotionStyled.section`
-  ${pcLayout}
-`;
-
-const SpLayout = emotionStyled.section`
-  ${spLayout}
-`;
+import { PcLayout, SpLayout } from "./styles";
 
 export const SkillLevel = () => {
   return (
