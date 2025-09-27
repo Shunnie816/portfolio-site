@@ -38,17 +38,17 @@ export const Home = () => {
               Frontend Developer
             </Typography>
             <Typography>
-              I am a dedicated software engineer with 2 years of professional
-              experience, and a total of 4 years including personal projects.
+              I am a dedicated software engineer with 3 years of professional
+              experience, and a total of 5 years including personal projects.
             </Typography>
             <Typography>
               Currently, I specialize in frontend development, focusing on
               technologies such as TypeScript, React, and Next.js. My goal is to
-              eventually take on roles as a Tech Lead or Full-Stack Engineer.
+              eventually take on roles as a Tech Lead.
             </Typography>
             <Typography>
-              I am actively expanding my skill set to include Docker, Firebase,
-              and Python.
+              I am actively expanding my skill set to include Firebase, AWS, and
+              AI driven development.
             </Typography>
           </IntroDescription>
           <IconsWrapper>

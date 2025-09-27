@@ -54,8 +54,12 @@ export const Experiences = () => {
                   <Typography>
                     ・Implement and test UI parts and pages
                   </Typography>
+                  <Typography>・Code review and improvement</Typography>
+                  <Typography>
+                    ・Fix bugs and improve user experience
+                  </Typography>
                   <Typography>・Frontend system desgin</Typography>
-                  <Typography>・A part of scrum master</Typography>
+                  <Typography>・Educating junior developers</Typography>
                 </div>
               </div>
             </ProjectWrapper>
