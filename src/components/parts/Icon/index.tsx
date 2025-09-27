@@ -1,4 +1,5 @@
 import DarkModeIcon from "@mui/icons-material/DarkMode";
+import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LanguageIcon from "@mui/icons-material/Language";
 import LightModeIcon from "@mui/icons-material/LightMode";
@@ -15,7 +16,8 @@ export type IconType =
   | "language"
   | "darkMode"
   | "lightMode"
-  | "zenn";
+  | "zenn"
+  | "exitToApp";
 
 type BaseProps = {
   icon: IconType;
@@ -30,6 +32,7 @@ const iconMap = {
   darkMode: DarkModeIcon,
   lightMode: LightModeIcon,
   zenn: NewspaperIcon,
+  exitToApp: ExitToAppIcon,
 };
 
 export const Icon = ({ icon, ...rest }: Props) => {
