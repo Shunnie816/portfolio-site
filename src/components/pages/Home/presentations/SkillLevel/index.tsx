@@ -1,5 +1,3 @@
-import { css } from "@emotion/react";
-import emotionStyled from "@emotion/styled";
 import {
   Box,
   CircularProgress,
@@ -8,28 +6,7 @@ import {
   TypographyProps,
 } from "@mui/material";
 import React from "react";
-import { breakpoint } from "@/assets/styles/variable";
-
-const pcLayout = css`
-  display: none;
-  @media (min-width: ${breakpoint}) {
-    display: block;
-  }
-`;
-
-const spLayout = css`
-  @media (min-width: ${breakpoint}) {
-    display: none;
-  }
-`;
-
-const PcLayout = emotionStyled.section`
-  ${pcLayout}
-`;
-
-const SpLayout = emotionStyled.section`
-  ${spLayout}
-`;
+import { PcLayout, SpLayout } from "./styles";
 
 export const SkillLevel = () => {
   return (
@@ -88,7 +65,7 @@ const SkillLevelSp = () => {
           <CircularProgress
             size={150}
             variant="determinate"
-            value={75}
+            value={80}
             sx={{ color: "info.main" }}
           />
           <Box sx={spCircleBoxSx}>
@@ -99,7 +76,7 @@ const SkillLevelSp = () => {
           <CircularProgress
             size={150}
             variant="determinate"
-            value={70}
+            value={75}
             sx={{ color: "success.light" }}
           />
           <Box sx={spCircleBoxSx}>
@@ -121,7 +98,7 @@ const SkillLevelSp = () => {
           <CircularProgress
             size={150}
             variant="determinate"
-            value={35}
+            value={30}
             sx={{ color: "info.light" }}
           />
           <Box sx={spCircleBoxSx}>
@@ -132,7 +109,7 @@ const SkillLevelSp = () => {
           <CircularProgress
             size={150}
             variant="determinate"
-            value={30}
+            value={40}
             sx={{ color: "warning.light" }}
           />
           <Box sx={spCircleBoxSx}>
@@ -143,7 +120,7 @@ const SkillLevelSp = () => {
           <CircularProgress
             size={150}
             variant="determinate"
-            value={85}
+            value={90}
             sx={{ color: "error.light" }}
           />
           <Box sx={spCircleBoxSx}>
@@ -165,7 +142,7 @@ const SkillLevelPc = () => {
           <CircularProgress
             size={130}
             variant="determinate"
-            value={75}
+            value={80}
             sx={{ color: "info.dark" }}
           />
           <Box sx={pcCircleBoxSx}>
@@ -176,7 +153,7 @@ const SkillLevelPc = () => {
           <CircularProgress
             size={130}
             variant="determinate"
-            value={70}
+            value={75}
             sx={{ color: "success.light" }}
           />
           <Box sx={pcCircleBoxSx}>
@@ -198,7 +175,7 @@ const SkillLevelPc = () => {
           <CircularProgress
             size={130}
             variant="determinate"
-            value={35}
+            value={30}
             sx={{ color: "info.light" }}
           />
           <Box sx={pcCircleBoxSx}>
@@ -209,7 +186,7 @@ const SkillLevelPc = () => {
           <CircularProgress
             size={130}
             variant="determinate"
-            value={30}
+            value={40}
             sx={{ color: "warning.light" }}
           />
           <Box sx={pcCircleBoxSx}>
@@ -220,11 +197,11 @@ const SkillLevelPc = () => {
           <CircularProgress
             size={130}
             variant="determinate"
-            value={85}
+            value={90}
             sx={{ color: "error.light" }}
           />
           <Box sx={pcCircleBoxSx}>
-            <CustomTypography textAlign="center">
+            <CustomTypography textAlign="center" fontSize="1rem">
               English <br /> Proficiency
             </CustomTypography>
           </Box>
