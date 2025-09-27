@@ -201,7 +201,7 @@ const SkillLevelPc = () => {
             sx={{ color: "error.light" }}
           />
           <Box sx={pcCircleBoxSx}>
-            <CustomTypography textAlign="center">
+            <CustomTypography textAlign="center" fontSize="1rem">
               English <br /> Proficiency
             </CustomTypography>
           </Box>

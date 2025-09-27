@@ -1,4 +1,10 @@
 import { createTheme } from "@mui/material";
+import { Mulish } from "next/font/google";
+
+const mulish = Mulish({
+  subsets: ["latin"],
+  display: "swap",
+});
 
 // ここを変更したらvariables.scssも変更する
 const COLOR_PALETTE = {
@@ -37,6 +43,7 @@ export const defaultTheme = createTheme({
     },
   },
   typography: {
+    fontFamily: mulish.style.fontFamily,
     h1: {
       fontSize: "3rem", // 48px
     },

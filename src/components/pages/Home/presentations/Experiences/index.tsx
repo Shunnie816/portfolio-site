@@ -39,11 +39,11 @@ export const Experiences = () => {
                   >
                     Skill sets:
                   </Typography>
-                  <Typography>・TypeScript</Typography>
-                  <Typography>・Next.js</Typography>
-                  <Typography>・React</Typography>
-                  <Typography>・Docker</Typography>
-                  <Typography>・AWS</Typography>
+                  <Typography>- TypeScript</Typography>
+                  <Typography>- Next.js</Typography>
+                  <Typography>- React</Typography>
+                  <Typography>- Docker</Typography>
+                  <Typography>- AWS</Typography>
                 </div>
                 <div>
                   <Typography
@@ -52,14 +52,14 @@ export const Experiences = () => {
                     Responsibilities:
                   </Typography>
                   <Typography>
-                    ・Implement and test UI parts and pages
+                    - Implement and test UI parts and pages
                   </Typography>
-                  <Typography>・Code review and improvement</Typography>
+                  <Typography>- Code review and improvement</Typography>
                   <Typography>
-                    ・Fix bugs and improve user experience
+                    - Fix bugs and improve user experience
                   </Typography>
-                  <Typography>・Frontend system desgin</Typography>
-                  <Typography>・Educating junior developers</Typography>
+                  <Typography>- Frontend system desgin</Typography>
+                  <Typography>- Educating junior developers</Typography>
                 </div>
               </div>
             </ProjectWrapper>
