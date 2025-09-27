@@ -31,12 +31,12 @@ export const Footer = () => {
     {
       component: (
         <ItemWrapper>
-          <Icon icon="linkedIn" />
-          Shun Yoshiya
+          <Icon icon="zenn" />
+          ねこのこ -Nekonoko-
         </ItemWrapper>
       ),
-      id: "LinkedIn",
-      url: URL.LINKEDIN,
+      id: "zenn",
+      url: URL.ZENN,
     },
     {
       component: (

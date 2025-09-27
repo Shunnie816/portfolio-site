@@ -1,5 +1,5 @@
 "use client";
-import { Avatar, IconButton, Typography } from "@mui/material";
+import { Avatar, IconButton, Tooltip, Typography } from "@mui/material";
 import Link from "next/link";
 import React from "react";
 import { Footer } from "@/components/parts/Footer";
@@ -52,25 +52,31 @@ export const Home = () => {
             </Typography>
           </IntroDescription>
           <IconsWrapper>
-            <IconButton>
-              <Link href={URL.GITHUB} target="_blank" rel="noreferrer noopener">
-                <Icon icon="gitHub" color="primary" />
-              </Link>
-            </IconButton>
-            <IconButton>
-              <Link
-                href={URL.LINKEDIN}
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                <Icon icon="linkedIn" color="primary" />
-              </Link>
-            </IconButton>
-            <IconButton>
-              <Link href={URL.X} target="_blank" rel="noreferrer noopener">
-                <Icon icon="x" color="primary" />
-              </Link>
-            </IconButton>
+            <Tooltip title="GitHub">
+              <IconButton>
+                <Link
+                  href={URL.GITHUB}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <Icon icon="gitHub" color="primary" />
+                </Link>
+              </IconButton>
+            </Tooltip>
+            <Tooltip title="Zenn">
+              <IconButton>
+                <Link href={URL.ZENN} target="_blank" rel="noreferrer noopener">
+                  <Icon icon="zenn" color="primary" />
+                </Link>
+              </IconButton>
+            </Tooltip>
+            <Tooltip title="X">
+              <IconButton>
+                <Link href={URL.X} target="_blank" rel="noreferrer noopener">
+                  <Icon icon="x" color="primary" />
+                </Link>
+              </IconButton>
+            </Tooltip>
           </IconsWrapper>
         </div>
         <SkillLevel />
