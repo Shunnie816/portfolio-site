@@ -8,6 +8,7 @@ import { Icon } from "@/components/parts/Icon";
 import { Experiences } from "../presentations/Experiences";
 import { SkillLevel } from "../presentations/SkillLevel";
 import { Skills } from "../presentations/Skills";
+import { Works } from "../presentations/Works";
 import { URL } from "./constants";
 import {
   AvatarWrapper,
@@ -83,14 +84,7 @@ export const Home = () => {
       </IntroWrapper>
       <Skills />
       <Experiences />
-
-      {/* 
-      TODO: 追加予定
-      <LearningWrapper>
-        <Typography variant="h3" textAlign="center">
-          Education
-        </Typography>
-      </LearningWrapper> */}
+      <Works />
       <Footer />
     </>
   );
