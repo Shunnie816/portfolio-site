@@ -5,6 +5,8 @@ import React from "react";
 import { globalStyle } from "@/assets/styles/global";
 import { variables } from "@/assets/styles/variable";
 import { defaultTheme } from "@/components/themes";
+import { Footer } from "../Footer";
+import { Header } from "../Header";
 
 type Props = {
   children: React.ReactNode;
@@ -21,7 +23,9 @@ export const Layout = ({ children }: Props) => {
     <ThemeProvider theme={defaultTheme}>
       <CssBaseline />
       <Global styles={globalStyles} />
+      <Header />
       {children}
+      <Footer />
     </ThemeProvider>
   );
 };
