@@ -35,7 +35,7 @@ export const appBarSx = {
 export const toolbarSx = {
   display: "flex",
   justifyContent: "space-between",
-  "@media (min-width: 768px)": {
+  [`@media (min-width: ${breakpoint})`]: {
     padding: "0 72px",
   },
 };
