@@ -25,17 +25,7 @@ export const Home = () => {
           src="/assets/img/ねこのこ.jpg"
           sx={{ width: "140px", height: "140px" }}
         />
-        <TypingCarousel
-          texts={TYPING_TEXT}
-          typingSpeed={120}
-          deletingSpeed={60}
-          pauseDuration={2500}
-          showCursor={true}
-          cursorChar="|"
-          loop={true}
-          variant="h3"
-          color="text.primary"
-        />
+        <TypingCarousel texts={TYPING_TEXT} />
       </AvatarWrapper>
       <IntroWrapper id="about">
         <div>

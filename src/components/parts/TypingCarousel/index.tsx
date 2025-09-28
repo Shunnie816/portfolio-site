@@ -1,38 +1,22 @@
 "use client";
 import { Typography } from "@mui/material";
 import React, { useState, useEffect, useRef } from "react";
+import { typingCarouselStyles } from "./styles";
 
 export interface TypingCarouselProps {
   texts: string[];
-  typingSpeed?: number;
-  deletingSpeed?: number;
-  pauseDuration?: number;
-  showCursor?: boolean;
-  cursorChar?: string;
-  loop?: boolean;
-  onComplete?: () => void;
-  className?: string;
-  variant?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "body1" | "body2";
-  color?: string;
 }
 
-export const TypingCarousel: React.FC<TypingCarouselProps> = ({
-  texts,
-  typingSpeed = 100,
-  deletingSpeed = 50,
-  pauseDuration = 2000,
-  showCursor = true,
-  cursorChar = "|",
-  loop = true,
-  onComplete,
-  className,
-  variant = "h3",
-  color = "text.primary",
-}) => {
+export const TypingCarousel: React.FC<TypingCarouselProps> = ({ texts }) => {
   const [displayedText, setDisplayedText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout>();
+
+  // タイピングアニメーションの設定値
+  const TYPING_SPEED = 100; // タイピング速度（ミリ秒）
+  const DELETING_SPEED = 50; // 削除速度（ミリ秒）
+  const PAUSE_DURATION = 2000; // タイピング完了後の一時停止時間（ミリ秒）
 
   useEffect(() => {
     const currentText = texts[currentIndex];
@@ -42,28 +26,26 @@ export const TypingCarousel: React.FC<TypingCarouselProps> = ({
       if (displayedText.length < currentText.length) {
         timeoutRef.current = setTimeout(() => {
           setDisplayedText(currentText.slice(0, displayedText.length + 1));
-        }, typingSpeed);
+        }, TYPING_SPEED);
       } else {
         // タイピング完了、一時停止
         timeoutRef.current = setTimeout(() => {
           setIsDeleting(true);
-        }, pauseDuration);
+        }, PAUSE_DURATION);
       }
     } else {
       // 削除中
       if (displayedText.length > 0) {
         timeoutRef.current = setTimeout(() => {
           setDisplayedText(currentText.slice(0, displayedText.length - 1));
-        }, deletingSpeed);
+        }, DELETING_SPEED);
       } else {
         // 削除完了、次のテキストへ
         setIsDeleting(false);
         if (currentIndex < texts.length - 1) {
           setCurrentIndex(currentIndex + 1);
-        } else if (loop) {
-          setCurrentIndex(0);
         } else {
-          onComplete?.();
+          setCurrentIndex(0); // 常にループ
         }
       }
     }
@@ -73,45 +55,12 @@ export const TypingCarousel: React.FC<TypingCarouselProps> = ({
         clearTimeout(timeoutRef.current);
       }
     };
-  }, [
-    displayedText,
-    currentIndex,
-    isDeleting,
-    texts,
-    typingSpeed,
-    deletingSpeed,
-    pauseDuration,
-    loop,
-    onComplete,
-  ]);
+  }, [displayedText, currentIndex, isDeleting, texts]);
 
   return (
-    <Typography
-      variant={variant}
-      component="span"
-      sx={{
-        color,
-        minHeight: "1.2em", // テキストの高さを固定してレイアウトシフトを防止
-        display: "inline-block",
-        ...(showCursor && {
-          "& .cursor": {
-            animation: "blink 1s infinite",
-            marginLeft: "2px",
-          },
-          "@keyframes blink": {
-            "0%, 50%": {
-              opacity: 1,
-            },
-            "51%, 100%": {
-              opacity: 0,
-            },
-          },
-        }),
-      }}
-      className={className}
-    >
+    <Typography component="span" sx={typingCarouselStyles}>
       {displayedText}
-      {showCursor && <span className="cursor">{cursorChar}</span>}
+      <span className="cursor">|</span>
     </Typography>
   );
 };

@@ -11,6 +11,7 @@ const avatarWrapper = css`
   gap: var(--spacing-2);
   height: 100vh;
   justify-content: center;
+  text-align: center;
 `;
 
 const introWrapper = css`
