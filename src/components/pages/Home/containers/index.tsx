@@ -3,11 +3,12 @@ import { Avatar, IconButton, Tooltip, Typography } from "@mui/material";
 import Link from "next/link";
 import React from "react";
 import { Icon } from "@/components/parts/Icon";
+import { TypingCarousel } from "@/components/parts/TypingCarousel";
 import { Experiences } from "../presentations/Experiences";
 import { SkillLevel } from "../presentations/SkillLevel";
 import { Skills } from "../presentations/Skills";
 import { Works } from "../presentations/Works";
-import { URL } from "./constants";
+import { TYPING_TEXT, URL } from "./constants";
 import {
   AvatarWrapper,
   IntroWrapper,
@@ -24,9 +25,17 @@ export const Home = () => {
           src="/assets/img/ねこのこ.jpg"
           sx={{ width: "140px", height: "140px" }}
         />
-        <Typography variant="h3" component="p" sx={{ color: "text.primary" }}>
-          Hi, I am Nekonoko
-        </Typography>
+        <TypingCarousel
+          texts={TYPING_TEXT}
+          typingSpeed={120}
+          deletingSpeed={60}
+          pauseDuration={2500}
+          showCursor={true}
+          cursorChar="|"
+          loop={true}
+          variant="h3"
+          color="text.primary"
+        />
       </AvatarWrapper>
       <IntroWrapper id="about">
         <div>
