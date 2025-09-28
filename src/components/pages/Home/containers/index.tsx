@@ -2,8 +2,6 @@
 import { Avatar, IconButton, Tooltip, Typography } from "@mui/material";
 import Link from "next/link";
 import React from "react";
-import { Footer } from "@/components/parts/Footer";
-import { Header } from "@/components/parts/Header";
 import { Icon } from "@/components/parts/Icon";
 import { Experiences } from "../presentations/Experiences";
 import { SkillLevel } from "../presentations/SkillLevel";
@@ -20,7 +18,6 @@ import {
 export const Home = () => {
   return (
     <>
-      <Header />
       <AvatarWrapper id="home">
         <Avatar
           alt="ねこのこ"
@@ -85,7 +82,6 @@ export const Home = () => {
       <Skills />
       <Experiences />
       <Works />
-      <Footer />
     </>
   );
 };
