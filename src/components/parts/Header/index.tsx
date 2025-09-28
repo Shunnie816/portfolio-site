@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import { useScrollSpy } from "@/hooks/useScrollSpy";
 import { DrawerNav } from "../DrawerNav";
 import { Icon } from "../Icon";
 import { MenuButton, PcHeaderMenu, appBarSx, toolbarSx } from "./styles";
@@ -26,6 +27,10 @@ export const Header = () => {
     { text: "Experiences", anchor: "experiences" },
     { text: "Works", anchor: "works" },
   ];
+
+  // スクロール監視のためのセクションIDリスト
+  const sectionIds = listItems.map((item) => item.anchor);
+  const activeSection = useScrollSpy({ sectionIds });
 
   return (
     <AppBar sx={appBarSx}>
@@ -52,10 +57,32 @@ export const Header = () => {
                 onClick={() => {
                   router.push(`#${item.anchor}`);
                 }}
+                sx={{
+                  backgroundColor:
+                    activeSection === item.anchor
+                      ? "primary.main"
+                      : "transparent",
+                  borderRadius: "8px",
+                  margin: "0 4px",
+                  transition: "background-color 0.3s ease",
+                  "&:hover": {
+                    backgroundColor:
+                      activeSection === item.anchor
+                        ? "primary.dark"
+                        : "primary.light",
+                  },
+                }}
               >
                 <ListItemText
                   primary={item.text}
-                  sx={{ color: "secondary.main", textAlign: "center" }}
+                  sx={{
+                    color:
+                      activeSection === item.anchor
+                        ? "white"
+                        : "secondary.main",
+                    textAlign: "center",
+                    transition: "color 0.3s ease",
+                  }}
                 />
               </ListItemButton>
             </ListItem>
