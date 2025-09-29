@@ -3,19 +3,31 @@ import { Avatar, IconButton, Tooltip, Typography } from "@mui/material";
 import Link from "next/link";
 import React from "react";
 import { Icon } from "@/components/parts/Icon";
+import { TypingCarousel } from "@/components/parts/TypingCarousel";
 import { Experiences } from "../presentations/Experiences";
 import { SkillLevel } from "../presentations/SkillLevel";
 import { Skills } from "../presentations/Skills";
 import { Works } from "../presentations/Works";
-import { URL } from "./constants";
+import { TYPING_TEXT, URL } from "./constants";
 import {
   AvatarWrapper,
   IntroWrapper,
   IntroDescription,
   IconsWrapper,
+  ArrowDownWrapper,
 } from "./styles";
 
 export const Home = () => {
+  const scrollToNextSection = () => {
+    const nextSection = document.getElementById("about");
+    if (nextSection) {
+      nextSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
     <>
       <AvatarWrapper id="home">
@@ -24,9 +36,15 @@ export const Home = () => {
           src="/assets/img/ねこのこ.jpg"
           sx={{ width: "140px", height: "140px" }}
         />
-        <Typography variant="h3" component="p" sx={{ color: "text.primary" }}>
-          Hi, I am Nekonoko
-        </Typography>
+        <TypingCarousel texts={TYPING_TEXT} />
+        <ArrowDownWrapper onClick={scrollToNextSection}>
+          <IconButton aria-label="次のセクションにスクロール">
+            <Icon
+              icon="arrowDown"
+              sx={{ color: "text.primary", fontSize: "3rem" }}
+            />
+          </IconButton>
+        </ArrowDownWrapper>
       </AvatarWrapper>
       <IntroWrapper id="about">
         <div>
