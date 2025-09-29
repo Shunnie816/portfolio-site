@@ -67,14 +67,9 @@ const iconsWrapper = css`
   margin-top: var(--spacing-4);
 `;
 
-// const learningWrapper = css`
-//   ${commonWrapperStyle}
-// `;
-
 /** emotion styled components */
 export const AvatarWrapper = emotionStyled.section`${avatarWrapper}`;
 export const ArrowDownWrapper = emotionStyled.div`${arrowDownWrapper}`;
 export const IntroWrapper = emotionStyled.section`${introWrapper}`;
 export const IntroDescription = emotionStyled.div`${introDescription}`;
 export const IconsWrapper = emotionStyled.div`${iconsWrapper}`;
-// export const LearningWrapper = emotionStyled.section`${learningWrapper}`;
