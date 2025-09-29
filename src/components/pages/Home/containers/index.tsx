@@ -14,9 +14,20 @@ import {
   IntroWrapper,
   IntroDescription,
   IconsWrapper,
+  ArrowDownWrapper,
 } from "./styles";
 
 export const Home = () => {
+  const scrollToNextSection = () => {
+    const nextSection = document.getElementById("about");
+    if (nextSection) {
+      nextSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
     <>
       <AvatarWrapper id="home">
@@ -26,6 +37,14 @@ export const Home = () => {
           sx={{ width: "140px", height: "140px" }}
         />
         <TypingCarousel texts={TYPING_TEXT} />
+        <ArrowDownWrapper onClick={scrollToNextSection}>
+          <IconButton aria-label="次のセクションにスクロール">
+            <Icon
+              icon="arrowDown"
+              sx={{ color: "text.primary", fontSize: "3rem" }}
+            />
+          </IconButton>
+        </ArrowDownWrapper>
       </AvatarWrapper>
       <IntroWrapper id="about">
         <div>

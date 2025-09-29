@@ -1,6 +1,7 @@
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import LanguageIcon from "@mui/icons-material/Language";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -17,7 +18,8 @@ export type IconType =
   | "darkMode"
   | "lightMode"
   | "zenn"
-  | "exitToApp";
+  | "exitToApp"
+  | "arrowDown";
 
 type BaseProps = {
   icon: IconType;
@@ -33,6 +35,7 @@ const iconMap = {
   lightMode: LightModeIcon,
   zenn: NewspaperIcon,
   exitToApp: ExitToAppIcon,
+  arrowDown: KeyboardArrowDownIcon,
 };
 
 export const Icon = ({ icon, ...rest }: Props) => {
