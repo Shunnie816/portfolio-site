@@ -1,5 +1,3 @@
-import { css } from "@emotion/react";
-import emotionStyled from "@emotion/styled";
 import {
   AppBar,
   Avatar,
@@ -13,47 +11,10 @@ import {
 } from "@mui/material";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
-import { breakpoint, headerHeight } from "@/assets/styles/variable";
+import { useScrollSpy } from "@/hooks/useScrollSpy";
 import { DrawerNav } from "../DrawerNav";
 import { Icon } from "../Icon";
-
-const menuButton = css`
-  @media (min-width: ${breakpoint}) {
-    display: none;
-  }
-`;
-
-const pcHeadermenu = css`
-  display: none;
-  @media (min-width: ${breakpoint}) {
-    display: flex;
-    margin: 0;
-  }
-`;
-
-const MenuButton = emotionStyled.div`
-  ${menuButton}
-`;
-
-const PcHeaderMenu = emotionStyled.ul`
-  ${pcHeadermenu}
-`;
-
-const appBarSx = {
-  boxShadow: "none",
-  backgroundColor: "background.default",
-  opacity: "0.8",
-  maxHeight: headerHeight,
-  justifyContent: "center",
-};
-
-const toolbarSx = {
-  display: "flex",
-  justifyContent: "space-between",
-  "@media (min-width: 768px)": {
-    padding: "0 72px",
-  },
-};
+import { MenuButton, PcHeaderMenu, appBarSx, toolbarSx } from "./styles";
 
 export const Header = () => {
   const router = useRouter();
@@ -64,7 +25,12 @@ export const Header = () => {
     { text: "About", anchor: "about" },
     { text: "Skills", anchor: "skills" },
     { text: "Experiences", anchor: "experiences" },
+    { text: "Works", anchor: "works" },
   ];
+
+  // スクロール監視のためのセクションIDリスト
+  const sectionIds = listItems.map((item) => item.anchor);
+  const activeSection = useScrollSpy({ sectionIds });
 
   return (
     <AppBar sx={appBarSx}>
@@ -82,7 +48,7 @@ export const Header = () => {
             component="a"
             href="/"
             sx={{ color: "secondary.main" }}
-          >{`Shun's Portfolio`}</Typography>
+          >{`Nekonoko's Portfolio`}</Typography>
         </Box>
         <PcHeaderMenu>
           {listItems.map((item) => (
@@ -91,10 +57,32 @@ export const Header = () => {
                 onClick={() => {
                   router.push(`#${item.anchor}`);
                 }}
+                sx={{
+                  backgroundColor:
+                    activeSection === item.anchor
+                      ? "primary.main"
+                      : "transparent",
+                  borderRadius: "8px",
+                  margin: "0 4px",
+                  transition: "background-color 0.3s ease",
+                  "&:hover": {
+                    backgroundColor:
+                      activeSection === item.anchor
+                        ? "primary.dark"
+                        : "primary.light",
+                  },
+                }}
               >
                 <ListItemText
                   primary={item.text}
-                  sx={{ color: "secondary.main", textAlign: "center" }}
+                  sx={{
+                    color:
+                      activeSection === item.anchor
+                        ? "white"
+                        : "secondary.main",
+                    textAlign: "center",
+                    transition: "color 0.3s ease",
+                  }}
                 />
               </ListItemButton>
             </ListItem>

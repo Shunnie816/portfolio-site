@@ -1,5 +1,3 @@
-import { css } from "@emotion/react";
-import emotionStyled from "@emotion/styled";
 import {
   Box,
   Divider,
@@ -12,23 +10,13 @@ import {
 import { useRouter } from "next/navigation";
 import React from "react";
 import { Icon } from "../Icon";
+import { ListWrapper } from "./styles";
 
 type Props = {
   isOpen: boolean;
   onClose: () => void;
   onOpen: () => void;
 };
-
-const listWrapper = css`
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-2);
-  justify-content: center;
-`;
-
-const ListWrapper = emotionStyled.div`
-  ${listWrapper}
-`;
 
 export const DrawerNav = ({ isOpen, onClose, onOpen }: Props) => {
   const router = useRouter();
@@ -38,6 +26,7 @@ export const DrawerNav = ({ isOpen, onClose, onOpen }: Props) => {
     { text: "About", anchor: "about" },
     { text: "Skills", anchor: "skills" },
     { text: "Experiences", anchor: "experiences" },
+    { text: "Works", anchor: "works" },
   ];
 
   return (
