@@ -1,5 +1,7 @@
+import { css } from "@emotion/react";
+import emotionStyled from "@emotion/styled";
 import { TypingCarousel } from "./index";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 
 const meta: Meta<typeof TypingCarousel> = {
   component: TypingCarousel,
@@ -18,10 +20,27 @@ const meta: Meta<typeof TypingCarousel> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+const wrapper = css`
+  background-color: var(--bg-color-dark);
+`;
+
+const Wrapper = emotionStyled.div`
+  ${wrapper}
+`;
+
+const Component: Story["render"] = (args) => {
+  return (
+    <Wrapper>
+      <TypingCarousel {...args} />
+    </Wrapper>
+  );
+};
+
 export const Default: Story = {
   args: {
     texts: ["I am Nekonoko", "Frontend Developer", "TypeScript Expert"],
   },
+  render: Component,
 };
 
 export const LongText: Story = {
@@ -32,10 +51,12 @@ export const LongText: Story = {
       "I specialize in React, TypeScript, and modern web technologies",
     ],
   },
+  render: Component,
 };
 
 export const SingleText: Story = {
   args: {
     texts: ["Single Text Example"],
   },
+  render: Component,
 };
