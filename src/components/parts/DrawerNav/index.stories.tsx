@@ -2,7 +2,7 @@ import { Button } from "@mui/material";
 import { useState } from "react";
 import { Layout } from "../Layout";
 import { DrawerNav } from ".";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/nextjs";
 
 const meta: Meta<typeof DrawerNav> = {
   component: DrawerNav,

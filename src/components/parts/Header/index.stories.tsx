@@ -2,7 +2,7 @@ import { css } from "@emotion/react";
 import emotionStyled from "@emotion/styled";
 import { Layout } from "../Layout";
 import { Header } from ".";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/nextjs";
 
 const meta: Meta<typeof Header> = {
   component: Header,

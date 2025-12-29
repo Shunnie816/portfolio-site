@@ -1,6 +1,6 @@
 import { Layout } from "../Layout";
 import { Card } from ".";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/nextjs";
 
 const meta: Meta<typeof Card> = {
   component: Card,

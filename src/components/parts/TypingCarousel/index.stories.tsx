@@ -1,5 +1,5 @@
 import { TypingCarousel } from "./index";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/nextjs";
 
 const meta: Meta<typeof TypingCarousel> = {
   component: TypingCarousel,

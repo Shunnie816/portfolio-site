@@ -1,6 +1,6 @@
 import { Layout } from "../Layout";
 import { WorkCard } from ".";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/nextjs";
 
 const meta: Meta<typeof WorkCard> = {
   component: WorkCard,
