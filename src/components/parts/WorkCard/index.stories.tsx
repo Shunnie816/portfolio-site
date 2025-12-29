@@ -1,6 +1,5 @@
-import { Layout } from "../Layout";
 import { WorkCard } from ".";
-import type { Meta, StoryObj } from "@storybook/nextjs";
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 
 const meta: Meta<typeof WorkCard> = {
   component: WorkCard,
@@ -8,14 +7,6 @@ const meta: Meta<typeof WorkCard> = {
 
 export default meta;
 type Story = StoryObj<typeof WorkCard>;
-
-const Component: Story["render"] = (args) => {
-  return (
-    <Layout>
-      <WorkCard {...args} />
-    </Layout>
-  );
-};
 
 export const Default: Story = {
   args: {
@@ -26,5 +17,4 @@ export const Default: Story = {
     zennUrl: "https://example.com",
     workUrl: "https://example.com",
   },
-  render: Component,
 };
