@@ -1,11 +1,13 @@
 import { css } from "@emotion/react";
 import emotionStyled from "@emotion/styled";
-import { Layout } from "../Layout";
 import { Header } from ".";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 
 const meta: Meta<typeof Header> = {
   component: Header,
+  parameters: {
+    layout: "fullscreen",
+  },
 };
 
 export default meta;
@@ -22,11 +24,9 @@ const Wrapper = emotionStyled.div`
 
 const Component: Story["render"] = () => {
   return (
-    <Layout>
-      <Wrapper>
-        <Header />
-      </Wrapper>
-    </Layout>
+    <Wrapper>
+      <Header />
+    </Wrapper>
   );
 };
 
