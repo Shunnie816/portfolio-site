@@ -26,5 +26,20 @@
       "Bash(git push origin develop*)",
       "Bash(git reset --hard*)"
     ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "mkdir -p \"$CLAUDE_PROJECT_DIR/.claude/logs\" && jq -r '\"\\(now | todate) \\(.tool_name)\"' >> \"$CLAUDE_PROJECT_DIR/.claude/logs/tool-usage.log\"",
+            "timeout": 5,
+            "async": true
+          }
+        ]
+      }
+    ]
   }
 }
