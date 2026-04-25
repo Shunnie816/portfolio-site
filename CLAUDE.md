@@ -195,6 +195,20 @@ MCPサーバーはスコープに応じて2か所に設定する。
 - **グローバル**: どのプロジェクトでも使う汎用ツール（ドキュメント取得・ブラウザ操作・コード解析）
 - **プロジェクト固有**: 特定のAPIや社内ツールなど、プロジェクト限定で使うもの
 
+## チェック実行の役割分担
+
+lint・build の二重実行を防ぐため、チェックの実行主体を明確に分けている。
+
+| チェック | Claude Code | husky（pre-commit） | CI |
+| --- | --- | --- | --- |
+| ESLint | **禁止**（deny） | ✅ lint-staged | ✅ npm run lint |
+| Stylelint | ✅ 手動可 | — | — |
+| 型チェック（tsc） | ✅ コミット前に実行 | ✅ npx tsc --noEmit | ✅ tsc --noEmit |
+| ビルド | **禁止**（deny） | — | ✅ npm run build |
+| テスト | ロジック修正時に実行 | — | —（導入後に追加） |
+
+**Claude Code はコミット前に `npx tsc --noEmit` のみ実行する。lint と build は実行しない。**
+
 ## 注意事項
 
 - テストランナーは現時点で未設定。テストを追加する場合は Jest + React Testing Library の導入を検討すること
