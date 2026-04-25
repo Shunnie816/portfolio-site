@@ -76,9 +76,11 @@ npm run build-storybook # Storybook ビルド
 
 ## Git ワークフロー
 
-- `main`: プロダクションブランチ（直接 push 禁止）
+- `main`: プロダクションブランチ
 - `develop`: 開発ブランチ（PR のベースブランチ）
 - 作業ブランチ: `feature/<name>`, `fix/<name>`, `chore/<name>` などの形式
+
+**`develop` への直接コミット・push は禁止。** 作業は必ず Issue 起点でブランチを切ってから開始すること。
 
 ## Issue 起点の開発ワークフロー
 
@@ -138,4 +140,3 @@ Closes #{番号}
 
 - テストランナーは現時点で未設定。テストを追加する場合は Jest + React Testing Library の導入を検討すること
 - Storybook は Vite ベース (`@storybook/nextjs-vite`) で動作する
-- `PR_DESCRIPTION.md` は `.gitignore` 対象のため、コミットしないこと
