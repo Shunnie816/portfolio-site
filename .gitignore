@@ -39,3 +39,9 @@ next-env.d.ts
 
 # Pull Request Description
 PR_DESCRIPTION.md
+
+# Claude Code (local settings)
+.claude/settings.local.json
+
+# Serena MCP (local tool config)
+.serena/
