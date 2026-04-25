@@ -43,6 +43,7 @@ PR_DESCRIPTION.md
 # Claude Code (local settings)
 .claude/settings.local.json
 .claude/issue-context.md
+.claude/logs/
 
 # Serena MCP (local tool config)
 .serena/
