@@ -46,3 +46,7 @@ PR_DESCRIPTION.md
 
 # Serena MCP (local tool config)
 .serena/
+
+# Playwright MCP (browser output)
+.playwright-mcp/
+*.png
