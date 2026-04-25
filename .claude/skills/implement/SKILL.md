@@ -1,6 +1,8 @@
-# /implement — 実装担当
+---
+description: タスクリストをもとに実装を進め、各タスク完了後にコミットする。実装フェーズに入るとき、またはサブスコープ（component, hook, style, config）を指定して実装するときに使う。
+---
 
-Issue のタスクリストをもとに実装を進める。
+# /implement — 実装担当
 
 ## 手順
 
@@ -23,11 +25,9 @@ Issue のタスクリストをもとに実装を進める。
 
 ## サブスキル
 
-複雑な Issue では以下のサブスキルに分割できる:
+`$ARGUMENTS` にサブスキル名を指定すると、そのスコープに絞って実装する:
 
-- `/implement component` — UI コンポーネントの実装
-- `/implement hook` — カスタム React フックの実装
-- `/implement style` — スタイル定義の実装
-- `/implement config` — 設定ファイルの変更
-
-`$ARGUMENTS` にサブスキル名が渡された場合は、そのスコープに絞って実装する。
+- `component` — UI コンポーネントの実装
+- `hook` — カスタム React フックの実装
+- `style` — スタイル定義の実装
+- `config` — 設定ファイルの変更
