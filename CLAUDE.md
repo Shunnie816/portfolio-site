@@ -143,6 +143,23 @@ Closes #{番号}
 - [ ] ビルド成功 (`npm run build`)
 ```
 
+## カスタムスキル（スラッシュコマンド）
+
+`.claude/commands/` に定義されたカスタムスラッシュコマンド。Issue 起点の開発ワークフローを標準化する。
+
+| コマンド | 役割 | 使い方 |
+| --- | --- | --- |
+| `/plan` | Issue を解析してタスクをチェックリスト化し、Issue にコメント投稿する | `/plan 43` or `/plan`（context から自動取得） |
+| `/implement` | タスクリストをもとに実装を進め、各タスク完了後にコミットする | `/implement` or `/implement hook` |
+| `/test` | テスト観点を列挙してテストコードを作成する | `/test src/hooks/useFoo.ts` |
+| `/pr` | lint・ビルド確認後、`develop` への PR をテンプレートに従って作成する | `/pr` |
+
+### 推奨ワークフロー
+
+```
+./scripts/issue-start.sh <番号>  →  /plan  →  /implement  →  /test  →  /pr
+```
+
 ## MCP サーバー設定
 
 MCPサーバーはスコープに応じて2か所に設定する。
