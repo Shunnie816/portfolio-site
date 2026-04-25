@@ -80,6 +80,60 @@ npm run build-storybook # Storybook ビルド
 - `develop`: 開発ブランチ（PR のベースブランチ）
 - 作業ブランチ: `feature/<name>`, `fix/<name>`, `chore/<name>` などの形式
 
+## Issue 起点の開発ワークフロー
+
+### スタート手順
+
+```bash
+./scripts/issue-start.sh <issue番号>
+```
+
+このスクリプトが以下を自動で行う:
+- Issue の内容を取得
+- ラベルに応じたブランチ名を生成して checkout (`feature/issue-{番号}-{slug}`)
+- `.claude/issue-context.md` にコンテキストファイルを生成
+
+その後 Claude Code を起動すると、コンテキストファイルを自動で読み込む。
+
+### Claude Code との作業手順
+
+1. **タスク分解**: Issue の内容をもとに具体的な実装タスクを対話で決定する
+2. **Issue にタスクを記録**: 合意したタスクをチェックリストとして Issue にコメントする
+   ```bash
+   gh issue comment <番号> --body "## タスク\n- [ ] ..."
+   ```
+3. **実装**: タスクを順番に実装してコミットする
+4. **PR 作成**: `Closes #<番号>` を本文に含めた PR を作成する
+
+### ブランチ命名規則
+
+| ラベル | プレフィックス |
+|---|---|
+| bug / fix | `fix/` |
+| chore / setup / ci | `chore/` |
+| docs | `docs/` |
+| refactor | `refactor/` |
+| その他 | `feature/` |
+
+形式: `{prefix}/issue-{番号}-{タイトルのslug}`
+
+### PR テンプレート
+
+```markdown
+## 概要
+<!-- 変更内容を簡潔に -->
+
+## 対応 Issue
+Closes #{番号}
+
+## 変更内容
+- 
+
+## 確認事項
+- [ ] lint エラーなし (`npm run lint`)
+- [ ] ビルド成功 (`npm run build`)
+```
+
 ## 注意事項
 
 - テストランナーは現時点で未設定。テストを追加する場合は Jest + React Testing Library の導入を検討すること
