@@ -15,7 +15,7 @@ export const Experiences = () => {
         Experiences
       </Typography>
       <Stepper orientation="vertical">
-        <Step>
+        <Step expanded>
           <StepLabel>
             <TitleWrapper>
               <Typography variant="h6" sx={{ color: "primary.light" }}>
@@ -65,7 +65,7 @@ export const Experiences = () => {
             </ProjectWrapper>
           </StepContent>
         </Step>
-        <Step>
+        <Step expanded>
           <StepLabel>
             <TitleWrapper>
               <Typography variant="h6" sx={{ color: "primary.light" }}>
@@ -114,7 +114,7 @@ export const Experiences = () => {
             </ProjectWrapper>
           </StepContent>
         </Step>
-        <Step>
+        <Step expanded>
           <StepLabel>
             <TitleWrapper>
               <Typography variant="h6" sx={{ color: "primary.light" }}>
