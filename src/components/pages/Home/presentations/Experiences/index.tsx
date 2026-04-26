@@ -22,7 +22,7 @@ export const Experiences = () => {
                 My Page renewal project
               </Typography>
               <Typography variant="caption" sx={{ color: "secondary.dark" }}>
-                July 2023 - Present
+                July 2023 - January 2025
               </Typography>
             </TitleWrapper>
           </StepLabel>
@@ -58,7 +58,7 @@ export const Experiences = () => {
                   <Typography>
                     - Fix bugs and improve user experience
                   </Typography>
-                  <Typography>- Frontend system desgin</Typography>
+                  <Typography>- Frontend system design</Typography>
                   <Typography>- Educating junior developers</Typography>
                 </div>
               </div>
