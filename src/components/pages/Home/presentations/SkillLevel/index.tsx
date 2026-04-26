@@ -69,7 +69,7 @@ const SkillLevelSp = () => {
             <CircularProgress
               size={150}
               variant="determinate"
-              value={80}
+              value={85}
               sx={{ color: "info.main" }}
             />
             <Box sx={spCircleBoxSx}>
@@ -82,7 +82,7 @@ const SkillLevelSp = () => {
             <CircularProgress
               size={150}
               variant="determinate"
-              value={75}
+              value={80}
               sx={{ color: "success.light" }}
             />
             <Box sx={spCircleBoxSx}>
@@ -95,7 +95,7 @@ const SkillLevelSp = () => {
             <CircularProgress
               size={150}
               variant="determinate"
-              value={70}
+              value={75}
               sx={{ color: "secondary.dark" }}
             />
             <Box sx={spCircleBoxSx}>
@@ -108,7 +108,7 @@ const SkillLevelSp = () => {
             <CircularProgress
               size={150}
               variant="determinate"
-              value={30}
+              value={40}
               sx={{ color: "info.light" }}
             />
             <Box sx={spCircleBoxSx}>
@@ -158,7 +158,7 @@ const SkillLevelPc = () => {
             <CircularProgress
               size={130}
               variant="determinate"
-              value={80}
+              value={85}
               sx={{ color: "info.dark" }}
             />
             <Box sx={pcCircleBoxSx}>
@@ -171,7 +171,7 @@ const SkillLevelPc = () => {
             <CircularProgress
               size={130}
               variant="determinate"
-              value={75}
+              value={80}
               sx={{ color: "success.light" }}
             />
             <Box sx={pcCircleBoxSx}>
@@ -184,7 +184,7 @@ const SkillLevelPc = () => {
             <CircularProgress
               size={130}
               variant="determinate"
-              value={70}
+              value={75}
               sx={{ color: "secondary.dark" }}
             />
             <Box sx={pcCircleBoxSx}>
@@ -197,7 +197,7 @@ const SkillLevelPc = () => {
             <CircularProgress
               size={130}
               variant="determinate"
-              value={30}
+              value={40}
               sx={{ color: "info.light" }}
             />
             <Box sx={pcCircleBoxSx}>
