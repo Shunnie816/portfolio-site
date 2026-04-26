@@ -1,4 +1,10 @@
-import { Step, StepContent, StepLabel, Typography } from "@mui/material";
+import {
+  Step,
+  StepContent,
+  StepLabel,
+  type StepProps,
+  Typography,
+} from "@mui/material";
 import React from "react";
 import { ProjectWrapper, TitleWrapper } from "./styles";
 
@@ -16,9 +22,10 @@ export const ExperienceStep = ({
   description,
   skillSets,
   responsibilities,
-}: ExperienceStepProps) => {
+  ...stepProps
+}: ExperienceStepProps & StepProps) => {
   return (
-    <Step expanded>
+    <Step expanded {...stepProps}>
       <StepLabel>
         <TitleWrapper>
           <Typography variant="h6" sx={{ color: "primary.light" }}>
