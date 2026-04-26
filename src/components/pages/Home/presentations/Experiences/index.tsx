@@ -73,6 +73,7 @@ export const Experiences = () => {
       </Typography>
       <Stepper
         orientation="vertical"
+        nonLinear
         activeStep={activeStepIndex >= 0 ? activeStepIndex : undefined}
       >
         {EXPERIENCES.map(({ isActive: _, ...experience }) => (
