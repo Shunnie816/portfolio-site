@@ -6,7 +6,9 @@ import {
 } from "@/components/parts/ExperienceStep";
 import { ExperienceWrapper } from "./styles";
 
-const EXPERIENCES: ExperienceStepProps[] = [
+type ExperienceData = ExperienceStepProps & { isActive?: boolean };
+
+const EXPERIENCES: ExperienceData[] = [
   {
     title: "My Page renewal project",
     period: "July 2023 - January 2025",
@@ -46,16 +48,34 @@ const EXPERIENCES: ExperienceStepProps[] = [
       "Created a Python tool to convert Excel to Markdown for AI readability",
     ],
   },
+  {
+    title: "AI Product Development Standardization",
+    period: "April 2026 - June 2026",
+    description:
+      "Leading standardization of AI-driven application development practices across the team. Providing Claude Code environment and sharing knowledge on AI-assisted development workflows.",
+    skillSets: ["Claude Code", "Docker", "AWS"],
+    responsibilities: [
+      "Creating application development standards assuming AI-driven development",
+      "Providing Claude Code usage environment for the team",
+      "Sharing knowledge and best practices on utilizing Claude Code",
+    ],
+    isActive: true,
+  },
 ];
 
 export const Experiences = () => {
+  const activeStepIndex = EXPERIENCES.findIndex((e) => e.isActive);
+
   return (
     <ExperienceWrapper id="experiences">
       <Typography variant="h3" textAlign="center">
         Experiences
       </Typography>
-      <Stepper orientation="vertical">
-        {EXPERIENCES.map((experience) => (
+      <Stepper
+        orientation="vertical"
+        activeStep={activeStepIndex >= 0 ? activeStepIndex : undefined}
+      >
+        {EXPERIENCES.map(({ isActive: _, ...experience }) => (
           <ExperienceStep key={experience.title} {...experience} />
         ))}
         <Step>

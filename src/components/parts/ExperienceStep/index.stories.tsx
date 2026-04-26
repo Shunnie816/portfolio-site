@@ -51,6 +51,21 @@ export const SystemRiskResponse: Story = {
   },
 };
 
+export const AiProductDevelopmentStandardization: Story = {
+  args: {
+    title: "AI Product Development Standardization",
+    period: "April 2026 - June 2026",
+    description:
+      "Leading standardization of AI-driven application development practices across the team. Providing Claude Code environment and sharing knowledge on AI-assisted development workflows.",
+    skillSets: ["Claude Code", "Docker", "AWS"],
+    responsibilities: [
+      "Creating application development standards assuming AI-driven development",
+      "Providing Claude Code usage environment for the team",
+      "Sharing knowledge and best practices on utilizing Claude Code",
+    ],
+  },
+};
+
 export const DevelopmentImprovementProject: Story = {
   args: {
     title: "Development Improvement Project",
