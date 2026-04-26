@@ -58,13 +58,14 @@ export const Home = () => {
               experience, and a total of 5 years including personal projects.
             </Typography>
             <Typography>
-              Currently, I specialize in frontend development, focusing on
-              technologies such as TypeScript, React, and Next.js. My goal is to
-              eventually take on roles as a Tech Lead.
+              I specialize in frontend development with TypeScript, React, and
+              Next.js. My goal is to take on architect and tech lead roles —
+              driving teams through technical excellence.
             </Typography>
             <Typography>
-              I am actively expanding my skill set to include Firebase, AWS, and
-              AI driven development.
+              I am actively expanding into infrastructure (AWS, Firebase) and
+              AI-driven development to strengthen my design capabilities beyond
+              the frontend.
             </Typography>
           </IntroDescription>
           <IconsWrapper>
