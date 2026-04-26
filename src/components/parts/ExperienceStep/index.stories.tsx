@@ -1,13 +1,24 @@
-import { Step, StepLabel, Stepper, Typography } from "@mui/material";
+import { Stepper } from "@mui/material";
 import React from "react";
-import {
-  ExperienceStep,
-  type ExperienceStepProps,
-} from "@/components/parts/ExperienceStep";
-import { ExperienceWrapper } from "./styles";
+import { ExperienceStep } from ".";
+import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 
-const EXPERIENCES: ExperienceStepProps[] = [
-  {
+const meta: Meta<typeof ExperienceStep> = {
+  component: ExperienceStep,
+  decorators: [
+    (Story) => (
+      <Stepper orientation="vertical">
+        <Story />
+      </Stepper>
+    ),
+  ],
+};
+
+export default meta;
+type Story = StoryObj<typeof ExperienceStep>;
+
+export const Default: Story = {
+  args: {
     title: "My Page renewal project",
     period: "July 2023 - January 2025",
     description:
@@ -21,7 +32,10 @@ const EXPERIENCES: ExperienceStepProps[] = [
       "Educating junior developers",
     ],
   },
-  {
+};
+
+export const SystemRiskResponse: Story = {
+  args: {
     title: "System Risk Response",
     period: "October 2025 - April 2026",
     description:
@@ -35,7 +49,10 @@ const EXPERIENCES: ExperienceStepProps[] = [
       "Lead engineer role",
     ],
   },
-  {
+};
+
+export const DevelopmentImprovementProject: Story = {
+  args: {
     title: "Development Improvement Project",
     period: "January 2026 - March 2026",
     description:
@@ -46,22 +63,4 @@ const EXPERIENCES: ExperienceStepProps[] = [
       "Created a Python tool to convert Excel to Markdown for AI readability",
     ],
   },
-];
-
-export const Experiences = () => {
-  return (
-    <ExperienceWrapper id="experiences">
-      <Typography variant="h3" textAlign="center">
-        Experiences
-      </Typography>
-      <Stepper orientation="vertical">
-        {EXPERIENCES.map((experience) => (
-          <ExperienceStep key={experience.title} {...experience} />
-        ))}
-        <Step>
-          <StepLabel />
-        </Step>
-      </Stepper>
-    </ExperienceWrapper>
-  );
 };
