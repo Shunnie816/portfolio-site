@@ -1,10 +1,18 @@
 import { Button } from "@mui/material";
 import { useState } from "react";
+import { ThemeModeProvider } from "@/contexts/ThemeContext";
 import { DrawerNav } from ".";
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 
 const meta: Meta<typeof DrawerNav> = {
   component: DrawerNav,
+  decorators: [
+    (Story) => (
+      <ThemeModeProvider>
+        <Story />
+      </ThemeModeProvider>
+    ),
+  ],
 };
 
 export default meta;
