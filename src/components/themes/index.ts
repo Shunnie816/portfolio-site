@@ -6,7 +6,7 @@ const mulish = Mulish({
   display: "swap",
 });
 
-// ここを変更したらvariables.scssも変更する
+// ここを変更したらvariable.tsも変更する
 const COLOR_PALETTE = {
   darkNavy: "#201e43",
   navy: "#134b70",
@@ -17,14 +17,23 @@ const COLOR_PALETTE = {
   fog: "#64748b",
 };
 
-/**
- * MUIのpalette
- * https://mui.com/material-ui/customization/default-theme/?expand-path=$.palette
- */
+const typography = {
+  fontFamily: mulish.style.fontFamily,
+  h1: { fontSize: "3rem" },
+  h2: { fontSize: "2.5rem" },
+  h3: { fontSize: "2rem" },
+  h4: { fontSize: "1.75rem" },
+  h5: { fontSize: "1.5rem" },
+  h6: { fontSize: "1.25rem" },
+  subtitle1: { fontSize: "1rem" },
+  subtitle2: { fontSize: "0.875rem" },
+  body1: { fontSize: "1rem" },
+  body2: { fontSize: "0.875rem" },
+};
 
-/** MUIのカスタムthemeを定義 */
-export const defaultTheme = createTheme({
+export const darkTheme = createTheme({
   palette: {
+    mode: "dark",
     primary: {
       main: COLOR_PALETTE.navy,
     },
@@ -42,37 +51,28 @@ export const defaultTheme = createTheme({
       paper: COLOR_PALETTE.gray,
     },
   },
-  typography: {
-    fontFamily: mulish.style.fontFamily,
-    h1: {
-      fontSize: "3rem", // 48px
+  typography,
+});
+
+export const lightTheme = createTheme({
+  palette: {
+    mode: "light",
+    primary: {
+      main: COLOR_PALETTE.navy,
     },
-    h2: {
-      fontSize: "2.5rem", // 40px
+    secondary: {
+      main: COLOR_PALETTE.darkNavy,
+      light: COLOR_PALETTE.lightGray,
     },
-    h3: {
-      fontSize: "2rem", // 32px
+    text: {
+      primary: COLOR_PALETTE.darkNavy,
+      secondary: COLOR_PALETTE.gray,
+      disabled: COLOR_PALETTE.fog,
     },
-    h4: {
-      fontSize: "1.75rem", // 28px
-    },
-    h5: {
-      fontSize: "1.5rem", // 24px
-    },
-    h6: {
-      fontSize: "1.25rem", // 20px
-    },
-    subtitle1: {
-      fontSize: "1rem", // 16px
-    },
-    subtitle2: {
-      fontSize: "0.875rem", // 14px
-    },
-    body1: {
-      fontSize: "1rem", // 16px
-    },
-    body2: {
-      fontSize: "0.875rem", // 14px
+    background: {
+      default: COLOR_PALETTE.lightGray,
+      paper: "#ffffff",
     },
   },
+  typography,
 });

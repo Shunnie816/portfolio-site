@@ -7,6 +7,7 @@ export const breakpoint = "768px";
 export const headerHeight = "56px";
 
 export const variables = css`
+  /* light mode (default) */
   :root {
     /* font-size */
     --fontSizeXXS: 10px;
@@ -50,5 +51,12 @@ export const variables = css`
     --bg-color-default: var(--color-gray);
     --bg-color-dark: var(--color-dark-navy);
     --bg-color-light: var(--color-white);
+  }
+
+  /* dark mode overrides */
+  [data-color-scheme="dark"] {
+    --bg-color-default: var(--color-dark-navy);
+    --bg-color-light: var(--color-white);
+    --text-default: var(--color-gray);
   }
 `;
