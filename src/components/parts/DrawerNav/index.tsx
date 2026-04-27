@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import { useRouter } from "next/navigation";
 import React from "react";
+import { useThemeMode } from "@/hooks/useThemeMode";
 import { Icon } from "../Icon";
 import { ListWrapper } from "./styles";
 
@@ -20,6 +21,7 @@ type Props = {
 
 export const DrawerNav = ({ isOpen, onClose, onOpen }: Props) => {
   const router = useRouter();
+  const { mode, toggleTheme } = useThemeMode();
 
   const listItems = [
     { text: "Home", anchor: "home" },
@@ -74,15 +76,16 @@ export const DrawerNav = ({ isOpen, onClose, onOpen }: Props) => {
           </ListItem>
           <ListItem disablePadding>
             <ListItemButton
-              onClick={() => {
-                alert("Convert theme is under developing");
+              onClick={(e) => {
+                e.stopPropagation();
+                toggleTheme();
               }}
             >
               <ListItemText
                 primary={
                   <ListWrapper>
-                    <Icon icon="darkMode" />
-                    Dark Mode
+                    <Icon icon={mode === "dark" ? "lightMode" : "darkMode"} />
+                    {mode === "dark" ? "Light Mode" : "Dark Mode"}
                   </ListWrapper>
                 }
                 sx={{ color: "primary.dark", textAlign: "center" }}
