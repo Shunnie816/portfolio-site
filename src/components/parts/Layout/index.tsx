@@ -1,7 +1,7 @@
 "use client";
 import { Global, css } from "@emotion/react";
 import { CssBaseline, ThemeProvider } from "@mui/material";
-import React, { useEffect } from "react";
+import React from "react";
 import { globalStyle } from "@/assets/styles/global";
 import { variables } from "@/assets/styles/variable";
 import { darkTheme, lightTheme } from "@/components/themes";
@@ -23,10 +23,6 @@ const globalStyles = css`
 const LayoutInner = ({ children }: Props) => {
   const { mode } = useThemeMode();
   const theme = mode === "dark" ? darkTheme : lightTheme;
-
-  useEffect(() => {
-    document.documentElement.setAttribute("data-color-scheme", mode);
-  }, [mode]);
 
   return (
     <ThemeProvider theme={theme}>

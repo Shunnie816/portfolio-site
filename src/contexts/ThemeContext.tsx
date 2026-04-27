@@ -1,5 +1,5 @@
 "use client";
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext, useEffect, useSyncExternalStore } from "react";
 
 type ThemeMode = "light" | "dark";
 
@@ -17,25 +17,38 @@ type Props = {
   children: React.ReactNode;
 };
 
-function getStoredTheme(): ThemeMode {
-  if (typeof window === "undefined") return "dark";
-  const stored = window.localStorage.getItem("theme");
+const STORAGE_KEY = "theme";
+const CHANGE_EVENT = "themeChange";
+
+function getSnapshot(): ThemeMode {
+  const stored = localStorage.getItem(STORAGE_KEY);
   return stored === "light" || stored === "dark" ? stored : "dark";
 }
 
+function getServerSnapshot(): ThemeMode {
+  return "dark";
+}
+
+function subscribe(callback: () => void) {
+  window.addEventListener(CHANGE_EVENT, callback);
+  window.addEventListener("storage", callback);
+  return () => {
+    window.removeEventListener(CHANGE_EVENT, callback);
+    window.removeEventListener("storage", callback);
+  };
+}
+
 export const ThemeModeProvider = ({ children }: Props) => {
-  const [mode, setMode] = useState<ThemeMode>(getStoredTheme);
+  const mode = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
   useEffect(() => {
     document.documentElement.setAttribute("data-color-scheme", mode);
   }, [mode]);
 
   const toggleTheme = () => {
-    setMode((prev) => {
-      const next = prev === "dark" ? "light" : "dark";
-      localStorage.setItem("theme", next);
-      return next;
-    });
+    const next = mode === "dark" ? "light" : "dark";
+    localStorage.setItem(STORAGE_KEY, next);
+    window.dispatchEvent(new Event(CHANGE_EVENT));
   };
 
   return (
