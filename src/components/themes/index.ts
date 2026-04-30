@@ -41,6 +41,7 @@ export const darkTheme = createTheme({
     secondary: {
       main: COLOR_PALETTE.gray,
       light: COLOR_PALETTE.lightGray,
+      dark: "#a0a0a0",
     },
     text: {
       primary: COLOR_PALETTE.gray,
@@ -64,6 +65,7 @@ export const lightTheme = createTheme({
     secondary: {
       main: COLOR_PALETTE.darkNavy,
       light: COLOR_PALETTE.lightBlue, // lightGray はページ背景と同色になるため lightBlue に変更
+      dark: "#a0a0a0",
     },
     text: {
       primary: COLOR_PALETTE.darkNavy,
