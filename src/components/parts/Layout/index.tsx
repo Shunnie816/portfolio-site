@@ -30,7 +30,10 @@ const LayoutInner = ({ children }: Props) => {
       <Global styles={globalStyles} />
       <Header />
       {children}
-      <Footer />
+      {/* Footer は常にダーク背景のため darkTheme で固定する */}
+      <ThemeProvider theme={darkTheme}>
+        <Footer />
+      </ThemeProvider>
     </ThemeProvider>
   );
 };

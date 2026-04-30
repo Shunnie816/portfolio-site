@@ -57,6 +57,8 @@ export const variables = css`
   [data-color-scheme="dark"] {
     --bg-color-default: var(--color-dark-navy);
     --bg-color-light: var(--color-white);
-    --text-default: var(--color-gray);
+
+    /* --text-default はオーバーライドしない。常に darkNavy のままにする。
+       ダーク背景セクション内のテキストは MUI sx で明示的に上書きする */
   }
 `;

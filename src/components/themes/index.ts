@@ -31,9 +31,10 @@ const typography = {
   body2: { fontSize: "0.875rem" },
 };
 
+// palette.mode を設定しない = MUI デフォルト(light)の component スタイルを維持
+// 元の defaultTheme と同じ挙動になり、Stepper/Divider 等が崩れない
 export const darkTheme = createTheme({
   palette: {
-    mode: "dark",
     primary: {
       main: COLOR_PALETTE.navy,
     },
@@ -43,7 +44,7 @@ export const darkTheme = createTheme({
     },
     text: {
       primary: COLOR_PALETTE.gray,
-      secondary: COLOR_PALETTE.darkNavy,
+      secondary: COLOR_PALETTE.lightNavy, // 暗背景で読めるトーン
       disabled: COLOR_PALETTE.fog,
     },
     background: {
@@ -62,11 +63,11 @@ export const lightTheme = createTheme({
     },
     secondary: {
       main: COLOR_PALETTE.darkNavy,
-      light: COLOR_PALETTE.lightGray,
+      light: COLOR_PALETTE.lightBlue, // lightGray はページ背景と同色になるため lightBlue に変更
     },
     text: {
       primary: COLOR_PALETTE.darkNavy,
-      secondary: COLOR_PALETTE.gray,
+      secondary: COLOR_PALETTE.fog, // 白背景で読めるトーン
       disabled: COLOR_PALETTE.fog,
     },
     background: {

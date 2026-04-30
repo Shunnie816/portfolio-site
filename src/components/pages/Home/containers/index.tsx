@@ -1,9 +1,16 @@
 "use client";
-import { Avatar, IconButton, Tooltip, Typography } from "@mui/material";
+import {
+  Avatar,
+  IconButton,
+  ThemeProvider,
+  Tooltip,
+  Typography,
+} from "@mui/material";
 import Link from "next/link";
 import React from "react";
 import { Icon } from "@/components/parts/Icon";
 import { TypingCarousel } from "@/components/parts/TypingCarousel";
+import { darkTheme } from "@/components/themes";
 import { Experiences } from "../presentations/Experiences";
 import { SkillLevel } from "../presentations/SkillLevel";
 import { Skills } from "../presentations/Skills";
@@ -30,22 +37,25 @@ export const Home = () => {
 
   return (
     <>
-      <AvatarWrapper id="home">
-        <Avatar
-          alt="ねこのこ"
-          src="/assets/img/ねこのこ.jpg"
-          sx={{ width: "140px", height: "140px" }}
-        />
-        <TypingCarousel texts={TYPING_TEXT} />
-        <ArrowDownWrapper onClick={scrollToNextSection}>
-          <IconButton aria-label="次のセクションにスクロール">
-            <Icon
-              icon="arrowDown"
-              sx={{ color: "text.primary", fontSize: "3rem" }}
-            />
-          </IconButton>
-        </ArrowDownWrapper>
-      </AvatarWrapper>
+      {/* ヒーロー section は常にダーク背景のため darkTheme で固定する */}
+      <ThemeProvider theme={darkTheme}>
+        <AvatarWrapper id="home">
+          <Avatar
+            alt="ねこのこ"
+            src="/assets/img/ねこのこ.jpg"
+            sx={{ width: "140px", height: "140px" }}
+          />
+          <TypingCarousel texts={TYPING_TEXT} />
+          <ArrowDownWrapper onClick={scrollToNextSection}>
+            <IconButton aria-label="次のセクションにスクロール">
+              <Icon
+                icon="arrowDown"
+                sx={{ color: "text.primary", fontSize: "3rem" }}
+              />
+            </IconButton>
+          </ArrowDownWrapper>
+        </AvatarWrapper>
+      </ThemeProvider>
       <IntroWrapper id="about">
         <div>
           <IntroDescription>
