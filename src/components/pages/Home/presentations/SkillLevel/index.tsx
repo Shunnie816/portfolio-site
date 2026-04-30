@@ -43,7 +43,7 @@ const spCircleBoxSx = {
   width: "126px",
   height: "126px",
   borderRadius: 99,
-  backgroundColor: "background.default",
+  backgroundColor: "var(--color-dark-navy)",
 };
 
 const pcCircleBoxSx = {
@@ -57,7 +57,7 @@ const pcCircleBoxSx = {
   width: "110px",
   height: "110px",
   borderRadius: 99,
-  backgroundColor: "background.default",
+  backgroundColor: "var(--color-dark-navy)",
 };
 
 const SkillLevelSp = () => {
