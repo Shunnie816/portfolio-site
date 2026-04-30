@@ -21,7 +21,12 @@ type CustomProps = Omit<TypographyProps, "variant" | "component" | "color">;
 
 const CustomTypography = ({ children, ...rest }: CustomProps) => {
   return (
-    <Typography variant="h6" component="span" color="secondary.main" {...rest}>
+    <Typography
+      variant="h6"
+      component="span"
+      sx={{ color: "var(--color-gray)" }}
+      {...rest}
+    >
       {children}
     </Typography>
   );
