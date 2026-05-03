@@ -7,11 +7,13 @@ import {
   ListItemButton,
   ListItemText,
   Toolbar,
+  Tooltip,
   Typography,
 } from "@mui/material";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { useScrollSpy } from "@/hooks/useScrollSpy";
+import { useThemeMode } from "@/hooks/useThemeMode";
 import { DrawerNav } from "../DrawerNav";
 import { Icon } from "../Icon";
 import { MenuButton, PcHeaderMenu, appBarSx, toolbarSx } from "./styles";
@@ -19,6 +21,7 @@ import { MenuButton, PcHeaderMenu, appBarSx, toolbarSx } from "./styles";
 export const Header = () => {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
+  const { mode, toggleTheme } = useThemeMode();
 
   const listItems = [
     { text: "Home", anchor: "home" },
@@ -87,6 +90,13 @@ export const Header = () => {
               </ListItemButton>
             </ListItem>
           ))}
+          <ListItem disablePadding sx={{ marginLeft: "8px" }}>
+            <Tooltip title={mode === "dark" ? "Light mode" : "Dark mode"}>
+              <IconButton onClick={toggleTheme} color="secondary" size="large">
+                <Icon icon={mode === "dark" ? "lightMode" : "darkMode"} />
+              </IconButton>
+            </Tooltip>
+          </ListItem>
         </PcHeaderMenu>
         <MenuButton>
           <IconButton

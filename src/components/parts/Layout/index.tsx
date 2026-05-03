@@ -4,7 +4,9 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 import React from "react";
 import { globalStyle } from "@/assets/styles/global";
 import { variables } from "@/assets/styles/variable";
-import { defaultTheme } from "@/components/themes";
+import { darkTheme, lightTheme } from "@/components/themes";
+import { ThemeModeProvider } from "@/contexts/ThemeContext";
+import { useThemeMode } from "@/hooks/useThemeMode";
 import { Footer } from "../Footer";
 import { Header } from "../Header";
 
@@ -18,14 +20,28 @@ const globalStyles = css`
   ${variables} /* scssカスタムプロパティ */
 `;
 
-export const Layout = ({ children }: Props) => {
+const LayoutInner = ({ children }: Props) => {
+  const { mode } = useThemeMode();
+  const theme = mode === "dark" ? darkTheme : lightTheme;
+
   return (
-    <ThemeProvider theme={defaultTheme}>
+    <ThemeProvider theme={theme}>
       <CssBaseline />
       <Global styles={globalStyles} />
       <Header />
       {children}
-      <Footer />
+      {/* Footer は常にダーク背景のため darkTheme で固定する */}
+      <ThemeProvider theme={darkTheme}>
+        <Footer />
+      </ThemeProvider>
     </ThemeProvider>
+  );
+};
+
+export const Layout = ({ children }: Props) => {
+  return (
+    <ThemeModeProvider>
+      <LayoutInner>{children}</LayoutInner>
+    </ThemeModeProvider>
   );
 };

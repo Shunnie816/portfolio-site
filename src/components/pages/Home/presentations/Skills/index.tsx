@@ -6,7 +6,11 @@ import { SkillWrapper, CardsWrapper } from "./styles";
 export const Skills = () => {
   return (
     <SkillWrapper id="skills">
-      <Typography variant="h3" textAlign="center">
+      <Typography
+        variant="h3"
+        textAlign="center"
+        sx={{ color: "text.primary" }}
+      >
         Skills
       </Typography>
       <CardsWrapper>

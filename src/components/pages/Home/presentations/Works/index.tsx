@@ -7,7 +7,11 @@ import { WorksWrapper, CardsWrapper } from "./styles";
 export const Works = () => {
   return (
     <WorksWrapper id="works">
-      <Typography variant="h3" textAlign="center">
+      <Typography
+        variant="h3"
+        textAlign="center"
+        sx={{ color: "text.primary" }}
+      >
         My Works
       </Typography>
       <CardsWrapper>

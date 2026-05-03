@@ -4,6 +4,7 @@ import { breakpoint } from "@/assets/styles/variable";
 
 const wrapper = css`
   background-color: var(--bg-color-dark);
+  border-top: 1px solid #64748b; /* text.disabled */
   padding: var(--spacing-12) var(--spacing-4) var(--spacing-10);
 `;
 

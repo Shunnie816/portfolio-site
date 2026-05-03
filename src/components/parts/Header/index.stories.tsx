@@ -1,5 +1,6 @@
 import { css } from "@emotion/react";
 import emotionStyled from "@emotion/styled";
+import { ThemeModeProvider } from "@/contexts/ThemeContext";
 import { Header } from ".";
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 
@@ -8,6 +9,13 @@ const meta: Meta<typeof Header> = {
   parameters: {
     layout: "fullscreen",
   },
+  decorators: [
+    (Story) => (
+      <ThemeModeProvider>
+        <Story />
+      </ThemeModeProvider>
+    ),
+  ],
 };
 
 export default meta;
