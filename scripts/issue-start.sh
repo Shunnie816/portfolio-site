@@ -66,12 +66,7 @@ if git show-ref --verify --quiet "refs/heads/${BRANCH_NAME}"; then
   echo "ブランチ '${BRANCH_NAME}' はすでに存在します。チェックアウトします。"
   git checkout "$BRANCH_NAME"
 else
-  BASE_BRANCH=$(git remote show origin 2>/dev/null | grep 'HEAD branch' | awk '{print $NF}')
-  BASE_BRANCH="${BASE_BRANCH:-develop}"
-  # develop がなければ main にフォールバック
-  if ! git show-ref --verify --quiet "refs/heads/${BASE_BRANCH}"; then
-    BASE_BRANCH="main"
-  fi
+  BASE_BRANCH="main"
   echo "ベースブランチ '${BASE_BRANCH}' からブランチを作成します。"
   git fetch origin "$BASE_BRANCH" --quiet
   git checkout -b "$BRANCH_NAME" "origin/${BASE_BRANCH}"
@@ -102,7 +97,7 @@ ${LABELS}
    \`\`\`
 3. **実装**: タスクをひとつずつ実装し、各タスク完了後にコミットする
 4. **PR 作成**: 全タスク完了後、以下の形式で PR を作成する
-   - ベースブランチ: \`develop\`
+   - ベースブランチ: \`main\`
    - 本文に \`Closes #${ISSUE_NUMBER}\` を含める
 CONTEXT
 
