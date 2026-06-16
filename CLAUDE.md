@@ -76,11 +76,10 @@ npm run build-storybook # Storybook ビルド
 
 ## Git ワークフロー
 
-- `main`: プロダクションブランチ
-- `develop`: 開発ブランチ（PR のベースブランチ）
+- `main`: プロダクションブランチ（PR のベースブランチ）
 - 作業ブランチ: `feature/<name>`, `fix/<name>`, `chore/<name>` などの形式
 
-**`develop` への直接コミット・push は禁止。** 作業は必ず Issue 起点でブランチを切ってから開始すること。
+**`main` への直接コミット・push は禁止。** 作業は必ず Issue 起点でブランチを切ってから開始すること。
 
 ## Issue 起点の開発ワークフロー
 
@@ -112,7 +111,7 @@ npm run build-storybook # Storybook ビルド
 | `/plan` | Issue を解析してタスクをチェックリスト化し、Issue にコメント投稿する | `/plan 43` or `/plan`（context から自動取得） |
 | `/implement` | タスクリストをもとに実装を進め、各タスク完了後にコミットする | `/implement` or `/implement hook` |
 | `/test` | テスト観点を列挙してテストコードを作成する | `/test src/hooks/useFoo.ts` |
-| `/pr` | lint・ビルド確認後、`develop` への PR をテンプレートに従って作成する | `/pr` |
+| `/pr` | lint・ビルド確認後、`main` への PR をテンプレートに従って作成する | `/pr` |
 
 ### 推奨ワークフロー
 

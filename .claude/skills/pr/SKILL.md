@@ -7,13 +7,13 @@ description: lint・ビルド確認後、develop への PR をテンプレート
 ## 手順
 
 1. `.claude/issue-context.md` から Issue 番号・ブランチ名を読み取る。
-2. `git log develop..HEAD --oneline` で変更コミットを確認する。
+2. `git log main..HEAD --oneline` で変更コミットを確認する。
 3. `npx tsc --noEmit` を実行して型エラーがないことを確認する。
 4. 以下のテンプレートで PR を作成する:
    - lint は husky の lint-staged がコミット時に実行済み
    - build の最終確認は CI に委ねる
    ```bash
-   gh pr create --base develop --head <ブランチ名> --title "<タイトル>" --body "..."
+   gh pr create --base main --head <ブランチ名> --title "<タイトル>" --body "..."
    ```
 
 ## PR テンプレート
@@ -45,6 +45,6 @@ Closes #<番号>
 
 ## 注意
 
-- PR のベースブランチは必ず `develop`（`main` への直接 PR は禁止）
+- PR のベースブランチは必ず `main`
 - タイトルは Conventional Commits に準じる形式（`feat:`, `fix:` など）
 - `Closes #番号` を本文に含めること
