@@ -14,7 +14,7 @@ description: Issue を解析して実装タスクをチェックリスト化し�
    ```bash
    gh issue comment <番号> --body "## タスク\n- [ ] ..."
    ```
-6. 現在のブランチが `develop` であれば `./scripts/issue-start.sh <番号>` でブランチを作成する。すでに作業ブランチにいる場合はスキップする。
+6. 現在のブランチが `main` であれば `./scripts/issue-start.sh <番号>` でブランチを作成する。すでに作業ブランチにいる場合はスキップする。
 
 ## サブエージェント戦略
 

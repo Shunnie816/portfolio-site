@@ -23,7 +23,7 @@
       "Bash(npm run lint)",
       "Bash(npm run build)",
       "Bash(git push --force*)",
-      "Bash(git push origin develop*)",
+      "Bash(git push origin main)",
       "Bash(git reset --hard*)"
     ]
   },
