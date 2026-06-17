@@ -23,6 +23,20 @@ export const Works = () => {
           zennUrl={URL.STUDY_TRACKER_ZENN}
           workUrl={URL.STUDY_TRACKER}
         />
+        <WorkCard
+          title="AI Radar"
+          description="A personal system that automatically collects and summarizes AI news daily from multiple RSS sources using Claude API to keep up with the latest AI trends."
+          skills={[
+            "TypeScript",
+            "Next.js",
+            "React",
+            "Firebase",
+            "Cloud Functions",
+            "Claude API",
+          ]}
+          repogitoryUrl={URL.AI_RADAR_REPO}
+          workUrl={URL.AI_RADAR}
+        />
       </CardsWrapper>
     </WorksWrapper>
   );
