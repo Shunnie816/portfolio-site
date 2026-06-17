@@ -25,7 +25,7 @@ type Props = {
   description: string;
   skills: string[];
   repogitoryUrl: string;
-  zennUrl: string;
+  zennUrl?: string;
   workUrl: string;
 };
 
@@ -61,12 +61,14 @@ export const WorkCard = ({
               <Typography sx={titleSx}>View Application</Typography>
             </LinkContainer>
           </Link>
-          <Link href={zennUrl} target="_blank" rel="noreferrer noopener">
-            <LinkContainer>
-              <Icon icon="zenn" color="primary" />
-              <Typography sx={titleSx}>Details</Typography>
-            </LinkContainer>
-          </Link>
+          {zennUrl && (
+            <Link href={zennUrl} target="_blank" rel="noreferrer noopener">
+              <LinkContainer>
+                <Icon icon="zenn" color="primary" />
+                <Typography sx={titleSx}>Details</Typography>
+              </LinkContainer>
+            </Link>
+          )}
         </LinksWrapper>
         <div>
           {skills.map((skill) => (
