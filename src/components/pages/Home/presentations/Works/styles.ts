@@ -18,9 +18,21 @@ const cardsWrapper = css`
     flex-flow: row wrap;
     justify-content: center;
 
-    .child {
-      margin: 0 var(--spacing-1);
+    /* 3+ cards: 3 columns */
+    > * {
       width: 31%;
+    }
+
+    /* exactly 1 card: centered */
+    > *:only-child {
+      max-width: 480px;
+      width: 100%;
+    }
+
+    /* exactly 2 cards: 2 columns */
+    > *:first-child:nth-last-child(2),
+    > *:first-child:nth-last-child(2) ~ * {
+      width: 48%;
     }
   }
 `;
