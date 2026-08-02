@@ -65,6 +65,8 @@ npm run lint:style      # Stylelint 実行
 npm run lint:style:fix  # Stylelint 自動修正
 npm run storybook       # Storybook 起動 (localhost:6006)
 npm run build-storybook # Storybook ビルド
+npm test                # Vitest 実行（1回だけ実行して終了）
+npm run test:watch      # Vitest ウォッチモード
 ```
 
 ## コーディング規約
@@ -127,11 +129,13 @@ lint・build の二重実行を防ぐため、チェックの実行主体を明�
 | Stylelint | ✅ 手動可 | — | — |
 | 型チェック（tsc） | ✅ コミット前に実行 | ✅ npx tsc --noEmit | ✅ tsc --noEmit |
 | ビルド | **禁止**（deny） | — | ✅ npm run build |
-| テスト | ロジック修正時に実行 | — | —（導入後に追加） |
+| テスト | ✅ ロジック修正時に実行 | — | ✅ npm test |
 
 **Claude Code はコミット前に `npx tsc --noEmit` のみ実行する。lint と build は実行しない。**
 
 ## 注意事項
 
-- テストランナーは現時点で未設定。Vitest + React Testing Library の導入を #69 で予定している
+- テストランナーは Vitest + React Testing Library。設定は `vitest.config.ts` / `vitest.setup.ts`
+- テストファイルは対象と同じディレクトリに `*.test.ts(x)` で配置する
+- `globals` は有効にしていないため、`describe` / `it` / `expect` は `vitest` から明示 import する
 - Storybook は Vite ベース (`@storybook/nextjs-vite`) で動作する
