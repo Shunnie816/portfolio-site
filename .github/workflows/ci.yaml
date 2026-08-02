@@ -2,10 +2,19 @@ name: CI
 
 run-name: ${{ github.actor }} has pushed
 
+# 作業ブランチへの push では走らせない。
+# 作業ブランチの検証は pull_request イベントが担当するため、
+# push を無指定にすると同一コミットに対して2本走ってしまう。
 on:
   push:
+    branches: [main]
   pull_request:
     branches: [main]
+
+# 同一ブランチで新しいコミットが積まれたら、実行中の古いランをキャンセルする
+concurrency:
+  group: "${{ github.workflow }}-${{ github.ref }}"
+  cancel-in-progress: true
 
 jobs:
   build-and-test:
@@ -20,7 +29,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "22"
+          cache: "npm"
 
       # 3. 依存関係をインストール
       - name: Install dependencies
