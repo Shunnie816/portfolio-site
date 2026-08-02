@@ -12,12 +12,14 @@
       "Bash(git add*)",
       "Bash(git commit*)",
       "Bash(git push*)",
+      "Bash(git fetch*)",
+      "Bash(./scripts/issue-start.sh*)",
       "Bash(gh issue create*)",
-      "Bash(gh issue view*)",
-      "Bash(gh issue comment*)",
       "Bash(gh issue edit*)",
-      "Bash(gh pr create*)",
-      "Bash(gh pr view*)"
+      "Bash(gh issue view*)",
+      "Bash(gh pr view*)",
+      "Bash(gh pr list*)",
+      "Bash(gh release list*)"
     ],
     "deny": [
       "Bash(npm run lint)",

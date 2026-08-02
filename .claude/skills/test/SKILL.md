@@ -1,15 +1,26 @@
 ---
+name: test
 description: テスト観点を列挙してテストコードを作成する。ビジネスロジックやカスタムフックのテストが必要なとき、実装後の品質確認をするときに使う。
+argument-hint: "[file-path or function-name]"
+allowed-tools: Bash(git diff:*), Bash(npm run lint:style)
 ---
 
 # /test — テスト担当
 
+## 直近の変更
+
+```!
+git diff main...HEAD --stat
+```
+
 ## 手順
 
-1. `$ARGUMENTS` に対象ファイル・関数名が渡された場合はそれを対象にする。なければ直近の実装変更（`git diff develop`）から対象を特定する。
+1. `$ARGUMENTS` に対象ファイル・関数名が渡された場合はそれを対象にする。
+   なければ上記の差分から対象を特定する。
 2. テスト観点を列挙してユーザーに提示する（実装前に合意を取る）。
 3. テストコードを作成する。
-4. `npm run lint` を実行してエラーがないことを確認する。
+4. `npm run lint:style` でスタイル系の lint を確認する。
+   ESLint とビルドは Claude Code では実行しない（husky の lint-staged と CI が担当する）。
 
 ## テスト観点の列挙フォーマット
 
@@ -31,12 +42,8 @@ description: テスト観点を列挙してテストコードを作成する。�
 - Magic Number を使わない
 - モックは最小限にする
 
-## サブエージェント戦略
-
-- 既存テストパターンの調査 → `Explore` サブエージェント（`haiku`）に委任する
-- テストコード生成はメインモデルで実行する
-
 ## 注意
 
-- テストランナーが未設定の場合は Jest + React Testing Library の導入を先に提案する
-- UIの見た目はテストしない（ビジネスロジックとカスタムフックを優先する）
+- **テストランナーは未導入**（#69 で Vitest + React Testing Library を導入予定）。
+  導入前にこのスキルが呼ばれた場合は、先に #69 の対応を提案する。
+- UI の見た目はテストしない（ビジネスロジックとカスタムフックを優先する）
