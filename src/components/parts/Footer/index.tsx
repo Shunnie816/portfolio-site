@@ -39,16 +39,6 @@ export const Footer = () => {
       id: "zenn",
       url: URL.ZENN,
     },
-    {
-      component: (
-        <ItemWrapper>
-          <Icon icon="x" />
-          @nekonoko2323
-        </ItemWrapper>
-      ),
-      id: "x",
-      url: URL.X,
-    },
   ];
 
   return (

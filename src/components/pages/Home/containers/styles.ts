@@ -1,6 +1,5 @@
 import { css } from "@emotion/react";
 import emotionStyled from "@emotion/styled";
-import { breakpoint } from "@/assets/styles/variable";
 import { commonWrapperStyle } from "./commonStyle";
 
 const avatarWrapper = css`
@@ -51,16 +50,17 @@ const introWrapper = css`
   ${commonWrapperStyle}
   background-color: var(--bg-color-light);
 
-  /* stylelint-disable-next-line media-query-no-invalid */
-  @media (min-width: ${breakpoint}) {
-    flex-direction: row;
-  }
+  /* SkillLevel が担っていた下部の余白を wrapper 側で持つ */
+  padding-bottom: var(--spacing-14);
 `;
 
 const introDescription = css`
   display: flex;
   flex-direction: column;
   gap: var(--spacing-2);
+
+  /* 右カラム（SkillLevel）がなくなり全幅になったため、可読性のため行長を制限する */
+  max-width: 800px;
 `;
 
 const iconsWrapper = css`
