@@ -115,13 +115,13 @@ commitlint（`commitlint.config.mjs`）が commit-msg hook で検証する。違
 
 ### ブランチ命名規則
 
-| ラベル             | プレフィックス |
-| ------------------ | -------------- |
-| bug / fix          | `fix/`         |
-| chore / setup / ci | `chore/`       |
-| docs               | `docs/`        |
-| refactor           | `refactor/`    |
-| その他             | `feature/`     |
+| ラベル               | プレフィックス |
+| -------------------- | -------------- |
+| bug / fix            | `fix/`         |
+| chore / setup / ci   | `chore/`       |
+| docs / documentation | `docs/`        |
+| refactor             | `refactor/`    |
+| その他               | `feature/`     |
 
 形式: `{prefix}/issue-{番号}-{タイトルのslug}`
 

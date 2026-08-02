@@ -43,7 +43,7 @@ if echo "$LABELS" | grep -qi "bug\|fix"; then
   PREFIX="fix"
 elif echo "$LABELS" | grep -qi "chore\|setup\|ci"; then
   PREFIX="chore"
-elif echo "$LABELS" | grep -qi "docs"; then
+elif echo "$LABELS" | grep -qi "docs\|documentation"; then
   PREFIX="docs"
 elif echo "$LABELS" | grep -qi "refactor"; then
   PREFIX="refactor"
