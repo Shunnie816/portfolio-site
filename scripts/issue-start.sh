@@ -72,38 +72,10 @@ else
   git checkout -b "$BRANCH_NAME" "origin/${BASE_BRANCH}"
 fi
 
-# --- Claude Code 向けコンテキストファイルを生成 ---
-CONTEXT_FILE=".claude/issue-context.md"
-cat > "$CONTEXT_FILE" <<CONTEXT
-# Issue #${ISSUE_NUMBER}: ${TITLE}
-
-## 対応ブランチ
-\`${BRANCH_NAME}\`
-
-## Issue 本文
-${BODY}
-
-## ラベル
-${LABELS}
-
-## Claude Code への作業指示
-
-以下のワークフローで作業してください:
-
-1. **タスク分解**: Issue の内容を具体的な実装タスクに分解し、ユーザーと確認する
-2. **Issue 更新**: 合意したタスクをチェックリスト形式で Issue #${ISSUE_NUMBER} にコメントする
-   \`\`\`bash
-   gh issue comment ${ISSUE_NUMBER} --body "## タスク\n- [ ] ..."
-   \`\`\`
-3. **実装**: タスクをひとつずつ実装し、各タスク完了後にコミットする
-4. **PR 作成**: 全タスク完了後、以下の形式で PR を作成する
-   - ベースブランチ: \`main\`
-   - 本文に \`Closes #${ISSUE_NUMBER}\` を含める
-CONTEXT
-
 echo ""
 echo "=== 準備完了 ==="
-echo "コンテキストファイル: $CONTEXT_FILE"
+echo "Issue 本文とタスクは SessionStart hook (scripts/session-context.mjs) が"
+echo "ブランチ名から解決して Claude Code に渡します。"
 echo ""
 echo "--- Issue 本文 ---"
 echo "$BODY"

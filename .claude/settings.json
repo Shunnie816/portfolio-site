@@ -30,15 +30,14 @@
     ]
   },
   "hooks": {
-    "PostToolUse": [
+    "SessionStart": [
       {
-        "matcher": ".*",
+        "matcher": "startup|resume|clear",
         "hooks": [
           {
             "type": "command",
-            "command": "mkdir -p \"$CLAUDE_PROJECT_DIR/.claude/logs\" && jq -r '\"\\(now | todate) \\(.tool_name)\"' >> \"$CLAUDE_PROJECT_DIR/.claude/logs/tool-usage.log\"",
-            "timeout": 5,
-            "async": true
+            "command": "node \"$CLAUDE_PROJECT_DIR/scripts/session-context.mjs\"",
+            "timeout": 15
           }
         ]
       }
