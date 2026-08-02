@@ -108,39 +108,14 @@ npm run build-storybook # Storybook ビルド
 
 | コマンド | 役割 | 使い方 |
 | --- | --- | --- |
-| `/plan` | Issue を解析してタスクをチェックリスト化し、Issue にコメント投稿する | `/plan 43` or `/plan`（context から自動取得） |
+| `/plan` | Issue を解析してタスクをチェックリスト化し、Issue にコメント投稿する | `/plan 43` or `/plan`（ブランチ名から自動解決） |
 | `/implement` | タスクリストをもとに実装を進め、各タスク完了後にコミットする | `/implement` or `/implement hook` |
 | `/test` | テスト観点を列挙してテストコードを作成する | `/test src/hooks/useFoo.ts` |
-| `/pr` | lint・ビルド確認後、`main` への PR をテンプレートに従って作成する | `/pr` |
+| `/pr` | 型チェック後、`main` への PR をテンプレートに従って作成する | `/pr` |
+| `/release-note` | リリースノートを作成して GitHub Release を公開する | `/release-note` |
 
-### 推奨ワークフロー
-
-```
-./scripts/issue-start.sh <番号>  →  /plan  →  /implement  →  /test  →  /pr
-```
-
-## サブエージェント戦略
-
-`Agent` ツールでサブタスクを委任するとき、以下の基準でモデルを選ぶ。
-
-| タスク種別 | モデル | 具体例 |
-| --- | --- | --- |
-| ファイル探索・コード調査 | `haiku` | Explore agent、glob、grep |
-| 通常の実装・テスト・PR 作成 | `sonnet` | 機能実装、テストコード生成 |
-| 複雑な設計・アーキテクチャ判断 | `opus` | 設計方針の検討、大規模リファクタ |
-
-各スキルにも同様のガイドが記載されており、スキル呼び出し時はスキル側の指示が優先される。
-
-## トークン節約ルール
-
-### 高コスト操作を避ける
-
-| 操作 | ガイドライン |
-| --- | --- |
-| `Read`（大きなファイル） | `offset` と `limit` で必要な行範囲に絞る |
-| コードベース全体の探索 | `Grep`・`Glob` で絞り込んでから `Read` する |
-| 広範な調査タスク | `Explore` サブエージェントに委任する（メインコンテキストを汚さない） |
-| 長い会話の継続 | `/compact` でコンテキストを圧縮する |
+各スキルは Issue・コミット履歴を `` ```! `` のインライン展開で先読みする。Issue 番号は
+引数がなければブランチ名（`{prefix}/issue-{番号}-{slug}`）から解決される。
 
 ## チェック実行の役割分担
 
@@ -158,5 +133,5 @@ lint・build の二重実行を防ぐため、チェックの実行主体を明�
 
 ## 注意事項
 
-- テストランナーは現時点で未設定。テストを追加する場合は Jest + React Testing Library の導入を検討すること
+- テストランナーは現時点で未設定。Vitest + React Testing Library の導入を #69 で予定している
 - Storybook は Vite ベース (`@storybook/nextjs-vite`) で動作する
