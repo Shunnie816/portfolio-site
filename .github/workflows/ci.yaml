@@ -44,6 +44,10 @@ jobs:
       - name: Type check
         run: npx tsc --noEmit
 
-      # 6. ビルド確認
+      # 6. テスト
+      - name: Run tests
+        run: npm test
+
+      # 7. ビルド確認
       - name: Build
         run: npm run build
