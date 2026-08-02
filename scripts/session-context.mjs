@@ -77,5 +77,5 @@ process.stdout.write(
       hookEventName: "SessionStart",
       additionalContext: buildContext(issue),
     },
-  }),
+  })
 );
