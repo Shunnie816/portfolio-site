@@ -74,7 +74,29 @@ npm run test:watch      # Vitest ウォッチモード
 - **import の順序**: ESLint `import/order` ルールに従う（builtin → external → internal → parent → sibling）
 - **スタイル定義**: コンポーネントと同ディレクトリの `styles.ts` に Emotion `styled` で定義する
 - **型安全**: `any` を使用しない。型が不明な場合は `unknown` を使い、適切に narrowing する
-- **コミット**: Conventional Commits 形式 (`feat:`, `fix:`, `refactor:`, `test:`, `chore:`)
+- **コミット**: Conventional Commits 形式。詳細は下記「コミットメッセージ規約」を参照
+
+## コミットメッセージ規約
+
+commitlint（`commitlint.config.mjs`）が commit-msg hook で検証する。違反するとコミットできない。
+
+### type
+
+`feat` / `fix` / `refactor` / `test` / `chore` / `docs` / `style` / `ci` の8種のみ許可（`type-enum`）。
+
+### 件名を英大文字で始めない
+
+`@commitlint/config-conventional` の `subject-case` が sentence-case / start-case / pascal-case / upper-case を禁止しているため、
+**日本語の件名でも先頭が英大文字だと弾かれる**。
+
+```
+✖ chore: CI にテストステップを追加する
+✖ chore: Vitest + React Testing Library を導入する
+✅ chore: ワークフローにテストステップを追加する
+✅ chore: テストランナーとして Vitest を導入する
+```
+
+先頭に置きたい英単語がある場合は、語順を変えて日本語から書き始める。
 
 ## Git ワークフロー
 
