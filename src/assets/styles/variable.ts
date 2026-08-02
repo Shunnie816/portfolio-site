@@ -44,8 +44,6 @@ export const variables = css`
 
     /* text color */
     --text-default: var(--color-dark-navy);
-    --text-normal: rgb(0 0 0 / 87%);
-    --text-dark: var(--color-color-gray);
 
     /* background-color */
     --bg-color-default: var(--color-gray);
