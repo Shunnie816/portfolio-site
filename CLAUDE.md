@@ -11,10 +11,13 @@
 - **フレームワーク**: Next.js 16 (App Router)
 - **言語**: TypeScript 5
 - **UI ライブラリ**: MUI (Material UI) v7 + Emotion
-- **スタイリング**: Emotion styled components + Sass + Tailwind CSS
+- **スタイリング**: Emotion styled components + CSS カスタムプロパティ
 - **コンポーネント開発**: Storybook 10
 - **Lint / Format**: ESLint 9 (Flat Config) + Prettier + Stylelint
-- **ホスティング**: Firebase Hosting
+- **ホスティング**: Firebase App Hosting（SSR / ISR 対応）
+
+Tailwind CSS と Sass は過去に導入されていたが、実際には一度も使われていなかったため削除した（#80）。
+スタイリングは Emotion に一本化されている。
 
 ## ディレクトリ構成
 
