@@ -1,21 +1,11 @@
 import { createTheme } from "@mui/material";
 import { Mulish } from "next/font/google";
+import { COLOR as COLOR_PALETTE } from "@/assets/styles/colors";
 
 const mulish = Mulish({
   subsets: ["latin"],
   display: "swap",
 });
-
-// ここを変更したらvariable.tsも変更する
-const COLOR_PALETTE = {
-  darkNavy: "#201e43",
-  navy: "#134b70",
-  lightNavy: "#508c9b",
-  gray: "#eeeeee",
-  lightGray: "#fafafa",
-  lightBlue: "#eef7ff",
-  fog: "#64748b",
-};
 
 const typography = {
   fontFamily: mulish.style.fontFamily,
@@ -41,7 +31,7 @@ export const darkTheme = createTheme({
     secondary: {
       main: COLOR_PALETTE.gray,
       light: COLOR_PALETTE.lightGray,
-      dark: "#a0a0a0",
+      dark: COLOR_PALETTE.mediumGray,
     },
     text: {
       primary: COLOR_PALETTE.gray,
@@ -65,7 +55,7 @@ export const lightTheme = createTheme({
     secondary: {
       main: COLOR_PALETTE.darkNavy,
       light: COLOR_PALETTE.lightBlue, // lightGray はページ背景と同色になるため lightBlue に変更
-      dark: "#a0a0a0",
+      dark: COLOR_PALETTE.mediumGray,
     },
     text: {
       primary: COLOR_PALETTE.darkNavy,
@@ -74,7 +64,7 @@ export const lightTheme = createTheme({
     },
     background: {
       default: COLOR_PALETTE.lightGray,
-      paper: "#ffffff",
+      paper: COLOR_PALETTE.white,
     },
   },
   typography,
