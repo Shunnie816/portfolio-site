@@ -1,4 +1,5 @@
 import { css } from "@emotion/react";
+import { COLOR } from "./colors";
 
 /* breakpoint */
 export const breakpoint = "768px";
@@ -21,24 +22,18 @@ export const variables = css`
     --spacing-18: 72px;
     --spacing-24: 96px;
 
-    /* color */
-    --color-dark-navy: #201e43;
-    --color-gray: #eee;
-    --color-white: #fff;
-
     /* text color */
-    --text-default: var(--color-dark-navy);
+    --text-default: ${COLOR.darkNavy};
 
     /* background-color */
-    --bg-color-default: var(--color-gray);
-    --bg-color-dark: var(--color-dark-navy);
-    --bg-color-light: var(--color-white);
+    --bg-color-default: ${COLOR.gray};
+    --bg-color-dark: ${COLOR.darkNavy};
+    --bg-color-light: ${COLOR.white};
   }
 
   /* dark mode overrides */
   [data-color-scheme="dark"] {
-    --bg-color-default: var(--color-dark-navy);
-    --bg-color-light: var(--color-white);
+    --bg-color-default: ${COLOR.darkNavy};
 
     /* --text-default はオーバーライドしない。常に darkNavy のままにする。
        ダーク背景セクション内のテキストは MUI sx で明示的に上書きする */

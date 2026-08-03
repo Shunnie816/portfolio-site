@@ -1,10 +1,11 @@
 import { css } from "@emotion/react";
 import emotionStyled from "@emotion/styled";
+import { COLOR } from "@/assets/styles/colors";
 import { breakpoint } from "@/assets/styles/variable";
 
 const wrapper = css`
   background-color: var(--bg-color-dark);
-  border-top: 1px solid #64748b; /* text.disabled */
+  border-top: 1px solid ${COLOR.fog}; /* text.disabled と同色 */
   padding: var(--spacing-12) var(--spacing-4) var(--spacing-10);
 `;
 

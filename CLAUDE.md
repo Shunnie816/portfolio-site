@@ -76,8 +76,46 @@ npm run test:watch      # Vitest ウォッチモード
 
 - **import の順序**: ESLint `import/order` ルールに従う（builtin → external → internal → parent → sibling）
 - **スタイル定義**: コンポーネントと同ディレクトリの `styles.ts` に Emotion `styled` で定義する
+- **デザイントークン**: 下記「デザイントークンの一次情報」を参照する
 - **型安全**: `any` を使用しない。型が不明な場合は `unknown` を使い、適切に narrowing する
 - **コミット**: Conventional Commits 形式。詳細は下記「コミットメッセージ規約」を参照
+
+## デザイントークンの一次情報
+
+トークンの種類ごとに定義元を1つに固定している。**同じ値を2箇所に書かない。**
+
+| トークン | 一次情報 | 参照方法 |
+| --- | --- | --- |
+| 色 | `src/assets/styles/colors.ts` の `COLOR` | MUI テーマ経由（`sx={{ color: "text.primary" }}`）または CSS 変数経由（`var(--bg-color-dark)`） |
+| スペーシング | `src/assets/styles/variable.ts` | `var(--spacing-4)` |
+| ブレークポイント / ヘッダー高 | `src/assets/styles/variable.ts` | `${breakpoint}` / `${headerHeight}` を import して補間 |
+| フォントサイズ | `src/components/themes/index.ts` の `typography` | MUI の `variant`（`<Typography variant="h4">`） |
+
+### 色の流れ
+
+```
+colors.ts (COLOR)
+├── components/themes/index.ts … MUI パレット（sx / variant から参照）
+└── assets/styles/variable.ts  … CSS 変数（Emotion styled から参照）
+```
+
+`colors.ts` が唯一の hex 定義元。MUI テーマも CSS 変数もここを import して組み立てるため、
+**色を変えるときは `colors.ts` だけを編集すれば両系統に反映される**。
+
+以前は `themes/index.ts` と `variable.ts` の両方に hex を書き、
+「ここを変更したら variable.ts も変更する」というコメントで同期を担保していたが、実際に値が乖離していた（#80）。
+
+### ライト / ダークの切り替え
+
+`ThemeContext` が `<html>` の `data-color-scheme` 属性を切り替える。
+CSS 変数はこの属性セレクタで上書きし、MUI 側は `Layout` が `darkTheme` / `lightTheme` を出し分ける。
+
+- **常にダーク背景のセクション**（Hero / Footer）は `<ThemeProvider theme={darkTheme}>` で囲む
+- `--text-default` はモードによらず darkNavy 固定。ダーク背景内のテキストは `sx` で明示的に上書きする
+
+MUI の `cssVariables` + `colorSchemes` へ移行すればこの二系統を1つにできるが、
+`colorSchemes.dark` は `palette.mode: "dark"` を強制し、`divider` が `rgba(0,0,0,.12)` → `rgba(255,255,255,.12)` に変わる。
+常に白背景の Experiences で Stepper の区切り線が見えなくなるため見送っている（#80 に詳細）。
 
 ## コミットメッセージ規約
 
