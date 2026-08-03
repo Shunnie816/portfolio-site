@@ -12,7 +12,6 @@ import { Icon } from "@/components/parts/Icon";
 import { TypingCarousel } from "@/components/parts/TypingCarousel";
 import { darkTheme } from "@/components/themes";
 import { Experiences } from "../presentations/Experiences";
-import { Skills } from "../presentations/Skills";
 import { Works } from "../presentations/Works";
 import { TYPING_TEXT, URL } from "./constants";
 import {
@@ -93,7 +92,6 @@ export const Home = () => {
           </Tooltip>
         </IconsWrapper>
       </IntroWrapper>
-      <Skills />
       <Experiences />
       <Works />
     </>
