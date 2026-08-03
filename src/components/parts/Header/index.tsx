@@ -28,6 +28,7 @@ export const Header = () => {
     { text: "About", anchor: "about" },
     { text: "Experiences", anchor: "experiences" },
     { text: "Works", anchor: "works" },
+    { text: "Writing", anchor: "writing" },
   ];
 
   // スクロール監視のためのセクションIDリスト

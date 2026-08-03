@@ -16,6 +16,7 @@ export const Footer = () => {
     { text: "About", anchor: "about" },
     { text: "Experiences", anchor: "experiences" },
     { text: "Works", anchor: "works" },
+    { text: "Writing", anchor: "writing" },
   ];
   const secondListItems = [
     {
