@@ -11,8 +11,10 @@ import React from "react";
 import { Icon } from "@/components/parts/Icon";
 import { TypingCarousel } from "@/components/parts/TypingCarousel";
 import { darkTheme } from "@/components/themes";
+import { type ZennArticle } from "@/lib/zenn";
 import { Experiences } from "../presentations/Experiences";
 import { Works } from "../presentations/Works";
+import { Writing } from "../presentations/Writing";
 import { TYPING_TEXT, URL } from "./constants";
 import {
   AvatarWrapper,
@@ -22,7 +24,11 @@ import {
   ArrowDownWrapper,
 } from "./styles";
 
-export const Home = () => {
+type Props = {
+  articles: ZennArticle[];
+};
+
+export const Home = ({ articles }: Props) => {
   const scrollToNextSection = () => {
     const nextSection = document.getElementById("about");
     if (nextSection) {
@@ -94,6 +100,7 @@ export const Home = () => {
       </IntroWrapper>
       <Experiences />
       <Works />
+      <Writing articles={articles} />
     </>
   );
 };
