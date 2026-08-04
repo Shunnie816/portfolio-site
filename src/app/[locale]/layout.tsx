@@ -55,7 +55,9 @@ export default async function LocaleLayout({ children, params }: Props) {
   setRequestLocale(locale);
 
   return (
-    <html lang={locale}>
+    // global.ts の scroll-behavior: smooth を Next.js のルート遷移に伝える
+    // （言語切り替えで遷移が発生するため、指定がないと警告になる）
+    <html lang={locale} data-scroll-behavior="smooth">
       <body>
         <AppRouterCacheProvider>
           {/* Layout 以下は Client Component のため、翻訳をここから配る */}

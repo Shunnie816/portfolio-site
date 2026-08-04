@@ -10,6 +10,7 @@ import {
 import { useRouter } from "next/navigation";
 import React from "react";
 import { NAV_ITEMS } from "@/components/pages/Home/containers/constants";
+import { useLocaleSwitch } from "@/hooks/useLocaleSwitch";
 import { useThemeMode } from "@/hooks/useThemeMode";
 import { Icon } from "../Icon";
 import { ListWrapper } from "./styles";
@@ -23,6 +24,7 @@ type Props = {
 export const DrawerNav = ({ isOpen, onClose, onOpen }: Props) => {
   const router = useRouter();
   const { mode, toggleTheme } = useThemeMode();
+  const { nextLocaleLabel, switchLocale } = useLocaleSwitch();
 
   const listItems = NAV_ITEMS;
 
@@ -53,16 +55,13 @@ export const DrawerNav = ({ isOpen, onClose, onOpen }: Props) => {
         <Divider variant="middle" />
         <List>
           <ListItem disablePadding>
-            <ListItemButton
-              onClick={() => {
-                alert("Language settings is under developing");
-              }}
-            >
+            {/* テーマ切り替えと同様、切り替え先を表示する */}
+            <ListItemButton onClick={switchLocale}>
               <ListItemText
                 primary={
                   <ListWrapper>
                     <Icon icon="language" />
-                    Japanese
+                    {nextLocaleLabel}
                   </ListWrapper>
                 }
                 sx={{ color: "primary.dark", textAlign: "center" }}

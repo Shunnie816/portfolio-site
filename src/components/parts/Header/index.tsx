@@ -16,8 +16,10 @@ import {
   NAV_ITEMS,
   SECTION_IDS,
 } from "@/components/pages/Home/containers/constants";
+import { useLocaleSwitch } from "@/hooks/useLocaleSwitch";
 import { useScrollSpy } from "@/hooks/useScrollSpy";
 import { useThemeMode } from "@/hooks/useThemeMode";
+import { Link } from "@/i18n/navigation";
 import { DrawerNav } from "../DrawerNav";
 import { Icon } from "../Icon";
 import { MenuButton, PcHeaderMenu, appBarSx, toolbarSx } from "./styles";
@@ -26,6 +28,7 @@ export const Header = () => {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const { mode, toggleTheme } = useThemeMode();
+  const { nextLocaleLabel, switchLocale } = useLocaleSwitch();
 
   const listItems = NAV_ITEMS;
   const activeSection = useScrollSpy({ sectionIds: SECTION_IDS });
@@ -34,7 +37,8 @@ export const Header = () => {
     <AppBar sx={appBarSx}>
       <Toolbar disableGutters sx={toolbarSx}>
         <Box display="flex" alignItems="center">
-          <IconButton onClick={() => router.push("/")}>
+          {/* ロゴから / に戻ると言語判定が再度走るため、locale を保つ Link を使う */}
+          <IconButton component={Link} href="/">
             <Avatar
               alt="ねこのこ"
               src="/assets/img/ねこのこ.jpg"
@@ -43,7 +47,7 @@ export const Header = () => {
           </IconButton>
           <Typography
             variant="h6"
-            component="a"
+            component={Link}
             href="/"
             sx={{ color: "secondary.main" }}
           >{`Nekonoko's Portfolio`}</Typography>
@@ -89,6 +93,14 @@ export const Header = () => {
             <Tooltip title={mode === "dark" ? "Light mode" : "Dark mode"}>
               <IconButton onClick={toggleTheme} color="secondary" size="large">
                 <Icon icon={mode === "dark" ? "lightMode" : "darkMode"} />
+              </IconButton>
+            </Tooltip>
+          </ListItem>
+          <ListItem disablePadding>
+            {/* テーマ切り替えと同様、切り替え先の言語を Tooltip に出す */}
+            <Tooltip title={nextLocaleLabel}>
+              <IconButton onClick={switchLocale} color="secondary" size="large">
+                <Icon icon="language" />
               </IconButton>
             </Tooltip>
           </ListItem>
