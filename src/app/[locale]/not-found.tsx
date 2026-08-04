@@ -1,6 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 const COLOR = {
   primary: "#BBDCE5",
@@ -12,6 +13,8 @@ const COLOR = {
 };
 
 export default function NotFound() {
+  const t = useTranslations("NotFound");
+
   return (
     <Box
       display={"flex"}
@@ -45,7 +48,7 @@ export default function NotFound() {
           color: COLOR.accent,
         }}
       >
-        ページが見つかりませんでした 🐾
+        {t("message")}
       </Typography>
       <Box mt={4} display="flex" justifyContent="center" gap={1}>
         <span
@@ -132,7 +135,7 @@ export default function NotFound() {
             rel="noopener noreferrer"
             style={{ textDecoration: "none", color: "inherit" }}
           >
-            My Portfolio
+            {t("portfolio")}
           </Link>
         </Button>
         <Button
@@ -158,7 +161,7 @@ export default function NotFound() {
             rel="noopener noreferrer"
             style={{ textDecoration: "none", color: "inherit" }}
           >
-            Study Tracker
+            {t("studyTracker")}
           </Link>
         </Button>
       </Box>

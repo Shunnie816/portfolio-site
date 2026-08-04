@@ -1,0 +1,90 @@
+{
+  "Metadata": {
+    "title": "Nekonoko's Portfolio",
+    "description": "This is Nekonoko, a frontend developer. This is my portfolio site which tells about myself and shows my skills."
+  },
+  "LanguageSwitcher": {
+    "label": "Language",
+    "en": "English",
+    "ja": "日本語"
+  },
+  "About": {
+    "role": "Frontend Developer",
+    "bio1": "I am a dedicated software engineer with 3 years of professional experience, and a total of 5 years including personal projects.",
+    "bio2": "I specialize in frontend development with TypeScript, React, and Next.js. My goal is to take on architect and tech lead roles — driving teams through technical excellence.",
+    "bio3": "I am actively expanding into infrastructure (AWS, Firebase) and AI-driven development to strengthen my design capabilities beyond the frontend."
+  },
+  "Works": {
+    "studyTracker": {
+      "description": "A web application for tracking your study progress. This is my first personal project with Next.js and Firebase."
+    },
+    "aiRadar": {
+      "description": "A personal system that automatically collects and summarizes AI news daily from multiple RSS sources using Claude API to keep up with the latest AI trends."
+    }
+  },
+  "Writing": {
+    "fallback": "Could not load the articles. They are published on <link>Zenn</link>."
+  },
+  "Experiences": {
+    "myPageRenewal": {
+      "title": "My Page renewal project",
+      "period": "July 2023 - January 2025",
+      "description": "Developing a SPA for outsourcing staffs. Join as a frontend developer in a scrum team.",
+      "responsibilities": [
+        "Implement and test UI parts and pages",
+        "Code review and improvement",
+        "Fix bugs and improve user experience",
+        "Frontend system design",
+        "Educating junior developers"
+      ]
+    },
+    "systemRiskResponse": {
+      "title": "System Risk Response",
+      "period": "October 2025 - April 2026",
+      "description": "Led a major version upgrade of Next.js (14→16) and migration from Recoil to Jotai. Conducted end-to-end vulnerability assessment using Snyk as a lead engineer.",
+      "responsibilities": [
+        "Technical investigation and PoC",
+        "Implementation and testing",
+        "Vulnerability assessment with Snyk",
+        "Analysis and remediation of identified vulnerabilities",
+        "Lead engineer role"
+      ]
+    },
+    "developmentImprovement": {
+      "title": "Development Improvement Project",
+      "period": "January 2026 - March 2026",
+      "description": "Addressed document quality issues in the MY Page renewal project. Designed an AI-powered automated document checking mechanism and delivered results under limited capacity while managing concurrent projects.",
+      "responsibilities": [
+        "Designed AI-based automated document checking",
+        "Created a Python tool to convert Excel to Markdown for AI readability"
+      ]
+    },
+    "aiStandardization": {
+      "title": "AI Product Development Standardization",
+      "period": "April 2026 - June 2026",
+      "description": "Leading standardization of AI-driven application development practices across the team. Providing Claude Code environment and sharing knowledge on AI-assisted development workflows.",
+      "responsibilities": [
+        "Creating application development standards assuming AI-driven development",
+        "Providing Claude Code usage environment for the team",
+        "Sharing knowledge and best practices on utilizing Claude Code"
+      ]
+    }
+  },
+  "WorkCard": {
+    "viewApplication": "View Application",
+    "details": "Details"
+  },
+  "ExperienceStep": {
+    "skillSets": "Skill sets:",
+    "responsibilities": "Responsibilities:"
+  },
+  "Footer": {
+    "navigation": "Navigation",
+    "contact": "Contact Me"
+  },
+  "NotFound": {
+    "message": "The page you are looking for was not found 🐾",
+    "portfolio": "My Portfolio",
+    "studyTracker": "Study Tracker"
+  }
+}

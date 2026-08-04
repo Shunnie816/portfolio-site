@@ -7,6 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import React from "react";
 import { Icon } from "@/components/parts/Icon";
 import { TypingCarousel } from "@/components/parts/TypingCarousel";
@@ -29,6 +30,8 @@ type Props = {
 };
 
 export const Home = ({ articles }: Props) => {
+  const t = useTranslations("About");
+
   const scrollToNextSection = () => {
     const nextSection = document.getElementById("about");
     if (nextSection) {
@@ -64,22 +67,11 @@ export const Home = ({ articles }: Props) => {
         <IntroDescription>
           <Typography variant="h4">Nekonoko</Typography>
           <Typography variant="h6" sx={{ color: "primary.light" }}>
-            Frontend Developer
+            {t("role")}
           </Typography>
-          <Typography>
-            I am a dedicated software engineer with 3 years of professional
-            experience, and a total of 5 years including personal projects.
-          </Typography>
-          <Typography>
-            I specialize in frontend development with TypeScript, React, and
-            Next.js. My goal is to take on architect and tech lead roles —
-            driving teams through technical excellence.
-          </Typography>
-          <Typography>
-            I am actively expanding into infrastructure (AWS, Firebase) and
-            AI-driven development to strengthen my design capabilities beyond
-            the frontend.
-          </Typography>
+          <Typography>{t("bio1")}</Typography>
+          <Typography>{t("bio2")}</Typography>
+          <Typography>{t("bio3")}</Typography>
         </IntroDescription>
         <IconsWrapper>
           <Tooltip title="GitHub">

@@ -1,6 +1,7 @@
 import { Divider, List, ListItemText, Typography } from "@mui/material";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 import React from "react";
 import {
   FOOTER_NAV_ITEMS,
@@ -14,6 +15,7 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const router = useRouter();
+  const t = useTranslations("Footer");
 
   const firstListItems = FOOTER_NAV_ITEMS;
   const secondListItems = [
@@ -42,7 +44,9 @@ export const Footer = () => {
   return (
     <Wrapper>
       <PcWrapper>
-        <Typography sx={{ color: "secondary.main" }}>Navigation</Typography>
+        <Typography sx={{ color: "secondary.main" }}>
+          {t("navigation")}
+        </Typography>
         <List>
           {firstListItems.map((item) => {
             return (
@@ -62,7 +66,7 @@ export const Footer = () => {
             );
           })}
         </List>
-        <Typography sx={{ color: "secondary.main" }}>Contact Me</Typography>
+        <Typography sx={{ color: "secondary.main" }}>{t("contact")}</Typography>
         <List>
           {secondListItems.map((item) => {
             return (

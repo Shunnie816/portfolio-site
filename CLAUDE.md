@@ -13,6 +13,7 @@
 - **UI ライブラリ**: MUI (Material UI) v7 + Emotion
 - **スタイリング**: Emotion styled components + CSS カスタムプロパティ
 - **コンポーネント開発**: Storybook 10
+- **多言語化**: next-intl（日本語 / 英語）
 - **Lint / Format**: ESLint 9 (Flat Config) + Prettier + Stylelint
 - **ホスティング**: Firebase App Hosting（SSR / ISR 対応）
 
@@ -22,11 +23,14 @@ Tailwind CSS と Sass は過去に導入されていたが、実際には一度�
 ## ディレクトリ構成
 
 ```
+messages/                       # 翻訳リソース（en.json / ja.json）
 src/
-├── app/                        # Next.js App Router のルートファイル
-│   ├── layout.tsx              # ルートレイアウト
-│   ├── page.tsx                # トップページ
-│   └── not-found.tsx           # 404 ページ
+├── app/
+│   └── [locale]/               # 言語ごとのルート（/en, /ja）
+│       ├── layout.tsx          # ルートレイアウト（html / Provider）
+│       ├── page.tsx            # トップページ
+│       ├── not-found.tsx       # 404 ページ
+│       └── [...rest]/          # 未定義パスを 404 に落とすキャッチオール
 ├── assets/
 │   └── styles/                 # グローバルスタイル・CSS 変数
 ├── components/
@@ -35,8 +39,9 @@ src/
 │   │       ├── containers/     # ロジック層（Container）
 │   │       └── presentations/  # 表示層（Presentation）
 │   ├── parts/                  # 共通 UI コンポーネント
-│   │   ├── Card/
+│   │   ├── ArticleCard/
 │   │   ├── DrawerNav/
+│   │   ├── ExperienceStep/
 │   │   ├── Footer/
 │   │   ├── Header/
 │   │   ├── Icon/
@@ -44,7 +49,11 @@ src/
 │   │   ├── TypingCarousel/
 │   │   └── WorkCard/
 │   └── themes/                 # MUI テーマ設定
-└── hooks/                      # カスタム React フック
+├── contexts/                   # React Context
+├── hooks/                      # カスタム React フック
+├── i18n/                       # next-intl の設定（routing / request / navigation）
+├── lib/                        # 外部データ取得（Zenn RSS など）
+└── proxy.ts                    # 言語判定とリダイレクト
 ```
 
 ## コンポーネント設計パターン
@@ -116,6 +125,56 @@ CSS 変数はこの属性セレクタで上書きし、MUI 側は `Layout` が `
 MUI の `cssVariables` + `colorSchemes` へ移行すればこの二系統を1つにできるが、
 `colorSchemes.dark` は `palette.mode: "dark"` を強制し、`divider` が `rgba(0,0,0,.12)` → `rgba(255,255,255,.12)` に変わる。
 常に白背景の Experiences で Stepper の区切り線が見えなくなるため見送っている（#80 に詳細）。
+
+## 多言語化（i18n）
+
+日本語と英語を**対等に提供する**（#65 の方針）。「日本語版を追加する」ではないため、
+文言を足すときは必ず両方の言語に入れる。
+
+### ルーティング
+
+| パス | 挙動 |
+| --- | --- |
+| `/` | `src/proxy.ts` が `Accept-Language` を見て `/en` か `/ja` へリダイレクトする |
+| `/en` `/ja` | 各言語のトップページ。`generateStaticParams` でビルド時に静的生成される |
+| `/en/foo` | `[...rest]` のキャッチオールが 404 に落とす |
+
+一度言語を切り替えると next-intl が `NEXT_LOCALE` Cookie を立て、次回以降はそちらを優先する。
+
+Next.js 16 で `middleware` は `proxy` に改称されたため、ファイル名は `src/proxy.ts`。
+
+### 文言の追加手順
+
+1. `messages/en.json` と `messages/ja.json` の**両方**にキーを足す
+2. コンポーネントで `useTranslations("<namespace>")` を呼んで参照する
+3. `npm test` で `messages` のキーが両言語で一致することを確認する
+
+キーは `src/global.d.ts` の `AppConfig` 拡張により `messages/en.json` から型が導出される。
+存在しないキーを渡すとコンパイルエラーになる。
+
+### 翻訳しないもの
+
+- **ナビゲーションとセクション見出し**（Home / About / Works / Writing / Experiences / My Works）
+  `useScrollSpy` のアンカー id と1対1で対応させ、切り替えでナビ幅が変動しないようにするため
+- **ヒーローのタイピングエフェクト**（`TYPING_TEXT`）
+  言葉遊びを含む短いフレーズで、日本語にすると雰囲気が崩れるため英語で固定する
+- **技術名・プロダクト名**（TypeScript / Study Tracker / AI Radar など）
+
+### 実装上の注意
+
+- **配列のメッセージは `t.raw` ではなく `useMessages()` を使う。**
+  `t.raw` は戻り値が `any` でキーも型検査されない。`useMessages()` なら
+  `messages.Experiences.<id>.responsibilities` が `string[]` として型付けされ、
+  Provider が持つオブジェクトをそのまま返すため参照も安定する（`useEffect` 依存に渡せる）
+- **`params.locale` は `string` で受けて `hasLocale` で絞る。**
+  CI は `next build` より先に `tsc --noEmit` を実行するため、
+  Next.js が生成する `LayoutProps` / `PageProps` に依存すると型チェックが落ちる
+- **ページ遷移は `@/i18n/navigation` の `Link` / `useRouter` を使う。**
+  `next/navigation` を直接使うと locale prefix が落ちる
+  （ページ内アンカーの `router.push("#works")` は `next/navigation` のままでよい）
+- **Storybook は `.storybook/preview.tsx` の decorator が `NextIntlClientProvider` を張る。**
+  アプリの layout を通らないため、これがないと `useTranslations` が例外になる。
+  ツールバーから言語を切り替えて両言語の見た目を確認できる
 
 ## コミットメッセージ規約
 
@@ -202,3 +261,5 @@ lint・build の二重実行を防ぐため、チェックの実行主体を明�
 - テストファイルは対象と同じディレクトリに `*.test.ts(x)` で配置する
 - `globals` は有効にしていないため、`describe` / `it` / `expect` は `vitest` から明示 import する
 - Storybook は Vite ベース (`@storybook/nextjs-vite`) で動作する
+- 翻訳リソース (`messages/`) は `src/` の外にあるが、`src/i18n/messages.test.ts` が
+  両言語のキー一致を検証しているため、追従漏れは `npm test` で落ちる

@@ -7,6 +7,7 @@ import {
   Chip,
 } from "@mui/material";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import React from "react";
 import { Icon } from "../Icon";
 import {
@@ -37,6 +38,8 @@ export const WorkCard = ({
   zennUrl,
   workUrl,
 }: Props) => {
+  const t = useTranslations("WorkCard");
+
   return (
     <MUICard sx={cardSx}>
       <CardHeader
@@ -58,14 +61,14 @@ export const WorkCard = ({
           <Link href={workUrl} target="_blank" rel="noreferrer noopener">
             <LinkContainer>
               <Icon icon="exitToApp" color="primary" />
-              <Typography sx={titleSx}>View Application</Typography>
+              <Typography sx={titleSx}>{t("viewApplication")}</Typography>
             </LinkContainer>
           </Link>
           {zennUrl && (
             <Link href={zennUrl} target="_blank" rel="noreferrer noopener">
               <LinkContainer>
                 <Icon icon="zenn" color="primary" />
-                <Typography sx={titleSx}>Details</Typography>
+                <Typography sx={titleSx}>{t("details")}</Typography>
               </LinkContainer>
             </Link>
           )}

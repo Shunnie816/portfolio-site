@@ -5,6 +5,7 @@ import {
   type StepProps,
   Typography,
 } from "@mui/material";
+import { useTranslations } from "next-intl";
 import React from "react";
 import { ProjectWrapper, TitleWrapper } from "./styles";
 
@@ -24,6 +25,8 @@ export const ExperienceStep = ({
   responsibilities,
   ...stepProps
 }: ExperienceStepProps & StepProps) => {
+  const t = useTranslations("ExperienceStep");
+
   return (
     <Step expanded {...stepProps}>
       <StepLabel>
@@ -42,7 +45,7 @@ export const ExperienceStep = ({
           <div className="details">
             <div>
               <Typography sx={{ fontWeight: "bold", color: "primary.main" }}>
-                Skill sets:
+                {t("skillSets")}
               </Typography>
               {skillSets.map((skill) => (
                 <Typography key={skill}>- {skill}</Typography>
@@ -50,7 +53,7 @@ export const ExperienceStep = ({
             </div>
             <div>
               <Typography sx={{ fontWeight: "bold", color: "primary.main" }}>
-                Responsibilities:
+                {t("responsibilities")}
               </Typography>
               {responsibilities.map((resp) => (
                 <Typography key={resp}>- {resp}</Typography>

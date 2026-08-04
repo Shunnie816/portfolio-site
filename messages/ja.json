@@ -1,0 +1,90 @@
+{
+  "Metadata": {
+    "title": "Nekonoko's Portfolio",
+    "description": "フロントエンドエンジニア ねこのこ のポートフォリオサイトです。制作物・技術記事・経歴を公開しています。"
+  },
+  "LanguageSwitcher": {
+    "label": "言語",
+    "en": "English",
+    "ja": "日本語"
+  },
+  "About": {
+    "role": "フロントエンドエンジニア",
+    "bio1": "実務3年、個人開発を含めると通算5年のソフトウェアエンジニアです。",
+    "bio2": "TypeScript・React・Next.js を中心にフロントエンド開発を専門としています。技術でチームを牽引するアーキテクトやテックリードの役割を担うことを目標にしています。",
+    "bio3": "フロントエンドにとどまらない設計力を身につけるため、インフラ（AWS・Firebase）や AI を活用した開発にも積極的に取り組んでいます。"
+  },
+  "Works": {
+    "studyTracker": {
+      "description": "学習の進捗を記録・可視化する Web アプリケーション。Next.js と Firebase で作った初めての個人開発プロジェクトです。"
+    },
+    "aiRadar": {
+      "description": "複数の RSS から AI 関連のニュースを毎日自動で収集し、Claude API で要約する個人用システム。最新の AI 動向を追い続けるために作りました。"
+    }
+  },
+  "Writing": {
+    "fallback": "記事を読み込めませんでした。<link>Zenn</link> で公開しています。"
+  },
+  "Experiences": {
+    "myPageRenewal": {
+      "title": "マイページ刷新プロジェクト",
+      "period": "2023年7月 - 2025年1月",
+      "description": "業務委託スタッフ向け SPA の開発。スクラムチームにフロントエンドエンジニアとして参画した。",
+      "responsibilities": [
+        "UI パーツ・ページの実装とテスト",
+        "コードレビューと改善",
+        "バグ修正と UX 改善",
+        "フロントエンドの設計",
+        "若手エンジニアの育成"
+      ]
+    },
+    "systemRiskResponse": {
+      "title": "システムリスク対応",
+      "period": "2025年10月 - 2026年4月",
+      "description": "Next.js のメジャーバージョンアップ（14→16）と Recoil から Jotai への移行をリード。リードエンジニアとして Snyk による脆弱性診断を一貫して担当した。",
+      "responsibilities": [
+        "技術調査と PoC",
+        "実装とテスト",
+        "Snyk を用いた脆弱性診断",
+        "検出された脆弱性の分析と対応",
+        "リードエンジニアとしての推進"
+      ]
+    },
+    "developmentImprovement": {
+      "title": "開発改善プロジェクト",
+      "period": "2026年1月 - 2026年3月",
+      "description": "マイページ刷新プロジェクトのドキュメント品質課題に対応。AI によるドキュメント自動チェックの仕組みを設計し、他案件と並行する限られた工数のなかで成果を出した。",
+      "responsibilities": [
+        "AI によるドキュメント自動チェックの設計",
+        "AI が読み取りやすいよう Excel を Markdown に変換する Python ツールの作成"
+      ]
+    },
+    "aiStandardization": {
+      "title": "AI プロダクト開発の標準化",
+      "period": "2026年4月 - 2026年6月",
+      "description": "AI を活用したアプリケーション開発の進め方をチーム横断で標準化。Claude Code の利用環境を整備し、AI 活用の知見を共有している。",
+      "responsibilities": [
+        "AI 駆動開発を前提としたアプリケーション開発標準の策定",
+        "チーム向け Claude Code 利用環境の提供",
+        "Claude Code 活用の知見・ベストプラクティスの共有"
+      ]
+    }
+  },
+  "WorkCard": {
+    "viewApplication": "アプリを見る",
+    "details": "解説記事"
+  },
+  "ExperienceStep": {
+    "skillSets": "使用技術:",
+    "responsibilities": "担当業務:"
+  },
+  "Footer": {
+    "navigation": "ナビゲーション",
+    "contact": "連絡先"
+  },
+  "NotFound": {
+    "message": "ページが見つかりませんでした 🐾",
+    "portfolio": "ポートフォリオ",
+    "studyTracker": "Study Tracker"
+  }
+}

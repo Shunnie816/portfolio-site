@@ -33,6 +33,10 @@ export const FOOTER_NAV_ITEMS = NAV_ITEMS.filter(
  */
 export const SECTION_IDS = NAV_ITEMS.map((item) => item.anchor);
 
+/**
+ * ヒーローのタイピングエフェクト。
+ * 言葉遊びを含む短いフレーズで、日本語にすると雰囲気が崩れるため英語で固定する。
+ */
 export const TYPING_TEXT = [
   "Hi, I am Nekonoko",
   "I am a Frontend Developer",

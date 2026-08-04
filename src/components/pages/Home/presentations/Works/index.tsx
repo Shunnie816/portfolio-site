@@ -1,10 +1,13 @@
 import { Typography } from "@mui/material";
+import { useTranslations } from "next-intl";
 import React from "react";
 import { WorkCard } from "@/components/parts/WorkCard";
 import { URL } from "../../containers/constants";
 import { WorksWrapper, CardsWrapper } from "./styles";
 
 export const Works = () => {
+  const t = useTranslations("Works");
+
   return (
     <WorksWrapper id="works">
       <Typography
@@ -17,7 +20,7 @@ export const Works = () => {
       <CardsWrapper>
         <WorkCard
           title="Study Tracker"
-          description="A web application for tracking your study progress. This is my first personal project with Next.js and Firebase."
+          description={t("studyTracker.description")}
           skills={["TypeScript", "Next.js", "React", "Firebase"]}
           repogitoryUrl={URL.STUDY_TRACKER_REPO}
           zennUrl={URL.STUDY_TRACKER_ZENN}
@@ -25,7 +28,7 @@ export const Works = () => {
         />
         <WorkCard
           title="AI Radar"
-          description="A personal system that automatically collects and summarizes AI news daily from multiple RSS sources using Claude API to keep up with the latest AI trends."
+          description={t("aiRadar.description")}
           skills={[
             "TypeScript",
             "Next.js",
