@@ -32,11 +32,3 @@ export const FOOTER_NAV_ITEMS = NAV_ITEMS.filter(
  * useScrollSpy の useEffect 依存に渡るため、レンダーごとに生成せず定数として持つ。
  */
 export const SECTION_IDS = NAV_ITEMS.map((item) => item.anchor);
-
-export const TYPING_TEXT = [
-  "Hi, I am Nekonoko",
-  "I am a Frontend Developer",
-  "I love fish",
-  "I copy from Stack Overflow",
-  "I sleep well",
-];

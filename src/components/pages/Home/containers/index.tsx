@@ -7,6 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 import Link from "next/link";
+import { useMessages, useTranslations } from "next-intl";
 import React from "react";
 import { Icon } from "@/components/parts/Icon";
 import { TypingCarousel } from "@/components/parts/TypingCarousel";
@@ -15,7 +16,7 @@ import { type ZennArticle } from "@/lib/zenn";
 import { Experiences } from "../presentations/Experiences";
 import { Works } from "../presentations/Works";
 import { Writing } from "../presentations/Writing";
-import { TYPING_TEXT, URL } from "./constants";
+import { URL } from "./constants";
 import {
   AvatarWrapper,
   IntroWrapper,
@@ -29,6 +30,15 @@ type Props = {
 };
 
 export const Home = ({ articles }: Props) => {
+  const t = useTranslations("About");
+
+  /**
+   * 配列のメッセージは `t.raw` だと戻り値が any になるため useMessages から取る。
+   * Provider が持つオブジェクトをそのまま参照するので、TypingCarousel の
+   * useEffect 依存に渡っても参照が変わらない。
+   */
+  const typingTexts = useMessages().Hero.typing;
+
   const scrollToNextSection = () => {
     const nextSection = document.getElementById("about");
     if (nextSection) {
@@ -49,7 +59,7 @@ export const Home = ({ articles }: Props) => {
             src="/assets/img/ねこのこ.jpg"
             sx={{ width: "140px", height: "140px" }}
           />
-          <TypingCarousel texts={TYPING_TEXT} />
+          <TypingCarousel texts={typingTexts} />
           <ArrowDownWrapper onClick={scrollToNextSection}>
             <IconButton aria-label="次のセクションにスクロール">
               <Icon
@@ -64,22 +74,11 @@ export const Home = ({ articles }: Props) => {
         <IntroDescription>
           <Typography variant="h4">Nekonoko</Typography>
           <Typography variant="h6" sx={{ color: "primary.light" }}>
-            Frontend Developer
+            {t("role")}
           </Typography>
-          <Typography>
-            I am a dedicated software engineer with 3 years of professional
-            experience, and a total of 5 years including personal projects.
-          </Typography>
-          <Typography>
-            I specialize in frontend development with TypeScript, React, and
-            Next.js. My goal is to take on architect and tech lead roles —
-            driving teams through technical excellence.
-          </Typography>
-          <Typography>
-            I am actively expanding into infrastructure (AWS, Firebase) and
-            AI-driven development to strengthen my design capabilities beyond
-            the frontend.
-          </Typography>
+          <Typography>{t("bio1")}</Typography>
+          <Typography>{t("bio2")}</Typography>
+          <Typography>{t("bio3")}</Typography>
         </IntroDescription>
         <IconsWrapper>
           <Tooltip title="GitHub">

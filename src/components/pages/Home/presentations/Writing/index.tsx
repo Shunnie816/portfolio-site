@@ -1,5 +1,6 @@
 import { Typography } from "@mui/material";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import React from "react";
 import { ArticleCard } from "@/components/parts/ArticleCard";
 import { type ZennArticle } from "@/lib/zenn";
@@ -11,6 +12,8 @@ type Props = {
 };
 
 export const Writing = ({ articles }: Props) => {
+  const t = useTranslations("Writing");
+
   return (
     <WritingWrapper id="writing">
       <Typography
@@ -31,11 +34,13 @@ export const Writing = ({ articles }: Props) => {
         // feed の取得に失敗してもセクションが空にならないよう Zenn への導線を残す
         <Fallback>
           <Typography sx={{ color: "text.primary" }}>
-            記事を読み込めませんでした。
-            <Link href={URL.ZENN} target="_blank" rel="noreferrer noopener">
-              Zenn
-            </Link>
-            で公開しています。
+            {t.rich("fallback", {
+              link: (chunks) => (
+                <Link href={URL.ZENN} target="_blank" rel="noreferrer noopener">
+                  {chunks}
+                </Link>
+              ),
+            })}
           </Typography>
         </Fallback>
       )}
