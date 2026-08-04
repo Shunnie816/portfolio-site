@@ -8,6 +8,18 @@
     "en": "English",
     "ja": "日本語"
   },
+  "Footer": {
+    "navigation": "Navigation",
+    "contact": "Contact Me"
+  },
+  "WorkCard": {
+    "viewApplication": "View Application",
+    "details": "Details"
+  },
+  "ExperienceStep": {
+    "skillSets": "Skill sets:",
+    "responsibilities": "Responsibilities:"
+  },
   "NotFound": {
     "message": "The page you are looking for was not found 🐾",
     "portfolio": "My Portfolio",

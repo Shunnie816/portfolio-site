@@ -8,6 +8,18 @@
     "en": "English",
     "ja": "日本語"
   },
+  "Footer": {
+    "navigation": "ナビゲーション",
+    "contact": "連絡先"
+  },
+  "WorkCard": {
+    "viewApplication": "アプリを見る",
+    "details": "解説記事"
+  },
+  "ExperienceStep": {
+    "skillSets": "使用技術:",
+    "responsibilities": "担当業務:"
+  },
   "NotFound": {
     "message": "ページが見つかりませんでした 🐾",
     "portfolio": "ポートフォリオ",
