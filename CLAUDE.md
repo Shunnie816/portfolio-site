@@ -156,14 +156,16 @@ Next.js 16 で `middleware` は `proxy` に改称されたため、ファイル�
 
 - **ナビゲーションとセクション見出し**（Home / About / Works / Writing / Experiences / My Works）
   `useScrollSpy` のアンカー id と1対1で対応させ、切り替えでナビ幅が変動しないようにするため
+- **ヒーローのタイピングエフェクト**（`TYPING_TEXT`）
+  言葉遊びを含む短いフレーズで、日本語にすると雰囲気が崩れるため英語で固定する
 - **技術名・プロダクト名**（TypeScript / Study Tracker / AI Radar など）
 
 ### 実装上の注意
 
 - **配列のメッセージは `t.raw` ではなく `useMessages()` を使う。**
   `t.raw` は戻り値が `any` でキーも型検査されない。`useMessages()` なら
-  `messages.Hero.typing` が `string[]` として型付けされ、Provider が持つ
-  オブジェクトをそのまま返すため参照も安定する（`useEffect` 依存に渡せる）
+  `messages.Experiences.<id>.responsibilities` が `string[]` として型付けされ、
+  Provider が持つオブジェクトをそのまま返すため参照も安定する（`useEffect` 依存に渡せる）
 - **`params.locale` は `string` で受けて `hasLocale` で絞る。**
   CI は `next build` より先に `tsc --noEmit` を実行するため、
   Next.js が生成する `LayoutProps` / `PageProps` に依存すると型チェックが落ちる

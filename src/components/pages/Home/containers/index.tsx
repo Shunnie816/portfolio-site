@@ -7,7 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 import Link from "next/link";
-import { useMessages, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import React from "react";
 import { Icon } from "@/components/parts/Icon";
 import { TypingCarousel } from "@/components/parts/TypingCarousel";
@@ -16,7 +16,7 @@ import { type ZennArticle } from "@/lib/zenn";
 import { Experiences } from "../presentations/Experiences";
 import { Works } from "../presentations/Works";
 import { Writing } from "../presentations/Writing";
-import { URL } from "./constants";
+import { TYPING_TEXT, URL } from "./constants";
 import {
   AvatarWrapper,
   IntroWrapper,
@@ -31,13 +31,6 @@ type Props = {
 
 export const Home = ({ articles }: Props) => {
   const t = useTranslations("About");
-
-  /**
-   * 配列のメッセージは `t.raw` だと戻り値が any になるため useMessages から取る。
-   * Provider が持つオブジェクトをそのまま参照するので、TypingCarousel の
-   * useEffect 依存に渡っても参照が変わらない。
-   */
-  const typingTexts = useMessages().Hero.typing;
 
   const scrollToNextSection = () => {
     const nextSection = document.getElementById("about");
@@ -59,7 +52,7 @@ export const Home = ({ articles }: Props) => {
             src="/assets/img/ねこのこ.jpg"
             sx={{ width: "140px", height: "140px" }}
           />
-          <TypingCarousel texts={typingTexts} />
+          <TypingCarousel texts={TYPING_TEXT} />
           <ArrowDownWrapper onClick={scrollToNextSection}>
             <IconButton aria-label="次のセクションにスクロール">
               <Icon
