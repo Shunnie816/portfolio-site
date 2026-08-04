@@ -2,7 +2,10 @@ import { Divider, List, ListItemText, Typography } from "@mui/material";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
-import { URL } from "@/components/pages/Home/containers/constants";
+import {
+  FOOTER_NAV_ITEMS,
+  URL,
+} from "@/components/pages/Home/containers/constants";
 import { Icon } from "../Icon";
 import { Wrapper, PcWrapper, ItemWrapper, CopyRight } from "./styles";
 
@@ -12,12 +15,7 @@ export const Footer = () => {
 
   const router = useRouter();
 
-  const firstListItems = [
-    { text: "About", anchor: "about" },
-    { text: "Experiences", anchor: "experiences" },
-    { text: "Works", anchor: "works" },
-    { text: "Writing", anchor: "writing" },
-  ];
+  const firstListItems = FOOTER_NAV_ITEMS;
   const secondListItems = [
     {
       component: (

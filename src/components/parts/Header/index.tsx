@@ -12,6 +12,10 @@ import {
 } from "@mui/material";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import {
+  NAV_ITEMS,
+  SECTION_IDS,
+} from "@/components/pages/Home/containers/constants";
 import { useScrollSpy } from "@/hooks/useScrollSpy";
 import { useThemeMode } from "@/hooks/useThemeMode";
 import { DrawerNav } from "../DrawerNav";
@@ -23,17 +27,8 @@ export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { mode, toggleTheme } = useThemeMode();
 
-  const listItems = [
-    { text: "Home", anchor: "home" },
-    { text: "About", anchor: "about" },
-    { text: "Experiences", anchor: "experiences" },
-    { text: "Works", anchor: "works" },
-    { text: "Writing", anchor: "writing" },
-  ];
-
-  // スクロール監視のためのセクションIDリスト
-  const sectionIds = listItems.map((item) => item.anchor);
-  const activeSection = useScrollSpy({ sectionIds });
+  const listItems = NAV_ITEMS;
+  const activeSection = useScrollSpy({ sectionIds: SECTION_IDS });
 
   return (
     <AppBar sx={appBarSx}>
