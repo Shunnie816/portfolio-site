@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import { useRouter } from "next/navigation";
 import React from "react";
+import { NAV_ITEMS } from "@/components/pages/Home/containers/constants";
 import { useThemeMode } from "@/hooks/useThemeMode";
 import { Icon } from "../Icon";
 import { ListWrapper } from "./styles";
@@ -23,13 +24,7 @@ export const DrawerNav = ({ isOpen, onClose, onOpen }: Props) => {
   const router = useRouter();
   const { mode, toggleTheme } = useThemeMode();
 
-  const listItems = [
-    { text: "Home", anchor: "home" },
-    { text: "About", anchor: "about" },
-    { text: "Experiences", anchor: "experiences" },
-    { text: "Works", anchor: "works" },
-    { text: "Writing", anchor: "writing" },
-  ];
+  const listItems = NAV_ITEMS;
 
   return (
     <SwipeableDrawer

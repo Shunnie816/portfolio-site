@@ -98,9 +98,9 @@ export const Home = ({ articles }: Props) => {
           </Tooltip>
         </IconsWrapper>
       </IntroWrapper>
-      <Experiences />
       <Works />
       <Writing articles={articles} />
+      <Experiences />
     </>
   );
 };
