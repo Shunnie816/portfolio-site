@@ -1,0 +1,16 @@
+{
+  "Metadata": {
+    "title": "Nekonoko's Portfolio",
+    "description": "フロントエンドエンジニア ねこのこ のポートフォリオサイトです。制作物・技術記事・経歴を公開しています。"
+  },
+  "LanguageSwitcher": {
+    "label": "言語",
+    "en": "English",
+    "ja": "日本語"
+  },
+  "NotFound": {
+    "message": "ページが見つかりませんでした 🐾",
+    "portfolio": "ポートフォリオ",
+    "studyTracker": "Study Tracker"
+  }
+}
