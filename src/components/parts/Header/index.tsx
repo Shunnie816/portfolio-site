@@ -41,7 +41,7 @@ export const Header = () => {
           <IconButton component={Link} href="/">
             <Avatar
               alt="ねこのこ"
-              src="/assets/img/ねこのこ.jpg"
+              src="/assets/img/nekonoko.jpg"
               sx={{ width: "42px", height: "42px" }}
             />
           </IconButton>
