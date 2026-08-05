@@ -39,7 +39,7 @@ export const SystemRiskResponse: Story = {
     title: "System Risk Response",
     period: "October 2025 - April 2026",
     description:
-      "Led a major version upgrade of Next.js (14→16) and migration from Recoil to Jotai. Conducted end-to-end vulnerability assessment using Snyk as a lead engineer.",
+      "Led a major version upgrade of Next.js (13→16) and migration from Recoil to Jotai. Conducted end-to-end vulnerability assessment using Snyk as a lead engineer.",
     skillSets: ["TypeScript", "Next.js", "React", "Docker", "AWS"],
     responsibilities: [
       "Technical investigation and PoC",

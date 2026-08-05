@@ -41,7 +41,7 @@
     "systemRiskResponse": {
       "title": "システムリスク対応",
       "period": "2025年10月 - 2026年4月",
-      "description": "Next.js のメジャーバージョンアップ（14→16）と Recoil から Jotai への移行をリード。リードエンジニアとして Snyk による脆弱性診断を一貫して担当した。",
+      "description": "Next.js のメジャーバージョンアップ（13→16）と Recoil から Jotai への移行をリード。リードエンジニアとして Snyk による脆弱性診断を一貫して担当した。",
       "responsibilities": [
         "技術調査と PoC",
         "実装とテスト",
