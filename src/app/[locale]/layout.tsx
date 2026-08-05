@@ -30,11 +30,12 @@ export async function generateMetadata({
   const locale = hasLocale(routing.locales, requested)
     ? requested
     : routing.defaultLocale;
-  const t = await getTranslations({ locale, namespace: "Metadata" });
+  const t = await getTranslations({ locale });
 
   return {
-    title: t("title"),
-    description: t("description"),
+    // タイトルはヘッダーのロゴと同じ名前を出すため Profile.name を参照する（#92）
+    title: t("Profile.name"),
+    description: t("Metadata.description"),
     // 検索エンジンに両言語が対等な版であることを伝える
     alternates: {
       canonical: `/${locale}`,
