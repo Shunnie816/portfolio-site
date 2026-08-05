@@ -47,12 +47,15 @@ export const Header = () => {
               sx={{ width: "42px", height: "42px" }}
             />
           </IconButton>
+          {/* ロゴは About セクションの見出しと同じ名前を出す（#92） */}
           <Typography
             variant="h6"
             component={Link}
             href="/"
             sx={{ color: "secondary.main" }}
-          >{`Nekonoko's Portfolio`}</Typography>
+          >
+            {name}
+          </Typography>
         </Box>
         <PcHeaderMenu>
           {listItems.map((item) => (
