@@ -10,7 +10,7 @@ import { ExperienceWrapper } from "./styles";
  */
 const EXPERIENCES = [
   {
-    id: "myPageRenewal",
+    id: "siteRenewal",
     skillSets: ["TypeScript", "Next.js", "React", "Docker", "AWS"],
   },
   {
@@ -18,7 +18,7 @@ const EXPERIENCES = [
     skillSets: ["TypeScript", "Next.js", "React", "Docker", "AWS"],
   },
   {
-    id: "developmentImprovement",
+    id: "issueManagementImprovement",
     skillSets: ["Dify", "Python"],
   },
   {

@@ -1,12 +1,14 @@
 {
   "Metadata": {
-    "title": "Nekonoko's Portfolio",
     "description": "フロントエンドエンジニア ねこのこ のポートフォリオサイトです。制作物・技術記事・経歴を公開しています。"
   },
   "LanguageSwitcher": {
     "label": "言語",
     "en": "English",
     "ja": "日本語"
+  },
+  "Profile": {
+    "name": "ねこのこ"
   },
   "About": {
     "role": "フロントエンドエンジニア",
@@ -26,8 +28,8 @@
     "fallback": "記事を読み込めませんでした。<link>Zenn</link> で公開しています。"
   },
   "Experiences": {
-    "myPageRenewal": {
-      "title": "マイページ刷新プロジェクト",
+    "siteRenewal": {
+      "title": "サイトリニューアルプロジェクト",
       "period": "2023年7月 - 2025年1月",
       "description": "業務委託スタッフ向け SPA の開発。スクラムチームにフロントエンドエンジニアとして参画した。",
       "responsibilities": [
@@ -41,7 +43,7 @@
     "systemRiskResponse": {
       "title": "システムリスク対応",
       "period": "2025年10月 - 2026年4月",
-      "description": "Next.js のメジャーバージョンアップ（14→16）と Recoil から Jotai への移行をリード。リードエンジニアとして Snyk による脆弱性診断を一貫して担当した。",
+      "description": "Next.js のメジャーバージョンアップ（13→16）と Recoil から Jotai への移行をリード。リードエンジニアとして Snyk による脆弱性診断を一貫して担当した。",
       "responsibilities": [
         "技術調査と PoC",
         "実装とテスト",
@@ -50,10 +52,10 @@
         "リードエンジニアとしての推進"
       ]
     },
-    "developmentImprovement": {
-      "title": "開発改善プロジェクト",
+    "issueManagementImprovement": {
+      "title": "課題整理改善プロジェクト",
       "period": "2026年1月 - 2026年3月",
-      "description": "マイページ刷新プロジェクトのドキュメント品質課題に対応。AI によるドキュメント自動チェックの仕組みを設計し、他案件と並行する限られた工数のなかで成果を出した。",
+      "description": "サイトリニューアルプロジェクトのドキュメント品質課題に対応。AI によるドキュメント自動チェックの仕組みを設計し、他案件と並行する限られた工数のなかで成果を出した。",
       "responsibilities": [
         "AI によるドキュメント自動チェックの設計",
         "AI が読み取りやすいよう Excel を Markdown に変換する Python ツールの作成"
@@ -77,10 +79,6 @@
   "ExperienceStep": {
     "skillSets": "使用技術:",
     "responsibilities": "担当業務:"
-  },
-  "Footer": {
-    "navigation": "ナビゲーション",
-    "contact": "連絡先"
   },
   "NotFound": {
     "message": "ページが見つかりませんでした 🐾",

@@ -11,6 +11,7 @@ import {
   Typography,
 } from "@mui/material";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 import React, { useState } from "react";
 import {
   NAV_ITEMS,
@@ -29,6 +30,7 @@ export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { mode, toggleTheme } = useThemeMode();
   const { nextLocaleLabel, switchLocale } = useLocaleSwitch();
+  const name = useTranslations("Profile")("name");
 
   const listItems = NAV_ITEMS;
   const activeSection = useScrollSpy({ sectionIds: SECTION_IDS });
@@ -40,17 +42,20 @@ export const Header = () => {
           {/* ロゴから / に戻ると言語判定が再度走るため、locale を保つ Link を使う */}
           <IconButton component={Link} href="/">
             <Avatar
-              alt="ねこのこ"
+              alt={name}
               src="/assets/img/nekonoko.jpg"
               sx={{ width: "42px", height: "42px" }}
             />
           </IconButton>
+          {/* ロゴは About セクションの見出しと同じ名前を出す（#92） */}
           <Typography
             variant="h6"
             component={Link}
             href="/"
             sx={{ color: "secondary.main" }}
-          >{`Nekonoko's Portfolio`}</Typography>
+          >
+            {name}
+          </Typography>
         </Box>
         <PcHeaderMenu>
           {listItems.map((item) => (
