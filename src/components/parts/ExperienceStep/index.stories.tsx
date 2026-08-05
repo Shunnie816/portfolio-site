@@ -19,7 +19,7 @@ type Story = StoryObj<typeof ExperienceStep>;
 
 export const Default: Story = {
   args: {
-    title: "My Page renewal project",
+    title: "Site Renewal Project",
     period: "July 2023 - January 2025",
     description:
       "Developing a SPA for outsourcing staffs. Join as a frontend developer in a scrum team.",
@@ -66,12 +66,12 @@ export const AiProductDevelopmentStandardization: Story = {
   },
 };
 
-export const DevelopmentImprovementProject: Story = {
+export const IssueManagementImprovementProject: Story = {
   args: {
-    title: "Development Improvement Project",
+    title: "Issue Management Improvement Project",
     period: "January 2026 - March 2026",
     description:
-      "Addressed document quality issues in the MY Page renewal project. Designed an AI-powered automated document checking mechanism and delivered results under limited capacity while managing concurrent projects.",
+      "Addressed document quality issues in the Site Renewal Project. Designed an AI-powered automated document checking mechanism and delivered results under limited capacity while managing concurrent projects.",
     skillSets: ["Dify", "Python"],
     responsibilities: [
       "Designed AI-based automated document checking",

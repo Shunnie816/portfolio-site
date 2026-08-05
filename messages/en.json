@@ -29,8 +29,8 @@
     "fallback": "Could not load the articles. They are published on <link>Zenn</link>."
   },
   "Experiences": {
-    "myPageRenewal": {
-      "title": "My Page renewal project",
+    "siteRenewal": {
+      "title": "Site Renewal Project",
       "period": "July 2023 - January 2025",
       "description": "Developing a SPA for outsourcing staffs. Join as a frontend developer in a scrum team.",
       "responsibilities": [
@@ -53,10 +53,10 @@
         "Lead engineer role"
       ]
     },
-    "developmentImprovement": {
-      "title": "Development Improvement Project",
+    "issueManagementImprovement": {
+      "title": "Issue Management Improvement Project",
       "period": "January 2026 - March 2026",
-      "description": "Addressed document quality issues in the MY Page renewal project. Designed an AI-powered automated document checking mechanism and delivered results under limited capacity while managing concurrent projects.",
+      "description": "Addressed document quality issues in the Site Renewal Project. Designed an AI-powered automated document checking mechanism and delivered results under limited capacity while managing concurrent projects.",
       "responsibilities": [
         "Designed AI-based automated document checking",
         "Created a Python tool to convert Excel to Markdown for AI readability"
