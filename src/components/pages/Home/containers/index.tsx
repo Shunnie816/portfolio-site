@@ -31,6 +31,7 @@ type Props = {
 
 export const Home = ({ articles }: Props) => {
   const t = useTranslations("About");
+  const name = useTranslations("Profile")("name");
 
   const scrollToNextSection = () => {
     const nextSection = document.getElementById("about");
@@ -48,7 +49,7 @@ export const Home = ({ articles }: Props) => {
       <ThemeProvider theme={darkTheme}>
         <AvatarWrapper id="home">
           <Avatar
-            alt="ねこのこ"
+            alt={name}
             src="/assets/img/nekonoko.jpg"
             sx={{ width: "140px", height: "140px" }}
           />
@@ -65,7 +66,7 @@ export const Home = ({ articles }: Props) => {
       </ThemeProvider>
       <IntroWrapper id="about">
         <IntroDescription>
-          <Typography variant="h4">Nekonoko</Typography>
+          <Typography variant="h4">{name}</Typography>
           <Typography variant="h6" sx={{ color: "primary.light" }}>
             {t("role")}
           </Typography>
