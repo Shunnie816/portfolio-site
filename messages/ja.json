@@ -81,10 +81,6 @@
     "skillSets": "使用技術:",
     "responsibilities": "担当業務:"
   },
-  "Footer": {
-    "navigation": "ナビゲーション",
-    "contact": "連絡先"
-  },
   "NotFound": {
     "message": "ページが見つかりませんでした 🐾",
     "portfolio": "ポートフォリオ",

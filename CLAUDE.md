@@ -156,6 +156,8 @@ Next.js 16 で `middleware` は `proxy` に改称されたため、ファイル�
 
 - **ナビゲーションとセクション見出し**（Home / About / Works / Writing / Experiences / My Works）
   `useScrollSpy` のアンカー id と1対1で対応させ、切り替えでナビ幅が変動しないようにするため
+- **フッターの見出し**（Navigation / Contact Me）
+  ナビゲーションの一部として扱うため、`messages` に置かず Footer に直接書く（#92）
 - **ヒーローのタイピングエフェクト**（`TYPING_TEXT`）
   言葉遊びを含む短いフレーズで、日本語にすると雰囲気が崩れるため英語で固定する
 - **技術名・プロダクト名**（TypeScript / Study Tracker / AI Radar など）
