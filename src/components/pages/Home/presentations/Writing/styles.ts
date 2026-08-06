@@ -11,7 +11,9 @@ const cardsWrapper = css`
   display: grid;
   gap: var(--spacing-3);
   grid-template-columns: 1fr;
-  padding: var(--spacing-4) 0 var(--spacing-9);
+
+  /* 下の余白はセクションの wrapper が持つ */
+  padding-top: var(--spacing-4);
 
   /* stylelint-disable-next-line media-query-no-invalid */
   @media (min-width: ${breakpoint}) {
@@ -20,7 +22,7 @@ const cardsWrapper = css`
 `;
 
 const fallback = css`
-  padding: var(--spacing-4) 0 var(--spacing-9);
+  padding-top: var(--spacing-4);
   text-align: center;
 `;
 

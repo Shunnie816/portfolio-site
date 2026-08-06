@@ -11,7 +11,9 @@ const cardsWrapper = css`
   display: flex;
   flex-direction: column;
   gap: var(--spacing-3);
-  padding: var(--spacing-4) 0 var(--spacing-9);
+
+  /* 下の余白はセクションの wrapper が持つ */
+  padding-top: var(--spacing-4);
 
   /* stylelint-disable-next-line media-query-no-invalid */
   @media (min-width: ${breakpoint}) {

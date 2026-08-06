@@ -49,9 +49,6 @@ const arrowDownWrapper = css`
 const introWrapper = css`
   ${commonWrapperStyle}
   background-color: var(--bg-color-light);
-
-  /* SkillLevel が担っていた下部の余白を wrapper 側で持つ */
-  padding-bottom: var(--spacing-14);
 `;
 
 const introDescription = css`
