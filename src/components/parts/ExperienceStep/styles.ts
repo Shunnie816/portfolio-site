@@ -9,8 +9,24 @@ const projectWrapper = css`
   .details {
     display: flex;
     flex-direction: column;
+    gap: var(--spacing-3);
+    margin-top: var(--spacing-3);
+  }
+
+  .skills {
+    display: flex;
+    flex-wrap: wrap;
     gap: var(--spacing-2);
     margin-top: var(--spacing-2);
+  }
+
+  .responsibilities {
+    margin-top: var(--spacing-2);
+
+    /* 箇条書きが詰まって読みにくいため、Typography の line-height を上書きして行間を広げる（#100） */
+    p {
+      line-height: 1.9;
+    }
   }
 
   /* stylelint-disable-next-line media-query-no-invalid */

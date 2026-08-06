@@ -1,4 +1,5 @@
 import {
+  Chip,
   Step,
   StepContent,
   StepLabel,
@@ -41,23 +42,37 @@ export const ExperienceStep = ({
       </StepLabel>
       <StepContent>
         <ProjectWrapper>
-          <Typography variant="body2">{description}</Typography>
+          {/* 1行の概要が最も小さい文字だったため、箇条書きより大きくして拾い読みできるようにする（#100） */}
+          <Typography variant="body1">{description}</Typography>
           <div className="details">
             <div>
-              <Typography sx={{ fontWeight: "bold", color: "primary.main" }}>
+              <Typography
+                variant="body2"
+                sx={{ fontWeight: "bold", color: "primary.main" }}
+              >
                 {t("skillSets")}
               </Typography>
-              {skillSets.map((skill) => (
-                <Typography key={skill}>- {skill}</Typography>
-              ))}
+              {/* My Works のカードと同じ Chip 表現に揃える（#100） */}
+              <div className="skills">
+                {skillSets.map((skill) => (
+                  <Chip key={skill} label={skill} color="primary" />
+                ))}
+              </div>
             </div>
             <div>
-              <Typography sx={{ fontWeight: "bold", color: "primary.main" }}>
+              <Typography
+                variant="body2"
+                sx={{ fontWeight: "bold", color: "primary.main" }}
+              >
                 {t("responsibilities")}
               </Typography>
-              {responsibilities.map((resp) => (
-                <Typography key={resp}>- {resp}</Typography>
-              ))}
+              <div className="responsibilities">
+                {responsibilities.map((resp) => (
+                  <Typography key={resp} variant="body2">
+                    - {resp}
+                  </Typography>
+                ))}
+              </div>
             </div>
           </div>
         </ProjectWrapper>
