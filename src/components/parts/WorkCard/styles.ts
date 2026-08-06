@@ -20,8 +20,12 @@ export const LinkContainer = emotionStyled.div`${linkContainer}`;
 export const LinksWrapper = emotionStyled.div`${linksWrapper}`;
 
 /** MUI sx styles */
+// My Works は白背景のセクションのため、影だけではカードの輪郭が出ない。
+// 枠線で縁を立てる（#98）
 export const cardSx = {
   backgroundColor: "common.white",
+  border: "1px solid",
+  borderColor: "divider",
 };
 
 export const cardHeaderSx = {

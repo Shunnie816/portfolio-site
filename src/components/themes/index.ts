@@ -30,7 +30,9 @@ export const darkTheme = createTheme({
     },
     secondary: {
       main: COLOR_PALETTE.gray,
-      light: COLOR_PALETTE.lightGray,
+      // 唯一の利用先が WorkCard のヘッダー帯で、カードは常に白いサーフェス。
+      // lightGray だと白地に埋もれるため、lightTheme と同じ lightBlue に揃える（#98）
+      light: COLOR_PALETTE.lightBlue,
       dark: COLOR_PALETTE.mediumGray,
     },
     text: {
