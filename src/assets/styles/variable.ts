@@ -33,7 +33,7 @@ export const variables = css`
 
   /* dark mode overrides */
   [data-color-scheme="dark"] {
-    --bg-color-default: ${COLOR.darkNavy};
+    --bg-color-default: ${COLOR.navyTint};
 
     /* --text-default はオーバーライドしない。常に darkNavy のままにする。
        ダーク背景セクション内のテキストは MUI sx で明示的に上書きする */

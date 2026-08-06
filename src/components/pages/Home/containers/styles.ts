@@ -48,7 +48,9 @@ const arrowDownWrapper = css`
 
 const introWrapper = css`
   ${commonWrapperStyle}
-  background-color: var(--bg-color-light);
+
+  /* セクションの背景は Hero(dark) から交互に切り替える（#97） */
+  background-color: var(--bg-color-default);
 `;
 
 const introDescription = css`

@@ -5,6 +5,7 @@ import { commonWrapperStyle } from "../../containers/commonStyle";
 
 const worksWrapper = css`
   ${commonWrapperStyle}
+  background-color: var(--bg-color-light);
 `;
 
 const cardsWrapper = css`
