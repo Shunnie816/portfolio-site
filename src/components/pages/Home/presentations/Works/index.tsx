@@ -10,11 +10,8 @@ export const Works = () => {
 
   return (
     <WorksWrapper id="works">
-      <Typography
-        variant="h3"
-        textAlign="center"
-        sx={{ color: "text.primary" }}
-      >
+      {/* 常に白背景のため、Experiences と同じく body の文字色を継承する（#97） */}
+      <Typography variant="h3" textAlign="center">
         My Works
       </Typography>
       <CardsWrapper>

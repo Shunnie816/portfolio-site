@@ -65,27 +65,30 @@ export const Home = ({ articles }: Props) => {
         </AvatarWrapper>
       </ThemeProvider>
       <IntroWrapper id="about">
+        {/* 背景がモードで反転するセクションのため、文字色は sx で明示する（#97） */}
         <IntroDescription>
-          <Typography variant="h4">{name}</Typography>
-          <Typography variant="h6" sx={{ color: "primary.light" }}>
+          <Typography variant="h4" sx={{ color: "text.primary" }}>
+            {name}
+          </Typography>
+          <Typography variant="h6" sx={{ color: "text.secondary" }}>
             {t("role")}
           </Typography>
-          <Typography>{t("bio1")}</Typography>
-          <Typography>{t("bio2")}</Typography>
-          <Typography>{t("bio3")}</Typography>
+          <Typography sx={{ color: "text.primary" }}>{t("bio1")}</Typography>
+          <Typography sx={{ color: "text.primary" }}>{t("bio2")}</Typography>
+          <Typography sx={{ color: "text.primary" }}>{t("bio3")}</Typography>
         </IntroDescription>
         <IconsWrapper>
           <Tooltip title="GitHub">
             <IconButton>
               <Link href={URL.GITHUB} target="_blank" rel="noreferrer noopener">
-                <Icon icon="gitHub" color="primary" />
+                <Icon icon="gitHub" sx={{ color: "text.primary" }} />
               </Link>
             </IconButton>
           </Tooltip>
           <Tooltip title="Zenn">
             <IconButton>
               <Link href={URL.ZENN} target="_blank" rel="noreferrer noopener">
-                <Icon icon="zenn" color="primary" />
+                <Icon icon="zenn" sx={{ color: "text.primary" }} />
               </Link>
             </IconButton>
           </Tooltip>

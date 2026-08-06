@@ -9,6 +9,12 @@
  */
 export const COLOR = {
   darkNavy: "#201e43",
+  /**
+   * ダークモードのページ背景。
+   * Hero / Footer は常に darkNavy のため、同じ色だと境界が消える。
+   * 隣り合っても切れ目が分かるよう、darkNavy をわずかに明るくしている（#97）。
+   */
+  navyTint: "#312d66",
   navy: "#134b70",
   lightNavy: "#508c9b",
   gray: "#eeeeee",
