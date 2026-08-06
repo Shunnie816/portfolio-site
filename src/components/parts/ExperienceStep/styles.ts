@@ -46,3 +46,18 @@ const titleWrapper = css`
 
 export const ProjectWrapper = emotionStyled.div`${projectWrapper}`;
 export const TitleWrapper = emotionStyled.div`${titleWrapper}`;
+
+/** MUI sx styles */
+/**
+ * StepLabel の中身が「タイトル + 期間」の2行のため、
+ * 既定の align-items: center では数字がラベル全体の中央 = タイトルより下に来る。
+ * 上寄せにしたうえで、24px の数字の中心がタイトル1行目（line-height 32px）の中心に
+ * 合うよう 4px だけ下げる（#99）。
+ */
+export const stepLabelSx = {
+  alignItems: "flex-start",
+
+  "& .MuiStepLabel-iconContainer": {
+    pt: 0.5,
+  },
+};

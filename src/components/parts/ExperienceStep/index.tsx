@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import { useTranslations } from "next-intl";
 import React from "react";
-import { ProjectWrapper, TitleWrapper } from "./styles";
+import { ProjectWrapper, TitleWrapper, stepLabelSx } from "./styles";
 
 export type ExperienceStepProps = {
   title: string;
@@ -30,7 +30,7 @@ export const ExperienceStep = ({
 
   return (
     <Step expanded {...stepProps}>
-      <StepLabel>
+      <StepLabel sx={stepLabelSx}>
         <TitleWrapper>
           <Typography variant="h6" sx={{ color: "primary.light" }}>
             {title}
