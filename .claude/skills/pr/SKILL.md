@@ -29,6 +29,8 @@ lint は husky の lint-staged がコミット時に実行済み。build の最�
 
 ## PR テンプレート
 
+`.github/PULL_REQUEST_TEMPLATE.md` と同じ内容。片方を変えたらもう片方も揃える。
+
 ```markdown
 ## 概要
 
@@ -46,6 +48,7 @@ Closes #<番号>
 
 - [ ] 型エラーなし (`npx tsc --noEmit`)
 - [ ] lint: husky の lint-staged がコミット時に確認済み
+- [ ] テスト: `npm test`
 - [ ] build: CI で確認
 ```
 
