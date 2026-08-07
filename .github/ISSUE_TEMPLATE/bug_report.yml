@@ -1,0 +1,38 @@
+name: バグ報告
+description: 表示崩れや不具合を報告する
+labels: ["bug"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: 事象
+      description: 何が起きているか。スクリーンショットがあれば貼ってください
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 再現手順
+      placeholder: |
+        1. /ja を開く
+        2. Experiences までスクロールする
+        3. ...
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期待する挙動
+
+  - type: checkboxes
+    id: environment
+    attributes:
+      label: 発生環境
+      description: 当てはまるものにチェックを入れてください
+      options:
+        - label: PC
+        - label: スマートフォン
+        - label: ライトモード
+        - label: ダークモード
+        - label: 日本語 (/ja)
+        - label: 英語 (/en)

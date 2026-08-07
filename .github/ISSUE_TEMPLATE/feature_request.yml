@@ -1,0 +1,32 @@
+name: 機能追加・改善
+description: 新しい機能や改善を提案する
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: background
+    attributes:
+      label: 背景
+      description: なぜやりたいか。困っていることや狙い
+    validations:
+      required: true
+
+  - type: textarea
+    id: todo
+    attributes:
+      label: やること
+      description: 分かる範囲で。詳細は `/plan` で分解します
+      value: |
+        - [ ]
+
+  - type: textarea
+    id: done
+    attributes:
+      label: 完了条件
+      value: |
+        - [ ]
+
+  - type: textarea
+    id: note
+    attributes:
+      label: 補足
+      description: 参考リンク、代替案、関連する Issue など
