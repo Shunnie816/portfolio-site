@@ -25,6 +25,9 @@ export const Body = emotionStyled.div`${body}`;
 // （ダークモードでは paper と text.primary がどちらも gray になり文字が消える）
 export const cardSx = {
   backgroundColor: "common.white",
+  // WorkCard と縁の見え方を揃える（#98）
+  border: "1px solid",
+  borderColor: "divider",
   height: "100%",
   transition: "transform 0.2s ease-in-out",
 
