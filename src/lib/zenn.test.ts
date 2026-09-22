@@ -7,7 +7,7 @@ const PUB_DATE = "Fri, 31 Oct 2025 21:00:02 GMT";
 const PUB_DATE_ISO = "2025-10-31T21:00:02.000Z";
 // 実際の feed は enclosure と dc:creator を含む。パーサがこれらを無視できることも兼ねて再現する
 const EXTRA_TAGS =
-  '<enclosure url="https://res.cloudinary.com/zenn/og-base.png" length="0" type="false"/><dc:creator>ねこのこ</dc:creator>';
+  '<enclosure url="https://res.cloudinary.com/zenn/og-base.png" length="0" type="false"/><dc:creator>のこの</dc:creator>';
 
 const buildItem = ({
   title = `<![CDATA[${TITLE}]]>`,

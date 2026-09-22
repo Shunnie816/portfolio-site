@@ -38,7 +38,7 @@ export const SECTION_IDS = NAV_ITEMS.map((item) => item.anchor);
  * 言葉遊びを含む短いフレーズで、日本語にすると雰囲気が崩れるため英語で固定する。
  */
 export const TYPING_TEXT = [
-  "Hi, I am Nekonoko",
+  "Hi, I am Nokono",
   "I am a Frontend Developer",
   "I love fish",
   "I copy from Stack Overflow",

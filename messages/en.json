@@ -1,6 +1,6 @@
 {
   "Metadata": {
-    "description": "This is Nekonoko, a frontend developer. This is my portfolio site which tells about myself and shows my skills."
+    "description": "This is Nokono, a frontend developer. This is my portfolio site which tells about myself and shows my skills."
   },
   "LanguageSwitcher": {
     "label": "Language",
@@ -8,7 +8,7 @@
     "ja": "日本語"
   },
   "Profile": {
-    "name": "Nekonoko"
+    "name": "Nokono"
   },
   "About": {
     "role": "Frontend Developer",

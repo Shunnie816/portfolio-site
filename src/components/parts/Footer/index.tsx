@@ -31,7 +31,7 @@ export const Footer = () => {
       component: (
         <ItemWrapper>
           <Icon icon="zenn" />
-          ねこのこ -Nekonoko-
+          のこの -Nokono-
         </ItemWrapper>
       ),
       id: "zenn",
@@ -87,7 +87,7 @@ export const Footer = () => {
 
       <CopyRight>
         <Typography variant="caption" sx={{ color: "text.disabled" }}>
-          © {currentYear} Nekonoko. All rights reserved.
+          © {currentYear} Nokono. All rights reserved.
         </Typography>
       </CopyRight>
     </Wrapper>
