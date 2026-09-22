@@ -130,7 +130,7 @@ export default function NotFound() {
           }}
         >
           <Link
-            href="https://shunniehub.com/"
+            href="https://nokono.net/"
             target="_blank"
             rel="noopener noreferrer"
             style={{ textDecoration: "none", color: "inherit" }}
@@ -156,7 +156,7 @@ export default function NotFound() {
           }}
         >
           <Link
-            href="https://study-tracker.shunniehub.com/"
+            href="https://study-tracker.nokono.net/"
             target="_blank"
             rel="noopener noreferrer"
             style={{ textDecoration: "none", color: "inherit" }}
