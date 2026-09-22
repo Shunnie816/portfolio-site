@@ -2,10 +2,10 @@
 
 [日本語](./README.md) | English
 
-The portfolio website of Nekonoko, a frontend engineer.
+The portfolio website of Nokono, a frontend engineer.
 It brings together my work history, personal projects, and technical writing.
 
-🔗 **https://shunniehub.com**
+🔗 **https://nokono.net**
 
 ## Features
 
