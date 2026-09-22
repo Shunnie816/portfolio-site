@@ -38,7 +38,7 @@ const Component: Story["render"] = (args) => {
 
 export const Default: Story = {
   args: {
-    texts: ["I am Nekonoko", "Frontend Developer", "TypeScript Expert"],
+    texts: ["I am Nokono", "Frontend Developer", "TypeScript Expert"],
   },
   render: Component,
 };

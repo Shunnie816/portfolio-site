@@ -50,7 +50,7 @@ export const Home = ({ articles }: Props) => {
         <AvatarWrapper id="home">
           <Avatar
             alt={name}
-            src="/assets/img/nekonoko.jpg"
+            src="/assets/img/nokono.jpg"
             sx={{ width: "140px", height: "140px" }}
           />
           <TypingCarousel texts={TYPING_TEXT} />
