@@ -1,11 +1,11 @@
 export const URL = {
-  GITHUB: "https://github.com/Shunnie816",
+  GITHUB: "https://github.com/Nokono222",
   ZENN: "https://zenn.dev/nekonoko2323",
   STUDY_TRACKER: "https://study-tracker.nokono.net",
-  STUDY_TRACKER_REPO: "https://github.com/Shunnie816/study-tracker-next",
+  STUDY_TRACKER_REPO: "https://github.com/Nokono222/study-tracker-next",
   STUDY_TRACKER_ZENN: "https://zenn.dev/nekonoko2323/articles/795d624f3293c7",
   AI_RADAR: "https://ai-radar.nokono.net",
-  AI_RADAR_REPO: "https://github.com/Shunnie816/ai-radar",
+  AI_RADAR_REPO: "https://github.com/Nokono222/ai-radar",
 };
 /**
  * セクションの並び順。Header / DrawerNav / Footer / useScrollSpy が

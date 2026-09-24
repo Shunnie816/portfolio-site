@@ -21,7 +21,7 @@ export const Footer = () => {
       component: (
         <ItemWrapper>
           <Icon icon="gitHub" />
-          Shunnie816
+          Nokono222
         </ItemWrapper>
       ),
       id: "gitHub",
