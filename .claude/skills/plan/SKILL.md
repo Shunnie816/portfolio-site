@@ -26,7 +26,7 @@ fi
    Issue 番号が解決できていない場合は、先にユーザーへ番号を確認する。
 2. タスクをユーザーに提示し、追加・修正があれば反映する。
 3. 合意後、`mcp__github__add_issue_comment` で Issue にコメントする。
-   - `owner: Shunnie816` / `repo: portfolio-site` / `issue_number: <番号>`
+   - `owner: Nokono222` / `repo: portfolio-site` / `issue_number: <番号>`
    - `body` には**生の改行をそのまま**含める（`\n` とエスケープしない）
 4. 現在のブランチが `main` であれば `./scripts/issue-start.sh <番号>` でブランチを作成する。
    すでに作業ブランチにいる場合はスキップする。
