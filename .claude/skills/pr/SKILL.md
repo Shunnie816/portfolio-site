@@ -21,7 +21,7 @@ N=$(git branch --show-current | sed -n 's/.*issue-\([0-9][0-9]*\).*/\1/p')
 1. `npx tsc --noEmit` を実行して型エラーがないことを確認する。
 2. `git push -u origin <ブランチ名>` でブランチを push する。
 3. `mcp__github__create_pull_request` で PR を作成する。
-   - `owner: Shunnie816` / `repo: portfolio-site` / `base: main` / `head: <ブランチ名>`
+   - `owner: Nokono222` / `repo: portfolio-site` / `base: main` / `head: <ブランチ名>`
    - `body` には**生の改行をそのまま**含める（`\n` とエスケープしない）
    - タイトルは Conventional Commits に準じる形式（`feat:`, `fix:`, `chore:` など）
 
